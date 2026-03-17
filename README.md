@@ -138,8 +138,4 @@ assets/audio/
 * Progress tracking (localStorage)
 * React refactor if the app scales
 
----
 
-## Notes
-
-This is an MVP (Minimum Viable Product) focused on validating the idea in a real kindergarten environment before adding complexity.
