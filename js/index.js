@@ -1,17 +1,14 @@
-let isPlaying = false;
+let currentAudio = null;
 
 function playSound(id) {
-    if (isPlaying) return; // block clicks while playing
+  const audio = document.getElementById(id);
 
-    const audio = document.getElementById(id);
-    if (!audio) return;
+  if (currentAudio && currentAudio !== audio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
 
-    isPlaying = true;
-
-    audio.currentTime = 0;
-    audio.play();
-
-    audio.onended = () => {
-        isPlaying = false; // unlock when finished
-    };
+  currentAudio = audio;
+  audio.currentTime = 0;
+  audio.play();
 }
