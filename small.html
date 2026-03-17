@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toddler Group</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main class="page">
+      <a href="index.html" class="back-link">← Back</a>
+
+      <header class="page-header">
+        <h1>Small group</h1>
+      </header>
+
+      <section class="card-container">
+        <article class="card">
+          <div class="image-frame">
+            <img src="assets/images/happy.webp" alt="Happy bear" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Happy</h2>
+            <button class="play-btn" onclick="playSound('audio1')">
+              ▶ Play Audio
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="image-frame">
+            <img src="assets/images/sad.webp" alt="Sad bear" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Sad</h2>
+            <button class="play-btn" onclick="playSound('audio2')">
+              ▶ Play Audio
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+            <div class="image-frame">
+                <img src="assets/images/hungry.webp" alt="Hungry bear" />
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">Hungry</h2>
+                <button class="play-btn" onclick="playSound('audio3')">
+                    ▶ Play Audio
+                </button>
+            </div>
+        </article>
+
+        <article  class="card">
+            <div class="image-frame">
+                <img src="assets/images/full.webp" alt="Full bear" />
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">Full</h2>
+                <button class="play-btn" onclick="playSound('audio4')">
+                    ▶ Play Audio
+                </button>
+            </div>
+        </article>
+
+      </section>
+    </main>
+
+    <audio id="audio1" src="assets/audio/happy.mp3"></audio>
+    <audio id="audio2" src="assets/audio/sad.mp3"></audio>
+    <audio id="audio3" src="assets/audio/hungry.mp3"></audio>
+    <audio id="audio4" src="assets/audio/full.mp3"></audio>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

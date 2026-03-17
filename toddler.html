@@ -12,13 +12,12 @@
 
       <header class="page-header">
         <h1>Toddler Group</h1>
-        <p class="group-subtitle">Tap a card to hear the word</p>
       </header>
 
       <section class="card-container">
         <article class="card">
           <div class="image-frame">
-            <img src="assets/images/happy.png" alt="Happy bear" />
+            <img src="assets/images/happy.webp" alt="Happy bear" />
           </div>
           <div class="card-body">
             <h2 class="card-title">Happy</h2>
@@ -30,7 +29,7 @@
 
         <article class="card">
           <div class="image-frame">
-            <img src="assets/images/sad.png" alt="Sad bear" />
+            <img src="assets/images/sad.webp" alt="Sad bear" />
           </div>
           <div class="card-body">
             <h2 class="card-title">Sad</h2>
@@ -39,11 +38,32 @@
             </button>
           </div>
         </article>
+
+        <article class="card">
+            <div class="card-body">
+                <h2 class="card-title">Hello!</h2>
+                <button class="play-btn" onclick="playSound('audio3')">
+                    ▶ Play Audio
+                </button>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="card-body">
+                <h2 class="card-title">Goodbye!</h2>
+                <button class="play-btn" onclick="playSound('audio4')">
+                    ▶ Play Audio
+                </button>
+            </div>
+        </article>
+
       </section>
     </main>
 
     <audio id="audio1" src="assets/audio/happy.mp3"></audio>
     <audio id="audio2" src="assets/audio/sad.mp3"></audio>
+    <audio id="audio3" src="assets/audio/hello.mp3"></audio>
+    <audio id="audio4" src="assets/audio/goodbye.mp3"></audio>
 
     <script src="js/index.js"></script>
   </body>
