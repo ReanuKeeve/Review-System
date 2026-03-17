@@ -1,17 +1,17 @@
 let isPlaying = false;
 
 function playSound(id) {
-  if (isPlaying) return; // block clicks while playing
+    if (isPlaying) return; // block clicks while playing
 
-  const audio = document.getElementById(id);
-  if (!audio) return;
+    const audio = document.getElementById(id);
+    if (!audio) return;
 
-  isPlaying = true;
+    isPlaying = true;
 
-  audio.currentTime = 0;
-  audio.play();
+    audio.currentTime = 0;
+    audio.play();
 
-  audio.onended = () => {
-    isPlaying = false; // unlock when finished
-  };
+    audio.onended = () => {
+        isPlaying = false; // unlock when finished
+    };
 }

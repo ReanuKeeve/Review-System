@@ -6,9 +6,9 @@ This is a lightweight, mobile-first web app designed to help parents review dail
 
 The app allows parents to:
 
-* Select their child’s group
-* View simple visual learning cards
-* Tap images to hear teacher-recorded audio (words or sentences)
+- Select their child’s group
+- View simple visual learning cards
+- Tap images to hear teacher-recorded audio (words or sentences)
 
 The focus is on **simplicity, speed, and usability on mobile devices**.
 
@@ -16,11 +16,11 @@ The focus is on **simplicity, speed, and usability on mobile devices**.
 
 ## Features
 
-* 📱 Mobile-first design
-* 🧸 Group selection (Toddler, Small Class, Middle & Big Class)
-* 🖼️ Image-based learning cards
-* 🔊 Tap-to-play audio for pronunciation
-* ⚡ Lightweight (no frameworks, pure HTML/CSS/JS)
+- 📱 Mobile-first design
+- 🧸 Group selection (Toddler, Small Class, Middle & Big Class)
+- 🖼️ Image-based learning cards
+- 🔊 Tap-to-play audio for pronunciation
+- ⚡ Lightweight (no frameworks, pure HTML/CSS/JS)
 
 ---
 
@@ -55,8 +55,8 @@ REVIEW SYSTEM/
 
 Audio is handled via JavaScript to:
 
-* prevent overlapping sounds
-* stop previous audio when a new one plays
+- prevent overlapping sounds
+- stop previous audio when a new one plays
 
 ---
 
@@ -105,13 +105,11 @@ assets/audio/
 ```html
 <article class="card">
   <div class="image-frame">
-    <img src="assets/images/example.png" alt="Example">
+    <img src="assets/images/example.png" alt="Example" />
   </div>
   <div class="card-body">
     <h2 class="card-title">Example</h2>
-    <button class="play-btn" onclick="playSound('audioX')">
-      ▶ Play Audio
-    </button>
+    <button class="play-btn" onclick="playSound('audioX')">▶ Play Audio</button>
   </div>
 </article>
 
@@ -122,21 +120,21 @@ assets/audio/
 
 ## Design Principles
 
-* Keep UI simple and friendly
-* Large tap areas for mobile
-* Minimal text, focus on visuals
-* Fast loading and responsiveness
-* Clear interaction (tap → sound)
+- Keep UI simple and friendly
+- Large tap areas for mobile
+- Minimal text, focus on visuals
+- Fast loading and responsiveness
+- Clear interaction (tap → sound)
 
 ---
 
 ## Future Improvements
 
-* Dynamic content using `data.js`
-* Admin interface for teachers
-* Sentence mode (word + sentence toggle)
-* Progress tracking (localStorage)
-* React refactor if the app scales
+- Dynamic content using `data.js`
+- Admin interface for teachers
+- Sentence mode (word + sentence toggle)
+- Progress tracking (localStorage)
+- React refactor if the app scales
 
 ---
 
