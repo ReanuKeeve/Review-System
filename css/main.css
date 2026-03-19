@@ -84,6 +84,10 @@ body {
     background: linear-gradient(135deg, #42a5f5, #1e88e5);
 }
 
+.group-card.big {
+    background: linear-gradient(135deg, #a442f5, #7d06df);
+}
+
 .page {
     max-width: 900px;
     margin: 0 auto;
@@ -114,6 +118,34 @@ body {
     margin-top: 8px;
     font-size: 1rem;
     color: #7a8597;
+}
+
+.mode-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.mode-tab {
+    border: 1px solid #d2d8e2;
+    border-radius: 12px;
+    background: #ffffff;
+    padding: 8px 14px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #3f4f61;
+}
+
+.mode-tab.active {
+    background: linear-gradient(135deg, #42a5f5, #1e88e5);
+    color: #fff;
+    border-color: transparent;
+}
+
+.mode-tab:hover {
+    transform: translateY(-1px);
 }
 
 .card-container {
@@ -159,6 +191,12 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     color: #24324a;
+}
+
+.card-text {
+  margin: 0 0 12px;
+  color: #5b6472;
+  line-height: 1.5;
 }
 
 .play-btn {

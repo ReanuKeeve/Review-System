@@ -15,63 +15,20 @@
         <h1>Small Class</h1>
       </header>
 
-      <section class="card-container">
-        <article class="card">
-          <div class="image-frame">
-            <img src="assets/images/happy.webp" alt="Happy bear" />
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">Happy</h2>
-            <button class="play-btn" onclick="playSound('audio1')">
-              ▶ Play Audio
-            </button>
-          </div>
-        </article>
+      <div class="mode-tabs" role="tablist" aria-label="Card type tabs">
+        <button id="tab-words" class="mode-tab active" type="button" onclick="setMode('words')" role="tab" aria-selected="true">Words</button>
+        <button id="tab-sentences" class="mode-tab" type="button" onclick="setMode('sentences')" role="tab" aria-selected="false">Sentences</button>
+      </div>
 
-        <article class="card">
-          <div class="image-frame">
-            <img src="assets/images/sad.webp" alt="Sad bear" />
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">Sad</h2>
-            <button class="play-btn" onclick="playSound('audio2')">
-              ▶ Play Audio
-            </button>
-          </div>
-        </article>
-
-        <article class="card">
-            <div class="image-frame">
-                <img src="assets/images/hungry.webp" alt="Hungry bear" />
-            </div>
-            <div class="card-body">
-                <h2 class="card-title">Hungry</h2>
-                <button class="play-btn" onclick="playSound('audio3')">
-                    ▶ Play Audio
-                </button>
-            </div>
-        </article>
-
-        <article  class="card">
-            <div class="image-frame">
-                <img src="assets/images/full.webp" alt="Full bear" />
-            </div>
-            <div class="card-body">
-                <h2 class="card-title">Full</h2>
-                <button class="play-btn" onclick="playSound('audio4')">
-                    ▶ Play Audio
-                </button>
-            </div>
-        </article>
-
-      </section>
+      <section class="card-container" id="card-container"></section>
     </main>
 
-    <audio id="audio1" src="assets/audio/happy.mp3" preload="auto"></audio>
-    <audio id="audio2" src="assets/audio/sad.mp3" preload="auto"></audio>
-    <audio id="audio3" src="assets/audio/hungry.mp3" preload="auto"></audio>
-    <audio id="audio4" src="assets/audio/full.mp3" preload="auto"></audio>
-
+    <script src="js/data.js"></script>
     <script src="js/index.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        initCardPage(reviewData.small);
+      });
+    </script>
   </body>
 </html>
