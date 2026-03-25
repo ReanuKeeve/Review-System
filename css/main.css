@@ -88,6 +88,9 @@ body {
     background: linear-gradient(135deg, #a442f5, #7d06df);
 }
 
+.group-card.alphabet {
+    background: linear-gradient(135deg, #ebd17f, #ebbc25 )
+}
 .page {
     max-width: 900px;
     margin: 0 auto;

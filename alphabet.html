@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alphabet</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f8b92809d3f247148b5bb4eb91309f70"}'></script><!-- End Cloudflare Web Analytics -->
+  </head>
+  <body>
+    <main class="page">
+      <a href="index.html" class="back-link">← Back</a>
+
+      <header class="page-header">
+        <h1>Alphabet</h1>
+        <h2 class="page-subtitle">Letters we learned so far.</h2>
+      </header>
+
+      <div class="mode-tabs" role="tablist" aria-label="Card type tabs">
+        <button id="tab-words" class="mode-tab active" type="button" onclick="setMode('words')" role="tab" aria-selected="true">Letters</button>
+        <button id="tab-sentences" class="mode-tab" type="button" onclick="setMode('sentences')" role="tab" aria-selected="false">Phonetics</button>
+      </div>
+
+      <section class="card-container" id="card-container"></section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        initCardPage(reviewData.alphabet);
+      });
+    </script>
+  </body>
+</html>
