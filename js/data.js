@@ -42,7 +42,7 @@ const reviewData = {
       image: "assets/images/ball.webp",
       alt: "Ball",
       wordAudio: "assets/audio/ball.mp3",
-      sentenceText: "it's a ball.",
+      sentenceText: "It's a ball.",
       sentenceAudio: "assets/audio/ball-sentence.mp3"
     },
     {
@@ -51,7 +51,7 @@ const reviewData = {
       image: "assets/images/car.webp",
       alt: "Car",
       wordAudio: "assets/audio/car.mp3",
-      sentenceText: "it's a car.",
+      sentenceText: "It's a car.",
       sentenceAudio: "assets/audio/car-sentence.mp3"
     },
     {
@@ -60,7 +60,7 @@ const reviewData = {
       image: "assets/images/doll.webp",
       alt: "Doll",
       wordAudio: "assets/audio/doll.mp3",
-      sentenceText: "it's a doll.",
+      sentenceText: "It's a doll.",
       sentenceAudio: "assets/audio/doll-sentence.mp3"
     }
   ],
