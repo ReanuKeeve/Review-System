@@ -239,6 +239,60 @@ const reviewData = {
       wordAudio: "assets/audio/hand.mp3",
       sentenceText: "My hand hurts!",
       sentenceAudio: "assets/audio/hand-sentence.mp3"
+    },
+    {
+      key: "nod",
+      title: "Nod",
+      image: "assets/images/nod.webp",
+      alt: "Nod",
+      wordAudio: "assets/audio/nod.mp3",
+      sentenceText: "Nod your head.",
+      sentenceAudio: "assets/audio/nod-sentence.mp3"
+    },
+    {
+      key: "bend",
+      title: "Bend",
+      image: "assets/images/bend.webp",
+      alt: "Bend",
+      wordAudio: "assets/audio/bend.mp3",
+      sentenceText: "Bend your knees.",
+      sentenceAudio: "assets/audio/bend-sentence.mp3"
+    },
+    {
+      key: "clap",
+      title: "Clap",
+      image: "assets/images/clap.webp",
+      alt: "Clap",
+      wordAudio: "assets/audio/clap.mp3",
+      sentenceText: "Clap your hands.",
+      sentenceAudio: "assets/audio/clap-sentence.mp3"
+    },
+    {
+      key: "stamp",
+      title: "Stamp",
+      image: "assets/images/stamp.webp",
+      alt: "Stamp",
+      wordAudio: "assets/audio/stamp.mp3",
+      sentenceText: "Stamp your feet.",
+      sentenceAudio: "assets/audio/stamp-sentence.mp3"
+    },
+    {
+      key: "wave",
+      title: "Wave",
+      image: "assets/images/wave.webp",
+      alt: "Wave",
+      wordAudio: "assets/audio/wave.mp3",
+      sentenceText: "Wave your hands.",
+      sentenceAudio: "assets/audio/wave-sentence.mp3"
+    },
+    {
+      key: "hop",
+      title: "Hop",
+      image: "assets/images/hop.webp",
+      alt: "Hop",
+      wordAudio: "assets/audio/hop.mp3",
+      sentenceText: "Hop in place.",
+      sentenceAudio: "assets/audio/hop-sentence.mp3"
     }
   ],
   alphabet: [
@@ -250,6 +304,15 @@ const reviewData = {
       wordAudio: "assets/audio/alphabet/a.mp3",
       sentenceText: "A a apple ant.",
       sentenceAudio: "assets/audio/alphabet/a-sentence.mp3"
+    },
+    {
+      key: "b",
+      title: "B",
+      image: "assets/images/alphabet/b.webp",
+      alt: "Letter B",
+      wordAudio: "assets/audio/alphabet/b.mp3",
+      sentenceText: "B b ball banana.",
+      sentenceAudio: "assets/audio/alphabet/b-sentence.mp3"
     }
   ]
 };
