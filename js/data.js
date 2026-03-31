@@ -62,6 +62,33 @@ const reviewData = {
       wordAudio: "assets/audio/doll.mp3",
       sentenceText: "It's a doll.",
       sentenceAudio: "assets/audio/doll-sentence.mp3"
+    },
+    {
+      key: "chair",
+      title: "Chair",
+      image: "assets/images/chair.webp",
+      alt: "Chair",
+      wordAudio: "assets/audio/chair.mp3",
+      sentenceText: "",
+      sentenceAudio: ""
+    },
+    {
+      key: "table",
+      title: "Table",
+      image: "assets/images/table.webp",
+      alt: "",
+      wordAudio: "assets/audio/table.mp3",
+      sentenceText: "",
+      sentenceAudio: ""
+    },
+    {
+      key: "bed",
+      title: "Bed",
+      image: "assets/images/bed.webp",
+      alt: "",
+      wordAudio: "assets/audio/bed.mp3",
+      sentenceText: "",
+      sentenceAudio: ""
     }
   ],
   small: [
@@ -127,6 +154,42 @@ const reviewData = {
       wordAudio: "assets/audio/sleepy.mp3",
       sentenceText: "I am sleepy.",
       sentenceAudio: "assets/audio/sleepy-sentence.mp3"
+    },
+    {
+      key: "soup",
+      title: "Soup",
+      image: "assets/images/soup.webp",
+      alt: "Plate of soup",
+      wordAudio: "assets/audio/soup.mp3",
+      sentenceText: "I want soup, please.",
+      sentenceAudio: "assets/audio/soup-sentence.mp3"
+    },
+    {
+      key: "fish",
+      title: "Fish",
+      image: "assets/images/fish.webp",
+      alt: "Fried fish",
+      wordAudio: "assets/audio/fish.mp3",
+      sentenceText: "I want fish, please.",
+      sentenceAudio: "assets/audio/fish-sentence.mp3"
+    },
+    {
+      key: "chicken",
+      title: "Chicken",
+      image: "assets/images/chicken.webp",
+      alt: "Fried chicken",
+      wordAudio: "assets/audio/chicken.mp3",
+      sentenceText: "I want chicken, please.",
+      sentenceAudio: "assets/audio/chicken-sentence.mp3"
+    },
+    {
+      key: "salad",
+      title: "Salad",
+      image: "assets/images/salad.webp",
+      alt: "Bowl of salad",
+      wordAudio: "assets/audio/salad.mp3",
+      sentenceText: "I want salad, please.",
+      sentenceAudio: "assets/audio/salad-sentence.mp3"
     }
   ],
   middle: [
@@ -183,6 +246,51 @@ const reviewData = {
       wordAudio: "assets/audio/oval.mp3",
       sentenceText: "I see an oval.",
       sentenceAudio: "assets/audio/oval-sentence.mp3"
+    },
+    {
+      key: "one",
+      title: "One",
+      image: "assets/images/one.webp",
+      alt: "Number one",
+      wordAudio: "assets/audio/one.mp3",
+      sentenceText: "",
+      sentenceAudio: ""
+    },
+    {
+      key: "two",
+      title: "Two",
+      image: "assets/images/two.webp",
+      alt: "Number two",
+      wordAudio: "assets/audio/two.mp3",
+      sentenceText: "",
+      sentenceAudio: ""
+    },
+    {
+      key: "three",
+      title: "Three",
+      image: "assets/images/three.webp",
+      alt: "Number three",
+      wordAudio: "assets/audio/three.mp3",
+      sentenceText: "",
+      sentenceAudio: ""
+    },
+    {
+      key: "four",
+      title: "Four",
+      image: "assets/images/four.webp",
+      alt: "Number four",
+      wordAudio: "assets/audio/four.mp3",
+      sentenceText: "",
+      sentenceAudio: ""
+    },
+    {
+      key: "five",
+      title: "Five",
+      image: "assets/images/five.webp",
+      alt: "Number five",
+      wordAudio: "assets/audio/five.mp3",
+      sentenceText: "",
+      sentenceAudio: ""
     }
   ],
   big: [
@@ -293,6 +401,33 @@ const reviewData = {
       wordAudio: "assets/audio/hop.mp3",
       sentenceText: "Hop in place.",
       sentenceAudio: "assets/audio/hop-sentence.mp3"
+    },
+    {
+      key: "park",
+      title: "Park",
+      image: "assets/images/park.webp",
+      alt: "Image of the park",
+      wordAudio: "assets/audio/park.mp3",
+      sentenceText: "I'm going to a park.",
+      sentenceAudio: "assets/audio/park-sentence.mp3"
+    },
+    {
+      key: "supermarket",
+      title: "Supermarket",
+      image: "assets/images/supermarket.webp",
+      alt: "Image of the supermarket",
+      wordAudio: "assets/audio/supermarket.mp3",
+      sentenceText: "I'm going to a supermarket.",
+      sentenceAudio: "assets/audio/supermarket-sentence.mp3"
+    },
+    {
+      key: "bookstore",
+      title: "Bookstore",
+      image: "assets/images/bookstore.webp",
+      alt: "Image of the park",
+      wordAudio: "assets/audio/bookstore.mp3",
+      sentenceText: "I'm going to a bookstore.",
+      sentenceAudio: "assets/audio/bookstore-sentence.mp3"
     }
   ],
   alphabet: [
@@ -313,6 +448,15 @@ const reviewData = {
       wordAudio: "assets/audio/alphabet/b.mp3",
       sentenceText: "B b ball banana.",
       sentenceAudio: "assets/audio/alphabet/b-sentence.mp3"
+    },
+    {
+      key: "c",
+      title: "C",
+      image: "assets/images/alphabet/c.webp",
+      alt: "Letter C",
+      wordAudio: "assets/audio/alphabet/c.mp3",
+      sentenceText: "C c cat car.",
+      sentenceAudio: "assets/audio/alphabet/c-sentence.mp3"
     }
   ]
 };
