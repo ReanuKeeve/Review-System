@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Match</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/game.css" />
+  <!-- Cloudflare Web Analytics -->
+  <script
+    defer
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "f8b92809d3f247148b5bb4eb91309f70"}'
+  ></script>
+  <!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+  <main class="page">
+    <a href="minigames.html" class="back-link">← Back</a>
+
+    <header class="page-header">
+      <h1>Memory Match</h1>
+      <h2 class="page-subtitle">Match words with their corresponding images.</h2>
+    </header>
+
+    <section class="memory-match-container">
+      <h3>Choose level:</h3>
+
+      <div class="mode-tabs">
+        <button id="tab-toddler" class="mode-tab active" type="button" onclick="setMode('toddler')" role="tab" aria-selected="true">Toddler</button>
+        <button id="tab-small" class="mode-tab" type="button" onclick="setMode('small')" role="tab" aria-selected="false">Small</button>
+        <button id="tab-middle" class="mode-tab" type="button" onclick="setMode('middle')" role="tab" aria-selected="false">Middle</button>
+        <button id="tab-big" class="mode-tab" type="button" onclick="setMode('big')" role="tab" aria-selected="false">Big</button>
+      </div>
+
+      <div class="game-area">
+        <div class="game-status">
+          <p id="moves-display">Moves: 0</p>
+          <p id="matches-display">Matches: 0</p>
+        </div>
+
+        <div id="memory-cards" class="memory-cards"></div>
+
+        <div class="game-controls">
+          <button id="restart-button" type="button" class="play-button">Restart</button>
+        </div>
+
+        <p id="memory-feedback" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/game-1.js"></script>
+</body>
+</html>

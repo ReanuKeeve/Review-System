@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/game.css" />
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "f8b92809d3f247148b5bb4eb91309f70"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->
+    <title>Correct Sentence</title>
+  </head>
+  <body>
+    <main class="page">
+      <a href="minigames.html" class="back-link">← Back</a>
+
+      <header class="page-header">
+        <h1>Correct Sentence</h1>
+        <h2 class="page-subtitle">Choose the correct sentence that matches the image.</h2>
+      </header>
+
+      <section class="correct-sentence-container">
+        <h3>Choose level:</h3>
+
+        <div class="mode-tabs">
+          <button
+            id="tab-toddler"
+            class="mode-tab active"
+            type="button"
+            onclick="setMode('toddler')"
+            role="tab"
+            aria-selected="true"
+          >
+            Toddler
+          </button>
+          <button
+            id="tab-small"
+            class="mode-tab"
+            type="button"
+            onclick="setMode('small')"
+            role="tab"
+            aria-selected="false"
+          >
+            Small
+          </button>
+          <button
+            id="tab-middle"
+            class="mode-tab"
+            type="button"
+            onclick="setMode('middle')"
+            role="tab"
+            aria-selected="false"
+          >
+            Middle
+          </button>
+          <button
+            id="tab-big"
+            class="mode-tab"
+            type="button"
+            onclick="setMode('big')"
+            role="tab"
+            aria-selected="false"
+          >
+            Big
+          </button>
+        </div>
+
+        <div class="game-area">
+          <div class="game-status">
+            <p id="score-display">Score: 0</p>
+            <p id="progress-display">Question: 0 / 0</p>
+          </div>
+
+          <div class="question-card">
+            <div class="image-wrap">
+              <img id="question-image" src="" alt="" />
+            </div>
+
+            <div id="answer-buttons" class="answer-buttons"></div>
+
+            <div class="game-controls">
+              <button id="submit-button" type="button" class="play-button">Submit</button>
+              <button id="next-button" type="button" class="play-button" hidden>Next</button>
+              <button id="restart-button" type="button" class="play-button">Restart</button>
+            </div>
+
+            <p id="feedback-message" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/game-2.js"></script>
+  </body>
+</html>
