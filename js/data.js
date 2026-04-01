@@ -69,26 +69,26 @@ const reviewData = {
       image: "assets/images/chair.webp",
       alt: "Chair",
       wordAudio: "assets/audio/chair.mp3",
-      sentenceText: "",
-      sentenceAudio: ""
+      sentenceText: "This is a chair.",
+      sentenceAudio: "assets/audio/chair-sentence.mp3"
     },
     {
       key: "table",
       title: "Table",
       image: "assets/images/table.webp",
-      alt: "",
+      alt: "Table image",
       wordAudio: "assets/audio/table.mp3",
-      sentenceText: "",
-      sentenceAudio: ""
+      sentenceText: "This is a table.",
+      sentenceAudio: "assets/audio/table-sentence.mp3"
     },
     {
       key: "bed",
       title: "Bed",
       image: "assets/images/bed.webp",
-      alt: "",
+      alt: "Bed image",
       wordAudio: "assets/audio/bed.mp3",
-      sentenceText: "",
-      sentenceAudio: ""
+      sentenceText: "This is a bed.",
+      sentenceAudio: "assets/audio/bed-sentence.mp3"
     }
   ],
   small: [
