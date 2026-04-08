@@ -89,6 +89,33 @@ const reviewData = {
       wordAudio: "assets/audio/bed.mp3",
       sentenceText: "This is a bed.",
       sentenceAudio: "assets/audio/bed-sentence.mp3"
+    },
+    {
+      key: "chairs",
+      title: "Chairs",
+      image: "assets/images/chairs.webp",
+      alt: "Image of chairs",
+      wordAudio: "assets/audio/chairs.mp3",
+      sentenceText: "These are chairs.",
+      sentenceAudio: "assets/audio/chairs-sentence.mp3"
+    },
+    {
+      key: "tables",
+      title: "Tables",
+      image: "assets/images/tables.webp",
+      alt: "Image of tables",
+      wordAudio: "assets/audio/tables.mp3",
+      sentenceText: "These are tables.",
+      sentenceAudio: "assets/audio/tables-sentence.mp3"
+    },
+    {
+      key: "beds",
+      title: "Beds",
+      image: "assets/images/beds.webp",
+      alt: "Image of beds",
+      wordAudio: "assets/audio/beds.mp3",
+      sentenceText: "These are beds.",
+      sentenceAudio: "assets/audio/beds-sentence.mp3"
     }
   ],
   small: [
@@ -190,6 +217,42 @@ const reviewData = {
       wordAudio: "assets/audio/salad.mp3",
       sentenceText: "I want salad, please.",
       sentenceAudio: "assets/audio/salad-sentence.mp3"
+    },
+    {
+      key: "pizza",
+      title: "Pizza",
+      image: "assets/images/pizza.webp",
+      alt: "Image of pizza",
+      wordAudio: "assets/audio/pizza.mp3",
+      sentenceText: "I want pizza, please.",
+      sentenceAudio: "assets/audio/pizza-sentence.mp3"
+    },
+    {
+      key: "noodles",
+      title: "Noodles",
+      image: "assets/images/noodles.webp",
+      alt: "Image of noodles",
+      wordAudio: "assets/audio/noodles.mp3",
+      sentenceText: "I want noodles, please.",
+      sentenceAudio: "assets/audio/noodles-sentence.mp3"
+    },
+    {
+      key: "tea",
+      title: "Tea",
+      image: "assets/images/tea.webp",
+      alt: "Image of tea",
+      wordAudio: "assets/audio/tea.mp3",
+      sentenceText: "I want tea, please.",
+      sentenceAudio: "assets/audio/tea-sentence.mp3"
+    },
+    {
+      key: "milk",
+      title: "Milk",
+      image: "assets/images/milk.webp",
+      alt: "Image of milk.",
+      wordAudio: "assets/audio/milk.mp3",
+      sentenceText: "I want milk please.",
+      sentenceAudio: "assets/audio/milk-sentence.mp3"
     }
   ],
   middle: [
