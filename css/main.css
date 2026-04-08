@@ -795,3 +795,7 @@ button:focus-visible {
     padding: 0.72rem 0.35rem;
   }
 }
+
+.play-btn.is-playing {
+  opacity: 0.8;
+}
