@@ -3,96 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Review System Admin</title>
+  <title>Review Admin Panel</title>
   <style>
     :root {
-      --bg: #f5f7fb;
+      --bg: #f4f7fb;
       --panel: #ffffff;
-      --panel-2: #f8fafc;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #dbe2ea;
+      --panel-soft: #f8fbff;
+      --text: #162033;
+      --muted: #667085;
+      --border: #d9e2ec;
+      --border-strong: #bfd0e2;
       --accent: #3b82f6;
-      --accent-soft: #dbeafe;
-      --danger: #dc2626;
+      --accent-soft: #e8f1ff;
       --success: #15803d;
-      --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-      --radius: 16px;
+      --danger: #dc2626;
+      --warning: #b45309;
+      --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 14px 36px rgba(15, 23, 42, 0.08);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --space-1: 8px;
+      --space-2: 12px;
+      --space-3: 16px;
+      --space-4: 20px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 40px;
     }
 
-    * { box-sizing: border-box; }
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
+      padding: 0;
       background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
     }
 
     .app {
       display: grid;
-      grid-template-columns: 300px minmax(0, 1fr);
+      grid-template-columns: 320px minmax(0, 1fr);
       min-height: 100vh;
     }
 
-    aside {
-      background: var(--panel);
-      border-right: 1px solid var(--border);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    .sidebar {
       position: sticky;
       top: 0;
       height: 100vh;
       overflow: auto;
+      padding: var(--space-5);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border-right: 1px solid var(--border);
     }
 
-    main {
-      padding: 24px;
+    .sidebar-inner {
       display: grid;
-      gap: 20px;
+      gap: var(--space-4);
+    }
+
+    .content {
+      padding: var(--space-6);
+      display: grid;
+      gap: var(--space-5);
       align-content: start;
     }
 
-    h1, h2, h3, p { margin: 0; }
+    .brand {
+      display: grid;
+      gap: 10px;
+      padding: var(--space-4);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
 
-    .brand h1 { font-size: 1.4rem; }
-    .brand p { color: var(--muted); margin-top: 8px; line-height: 1.4; }
+    .brand h1 {
+      font-size: 1.4rem;
+      line-height: 1.2;
+    }
+
+    .brand p {
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.96rem;
+    }
 
     .panel {
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-5);
     }
 
-    .sidebar-section {
+    .panel.tight {
+      padding: var(--space-4);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-4);
+    }
+
+    .panel-title {
       display: grid;
-      gap: 10px;
+      gap: 8px;
+    }
+
+    .panel-title h2 {
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .muted {
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     .section-list {
       display: grid;
-      gap: 8px;
-      max-height: 300px;
+      gap: 10px;
+      max-height: 340px;
       overflow: auto;
+      padding-right: 4px;
     }
 
     .section-btn {
       width: 100%;
       border: 1px solid var(--border);
-      background: var(--panel-2);
-      color: var(--text);
-      border-radius: 12px;
-      padding: 10px 12px;
-      text-align: left;
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
       cursor: pointer;
-      font-size: 0.95rem;
+      text-align: left;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
+      transition: 0.18s ease;
+    }
+
+    .section-btn:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
     }
 
     .section-btn.active {
@@ -100,107 +175,36 @@
       background: var(--accent-soft);
     }
 
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .section-name {
+      font-weight: 700;
+      overflow-wrap: anywhere;
     }
 
-    button,
-    input,
-    textarea,
-    select {
-      font: inherit;
-    }
-
-    button {
-      border: 1px solid var(--border);
-      background: var(--panel);
-      border-radius: 12px;
-      padding: 10px 14px;
-      cursor: pointer;
-    }
-
-    button.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
-    }
-
-    button.danger {
-      color: white;
-      background: var(--danger);
-      border-color: var(--danger);
-    }
-
-    button.success {
-      color: white;
-      background: var(--success);
-      border-color: var(--success);
-    }
-
-    button:disabled {
-      opacity: 0.55;
-      cursor: not-allowed;
-    }
-
-    .header-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .cards {
-      display: grid;
-      gap: 16px;
-    }
-
-    .card {
-      display: grid;
-      gap: 14px;
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-    }
-
-    .card-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .card-head-left {
-      display: grid;
-      gap: 4px;
-    }
-
-    .tag {
-      display: inline-block;
+    .badge {
+      min-width: 28px;
+      text-align: center;
       padding: 4px 8px;
       border-radius: 999px;
-      background: var(--panel-2);
+      background: #eef3f8;
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .form-stack {
+      display: grid;
+      gap: var(--space-3);
     }
 
     .grid {
       display: grid;
-      gap: 12px;
+      gap: var(--space-3);
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .field {
       display: grid;
-      gap: 6px;
+      gap: 8px;
     }
 
     .field.full {
@@ -210,154 +214,411 @@
     label {
       font-size: 0.92rem;
       font-weight: 700;
+      color: var(--text);
     }
 
-    input,
+    input[type="text"],
     textarea,
     select {
       width: 100%;
       border: 1px solid var(--border);
-      background: white;
-      border-radius: 12px;
-      padding: 10px 12px;
+      background: #fff;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      transition: 0.18s ease;
+      color: var(--text);
+    }
+
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
     }
 
     textarea {
-      min-height: 84px;
       resize: vertical;
+      min-height: 110px;
+      line-height: 1.45;
     }
 
-    .card-actions,
-    .preview-row,
-    .status-row {
+    .checkbox-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 16px;
       align-items: center;
     }
 
-    .preview-box {
-      border: 1px dashed var(--border);
-      border-radius: 12px;
-      padding: 12px;
-      background: var(--panel-2);
+    .checkbox {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    .checkbox input {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    button {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      border-radius: 14px;
+      padding: 11px 15px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: 0.18s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    }
+
+    button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    button.success {
+      background: var(--success);
+      border-color: var(--success);
+      color: #fff;
+    }
+
+    button.danger {
+      background: var(--danger);
+      border-color: var(--danger);
+      color: #fff;
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .cards {
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .card {
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-4);
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-3);
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .card-title-wrap {
       display: grid;
       gap: 8px;
     }
 
-    .preview-box img {
-      max-width: 160px;
-      max-height: 120px;
-      border-radius: 10px;
-      object-fit: contain;
-      background: white;
-      border: 1px solid var(--border);
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.25;
     }
 
-    .status {
-      min-height: 24px;
-      font-size: 0.92rem;
+    .card-subtitle {
       color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    .status.ok { color: var(--success); }
-    .status.error { color: var(--danger); }
+    .mini-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
-    .export-box {
+    .mini-actions button {
+      padding: 9px 12px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+    }
+
+    .preview-box {
+      border: 1px dashed var(--border-strong);
+      background: var(--panel-soft);
+      border-radius: var(--radius-md);
+      padding: var(--space-3);
       display: grid;
       gap: 10px;
     }
 
+    .preview-box strong {
+      font-size: 0.94rem;
+    }
+
+    .preview-grid {
+      display: grid;
+      gap: 8px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .output-wrap {
+      display: grid;
+      gap: var(--space-3);
+    }
+
     .code-output {
-      width: 100%;
-      min-height: 220px;
+      min-height: 260px;
       font-family: Consolas, Monaco, monospace;
       font-size: 0.92rem;
       white-space: pre;
     }
 
-    .hidden { display: none !important; }
+    .status {
+      min-height: 22px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
 
-    @media (max-width: 980px) {
-      .app { grid-template-columns: 1fr; }
-      aside {
+    .status.ok {
+      color: var(--success);
+    }
+
+    .status.error {
+      color: var(--danger);
+    }
+
+    .helper {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .empty-state {
+      border: 1px dashed var(--border-strong);
+      background: var(--panel-soft);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      color: var(--muted);
+    }
+
+    code {
+      background: #eef4fb;
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 0.92em;
+    }
+
+    @media (max-width: 1100px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
         position: static;
         height: auto;
         border-right: 0;
         border-bottom: 1px solid var(--border);
       }
-      .grid { grid-template-columns: 1fr; }
+
+      .content {
+        padding: var(--space-4);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .content,
+      .sidebar {
+        padding: 16px;
+      }
+
+      .panel,
+      .brand,
+      .card {
+        padding: 16px;
+        border-radius: 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .toolbar,
+      .mini-actions {
+        width: 100%;
+      }
+
+      .toolbar button,
+      .mini-actions button {
+        flex: 1 1 auto;
+      }
     }
   </style>
 </head>
 <body>
   <div class="app">
-    <aside>
-      <div class="brand">
-        <h1>Review Admin Panel</h1>
-        <p>Edit your lessons, add cards, manage sections, and export a fresh <code>data.js</code> file.</p>
-      </div>
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <section class="brand">
+          <h1>Review Admin</h1>
+          <p>Quick editor for your review cards. Add simple entries, auto-build paths, and export a clean <code>data.js</code>.</p>
+        </section>
 
-      <div class="sidebar-section">
-        <h2>Sections</h2>
-        <div id="sectionList" class="section-list"></div>
-      </div>
+        <section class="panel tight">
+          <div class="panel-header">
+            <div class="panel-title">
+              <h2>Sections</h2>
+              <p class="muted">Choose a section to edit.</p>
+            </div>
+          </div>
 
-      <div class="sidebar-section panel">
-        <h3>Add section</h3>
-        <div class="field">
-          <label for="newSectionName">Section key</label>
-          <input id="newSectionName" type="text" placeholder="example: colors" />
-        </div>
-        <button id="addSectionBtn" class="primary">Add section</button>
-        <p class="muted">Use simple lowercase keys. Example: <code>toddler</code>, <code>middle</code>, <code>alphabet</code>.</p>
-      </div>
+          <div id="sectionList" class="section-list"></div>
+        </section>
 
-      <div class="sidebar-section panel">
-        <h3>Project flow</h3>
-        <p class="muted">1. Edit content here.<br>2. Click Generate.<br>3. Download the new <code>data.js</code>.<br>4. Replace your old file in the project.</p>
+        <section class="panel tight">
+          <div class="panel-title" style="margin-bottom: 14px;">
+            <h2>Add section</h2>
+            <p class="muted">Use a short key like <code>toddler</code> or <code>alphabet</code>.</p>
+          </div>
+
+          <div class="form-stack">
+            <div class="field">
+              <label for="newSectionName">Section key</label>
+              <input id="newSectionName" type="text" placeholder="example: colors" />
+            </div>
+            <button id="addSectionBtn" class="primary" type="button">Add section</button>
+          </div>
+        </section>
+
+        <section class="panel tight">
+          <div class="panel-title" style="margin-bottom: 10px;">
+            <h2>How it works</h2>
+          </div>
+          <p class="helper">
+            1. Pick a section.<br>
+            2. Enter titles and sentences.<br>
+            3. Generate the final file.<br>
+            4. Replace your current <code>/js/data.js</code>.
+          </p>
+        </section>
       </div>
     </aside>
 
-    <main>
+    <main class="content">
       <section class="panel">
-        <div class="header-row">
-          <div>
+        <div class="panel-header">
+          <div class="panel-title">
             <h2 id="sectionTitle">Section</h2>
-            <p id="sectionMeta" class="muted"></p>
+            <p id="sectionMeta" class="muted">No section selected.</p>
           </div>
+
           <div class="toolbar">
-            <button id="addItemBtn" class="primary">Add item</button>
-            <button id="renameSectionBtn">Rename section</button>
-            <button id="deleteSectionBtn" class="danger">Delete section</button>
+            <button id="addItemBtn" class="primary" type="button">Add item</button>
+            <button id="renameSectionBtn" type="button">Rename section</button>
+            <button id="deleteSectionBtn" class="danger" type="button">Delete section</button>
           </div>
         </div>
       </section>
 
       <section class="panel">
-        <div class="header-row">
-          <div>
-            <h2>Items</h2>
-            <p class="muted">Each item follows your current schema: key, title, image, alt, wordAudio, sentenceText, sentenceAudio.</p>
+        <div class="panel-header">
+          <div class="panel-title">
+            <h2>Section defaults</h2>
+            <p class="muted">Set these once per section so each card stays simple.</p>
           </div>
         </div>
+
+        <div class="grid">
+          <div class="field">
+            <label for="imageFolder">Image folder</label>
+            <input id="imageFolder" type="text" placeholder="assets/images" />
+          </div>
+
+          <div class="field">
+            <label for="audioFolder">Audio folder</label>
+            <input id="audioFolder" type="text" placeholder="assets/audio" />
+          </div>
+
+          <div class="field">
+            <label for="imageExt">Image extension</label>
+            <input id="imageExt" type="text" placeholder=".webp" />
+          </div>
+
+          <div class="field">
+            <label for="audioExt">Audio extension</label>
+            <input id="audioExt" type="text" placeholder=".mp3" />
+          </div>
+
+          <div class="field full">
+            <label for="sentenceSuffix">Sentence audio suffix</label>
+            <input id="sentenceSuffix" type="text" placeholder="-sentence" />
+          </div>
+        </div>
+
+        <div class="checkbox-row" style="margin-top: 18px;">
+          <label class="checkbox">
+            <input id="autoKey" type="checkbox" checked />
+            <span>Generate key from title</span>
+          </label>
+
+          <label class="checkbox">
+            <input id="autoAlt" type="checkbox" checked />
+            <span>Generate alt from title</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
+            <h2>Items</h2>
+            <p class="muted">Focus on title and sentence. Paths are previewed automatically.</p>
+          </div>
+        </div>
+
         <div id="cards" class="cards"></div>
       </section>
 
-      <section class="panel export-box">
-        <div class="header-row">
-          <div>
+      <section class="panel">
+        <div class="panel-header">
+          <div class="panel-title">
             <h2>Export</h2>
-            <p class="muted">Generate a clean replacement for your existing <code>data.js</code>.</p>
+            <p class="muted">Generate a replacement for your current <code>/js/data.js</code>.</p>
           </div>
+
           <div class="toolbar">
-            <button id="generateBtn" class="success">Generate data.js</button>
-            <button id="copyBtn">Copy</button>
-            <button id="downloadBtn">Download</button>
+            <button id="generateBtn" class="success" type="button">Generate</button>
+            <button id="copyBtn" type="button">Copy</button>
+            <button id="downloadBtn" type="button">Download</button>
           </div>
         </div>
-        <textarea id="output" class="code-output" spellcheck="false"></textarea>
-        <div class="status-row">
+
+        <div class="output-wrap">
+          <textarea id="output" class="code-output" spellcheck="false"></textarea>
           <div id="status" class="status"></div>
         </div>
       </section>
