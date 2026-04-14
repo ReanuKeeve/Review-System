@@ -116,6 +116,33 @@ const reviewData = {
       "wordAudio": "assets/audio/beds.mp3",
       "sentenceText": "These are beds.",
       "sentenceAudio": "assets/audio/beds-sentence.mp3"
+    },
+    {
+      "key": "walk",
+      "title": "Walk",
+      "image": "assets/images/walk.gif",
+      "alt": "Walk",
+      "wordAudio": "assets/audio/walk.mp3",
+      "sentenceText": "I can walk.",
+      "sentenceAudio": "assets/audio/walk-sentence.mp3"
+    },
+    {
+      "key": "run",
+      "title": "Run",
+      "image": "assets/images/run.gif",
+      "alt": "Run",
+      "wordAudio": "assets/audio/run.mp3",
+      "sentenceText": "I can run.",
+      "sentenceAudio": "assets/audio/run-sentence.mp3"
+    },
+    {
+      "key": "jump",
+      "title": "Jump",
+      "image": "assets/images/jump.gif",
+      "alt": "Jump",
+      "wordAudio": "assets/audio/jump.mp3",
+      "sentenceText": "I can jump.",
+      "sentenceAudio": "assets/audio/jump-sentence.mp3"
     }
   ],
   "small": [
@@ -253,6 +280,42 @@ const reviewData = {
       "wordAudio": "assets/audio/milk.mp3",
       "sentenceText": "I want milk please.",
       "sentenceAudio": "assets/audio/milk-sentence.mp3"
+    },
+    {
+      "key": "-blocks",
+      "title": " Blocks",
+      "image": "assets/images/-blocks.webp",
+      "alt": " Blocks",
+      "wordAudio": "assets/audio/-blocks.mp3",
+      "sentenceText": "I like to play with blocks.",
+      "sentenceAudio": "assets/audio/-blocks-sentence.mp3"
+    },
+    {
+      "key": "cards",
+      "title": "Cards",
+      "image": "assets/images/cards.webp",
+      "alt": "Cards",
+      "wordAudio": "assets/audio/cards.mp3",
+      "sentenceText": "I don't like to play with cards.",
+      "sentenceAudio": "assets/audio/cards-sentence.mp3"
+    },
+    {
+      "key": "marbles",
+      "title": "Marbles",
+      "image": "assets/images/marbles.webp",
+      "alt": "Marbles",
+      "wordAudio": "assets/audio/marbles.mp3",
+      "sentenceText": "I like to play with marbles.",
+      "sentenceAudio": "assets/audio/marbles-sentence.mp3"
+    },
+    {
+      "key": "puzzles",
+      "title": "Puzzles",
+      "image": "assets/images/puzzles.webp",
+      "alt": "Puzzles",
+      "wordAudio": "assets/audio/puzzles.mp3",
+      "sentenceText": "I don't like to play with puzzles.",
+      "sentenceAudio": "assets/audio/puzzles-sentence.mp3"
     }
   ],
   "middle": [
@@ -399,6 +462,33 @@ const reviewData = {
       "wordAudio": "assets/audio/ten.mp3",
       "sentenceText": "Ten diamonds.",
       "sentenceAudio": "assets/audio/ten-sentence.mp3"
+    },
+    {
+      "key": "grapes",
+      "title": "Grapes",
+      "image": "assets/images/grapes.webp",
+      "alt": "Grapes",
+      "wordAudio": "assets/audio/grapes.mp3",
+      "sentenceText": "I like grapes.",
+      "sentenceAudio": "assets/audio/grapes-sentence.mp3"
+    },
+    {
+      "key": "strawberries",
+      "title": "Strawberries",
+      "image": "assets/images/strawberries.webp",
+      "alt": "Strawberries",
+      "wordAudio": "assets/audio/strawberries.mp3",
+      "sentenceText": "I like strawberries.",
+      "sentenceAudio": "assets/audio/strawberries-sentence.mp3"
+    },
+    {
+      "key": "cherries",
+      "title": "Cherries",
+      "image": "assets/images/cherries.webp",
+      "alt": "Cherries",
+      "wordAudio": "assets/audio/cherries.mp3",
+      "sentenceText": "I like cherries.",
+      "sentenceAudio": "assets/audio/cherries-sentence.mp3"
     }
   ],
   "big": [
@@ -563,6 +653,96 @@ const reviewData = {
       "wordAudio": "assets/audio/bakery.mp3",
       "sentenceText": "To the bakery.",
       "sentenceAudio": "assets/audio/bakery-sentence.mp3"
+    },
+    {
+      "key": "one",
+      "title": "One",
+      "image": "assets/images/one.webp",
+      "alt": "One",
+      "wordAudio": "assets/audio/one.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/one-sentence.mp3"
+    },
+    {
+      "key": "two",
+      "title": "Two",
+      "image": "assets/images/two.webp",
+      "alt": "Two",
+      "wordAudio": "assets/audio/two.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/two-sentence.mp3"
+    },
+    {
+      "key": "three",
+      "title": "Three",
+      "image": "assets/images/three.webp",
+      "alt": "Three",
+      "wordAudio": "assets/audio/three.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/three-sentence.mp3"
+    },
+    {
+      "key": "four",
+      "title": "Four",
+      "image": "assets/images/four.webp",
+      "alt": "Four",
+      "wordAudio": "assets/audio/four.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/four-sentence.mp3"
+    },
+    {
+      "key": "five",
+      "title": "Five",
+      "image": "assets/images/five.webp",
+      "alt": "Five",
+      "wordAudio": "assets/audio/five.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/five-sentence.mp3"
+    },
+    {
+      "key": "six",
+      "title": "Six",
+      "image": "assets/images/six.webp",
+      "alt": "Six",
+      "wordAudio": "assets/audio/six.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/six-sentence.mp3"
+    },
+    {
+      "key": "seven",
+      "title": "Seven",
+      "image": "assets/images/seven.webp",
+      "alt": "Seven",
+      "wordAudio": "assets/audio/seven.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/seven-sentence.mp3"
+    },
+    {
+      "key": "eight",
+      "title": "Eight",
+      "image": "assets/images/eight.webp",
+      "alt": "Eight",
+      "wordAudio": "assets/audio/eight.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/eight-sentence.mp3"
+    },
+    {
+      "key": "nine",
+      "title": "Nine",
+      "image": "assets/images/nine.webp",
+      "alt": "Nine",
+      "wordAudio": "assets/audio/nine.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/nine-sentence.mp3"
+    },
+    {
+      "key": "ten",
+      "title": "Ten",
+      "image": "assets/images/ten.webp",
+      "alt": "Ten",
+      "wordAudio": "assets/audio/ten.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/ten-sentence.mp3"
     }
   ],
   "alphabet": [
