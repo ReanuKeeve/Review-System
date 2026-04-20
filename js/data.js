@@ -282,13 +282,13 @@ const reviewData = {
       "sentenceAudio": "assets/audio/milk-sentence.mp3"
     },
     {
-      "key": "-blocks",
-      "title": " Blocks",
-      "image": "assets/images/-blocks.webp",
-      "alt": " Blocks",
-      "wordAudio": "assets/audio/-blocks.mp3",
+      "key": "blocks",
+      "title": "Blocks",
+      "image": "assets/images/blocks.webp",
+      "alt": "Blocks",
+      "wordAudio": "assets/audio/blocks.mp3",
       "sentenceText": "I like to play with blocks.",
-      "sentenceAudio": "assets/audio/-blocks-sentence.mp3"
+      "sentenceAudio": "assets/audio/blocks-sentence.mp3"
     },
     {
       "key": "cards",
