@@ -235,6 +235,10 @@ body::after {
  background: linear-gradient(135deg, #9169ec 0%, #f3ae3d 100%);
 }
 
+.group-card.downloads {
+  background: linear-gradient(135deg, #d6e049 0%, #811d19 100%);
+}
+
 .page {
   width: min(100%, 950px);
   margin: 0 auto;

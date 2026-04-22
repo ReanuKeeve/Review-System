@@ -143,6 +143,33 @@ const reviewData = {
       "wordAudio": "assets/audio/jump.mp3",
       "sentenceText": "I can jump.",
       "sentenceAudio": "assets/audio/jump-sentence.mp3"
+    },
+    {
+      "key": "bird",
+      "title": "Bird",
+      "image": "assets/images/bird.webp",
+      "alt": "Bird",
+      "wordAudio": "assets/audio/bird.mp3",
+      "sentenceText": "It's a bird.",
+      "sentenceAudio": "assets/audio/bird-sentence.mp3"
+    },
+    {
+      "key": "cat",
+      "title": "Cat",
+      "image": "assets/images/cat.webp",
+      "alt": "Cat",
+      "wordAudio": "assets/audio/cat.mp3",
+      "sentenceText": "It's a cat.",
+      "sentenceAudio": "assets/audio/cat-sentence.mp3"
+    },
+    {
+      "key": "dog",
+      "title": "Dog",
+      "image": "assets/images/dog.webp",
+      "alt": "Dog",
+      "wordAudio": "assets/audio/dog.mp3",
+      "sentenceText": "It's a dog.",
+      "sentenceAudio": "assets/audio/dog-sentence.mp3"
     }
   ],
   "small": [
@@ -316,6 +343,42 @@ const reviewData = {
       "wordAudio": "assets/audio/puzzles.mp3",
       "sentenceText": "I don't like to play with puzzles.",
       "sentenceAudio": "assets/audio/puzzles-sentence.mp3"
+    },
+    {
+      "key": "cups",
+      "title": "Cups",
+      "image": "assets/images/cups.webp",
+      "alt": "Cups",
+      "wordAudio": "assets/audio/cups.mp3",
+      "sentenceText": "I like cups!",
+      "sentenceAudio": "assets/audio/cups-sentence.mp3"
+    },
+    {
+      "key": "hoops",
+      "title": "Hoops",
+      "image": "assets/images/hoops.webp",
+      "alt": "Hoops",
+      "wordAudio": "assets/audio/hoops.mp3",
+      "sentenceText": "I don't like hoops.",
+      "sentenceAudio": "assets/audio/hoops-sentence.mp3"
+    },
+    {
+      "key": "balls",
+      "title": "Balls",
+      "image": "assets/images/balls.webp",
+      "alt": "Balls",
+      "wordAudio": "assets/audio/balls.mp3",
+      "sentenceText": "I like balls.",
+      "sentenceAudio": "assets/audio/balls-sentence.mp3"
+    },
+    {
+      "key": "dice",
+      "title": "Dice",
+      "image": "assets/images/dice.webp",
+      "alt": "Dice",
+      "wordAudio": "assets/audio/dice.mp3",
+      "sentenceText": "I don't like dice.",
+      "sentenceAudio": "assets/audio/dice-sentence.mp3"
     }
   ],
   "middle": [
@@ -489,6 +552,33 @@ const reviewData = {
       "wordAudio": "assets/audio/cherries.mp3",
       "sentenceText": "I like cherries.",
       "sentenceAudio": "assets/audio/cherries-sentence.mp3"
+    },
+    {
+      "key": "peaches",
+      "title": "Peaches",
+      "image": "assets/images/peaches.webp",
+      "alt": "Peaches",
+      "wordAudio": "assets/audio/peaches.mp3",
+      "sentenceText": "I don't like peaches.",
+      "sentenceAudio": "assets/audio/peaches-sentence.mp3"
+    },
+    {
+      "key": "papayas",
+      "title": "Papayas",
+      "image": "assets/images/papayas.webp",
+      "alt": "Papayas",
+      "wordAudio": "assets/audio/papayas.mp3",
+      "sentenceText": "I don't like papayas.",
+      "sentenceAudio": "assets/audio/papayas-sentence.mp3"
+    },
+    {
+      "key": "oranges",
+      "title": "Oranges",
+      "image": "assets/images/oranges.webp",
+      "alt": "Oranges",
+      "wordAudio": "assets/audio/oranges.mp3",
+      "sentenceText": "I don't like oranges.",
+      "sentenceAudio": "assets/audio/oranges-sentence.mp3"
     }
   ],
   "big": [
@@ -743,6 +833,96 @@ const reviewData = {
       "wordAudio": "assets/audio/ten.mp3",
       "sentenceText": "",
       "sentenceAudio": "assets/audio/ten-sentence.mp3"
+    },
+    {
+      "key": "eleven",
+      "title": "Eleven",
+      "image": "assets/images/eleven.webp",
+      "alt": "Eleven",
+      "wordAudio": "assets/audio/eleven.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/eleven-sentence.mp3"
+    },
+    {
+      "key": "twelve",
+      "title": "Twelve",
+      "image": "assets/images/twelve.webp",
+      "alt": "Twelve",
+      "wordAudio": "assets/audio/twelve.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/twelve-sentence.mp3"
+    },
+    {
+      "key": "thirteen",
+      "title": "Thirteen",
+      "image": "assets/images/thirteen.webp",
+      "alt": "Thirteen",
+      "wordAudio": "assets/audio/thirteen.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/thirteen-sentence.mp3"
+    },
+    {
+      "key": "fourteen",
+      "title": "Fourteen",
+      "image": "assets/images/fourteen.webp",
+      "alt": "Fourteen",
+      "wordAudio": "assets/audio/fourteen.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/fourteen-sentence.mp3"
+    },
+    {
+      "key": "fifteen-",
+      "title": "Fifteen ",
+      "image": "assets/images/fifteen-.webp",
+      "alt": "Fifteen ",
+      "wordAudio": "assets/audio/fifteen-.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/fifteen--sentence.mp3"
+    },
+    {
+      "key": "sixteen",
+      "title": "Sixteen",
+      "image": "assets/images/sixteen.webp",
+      "alt": "Sixteen",
+      "wordAudio": "assets/audio/sixteen.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/sixteen-sentence.mp3"
+    },
+    {
+      "key": "seventeen",
+      "title": "Seventeen",
+      "image": "assets/images/seventeen.webp",
+      "alt": "Seventeen",
+      "wordAudio": "assets/audio/seventeen.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/seventeen-sentence.mp3"
+    },
+    {
+      "key": "eighteen",
+      "title": "Eighteen",
+      "image": "assets/images/eighteen.webp",
+      "alt": "Eighteen",
+      "wordAudio": "assets/audio/eighteen.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/eighteen-sentence.mp3"
+    },
+    {
+      "key": "nineteen",
+      "title": "Nineteen",
+      "image": "assets/images/nineteen.webp",
+      "alt": "Nineteen",
+      "wordAudio": "assets/audio/nineteen.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/nineteen-sentence.mp3"
+    },
+    {
+      "key": "twenty",
+      "title": "Twenty",
+      "image": "assets/images/twenty.webp",
+      "alt": "Twenty",
+      "wordAudio": "assets/audio/twenty.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/twenty-sentence.mp3"
     }
   ],
   "alphabet": [
@@ -772,6 +952,24 @@ const reviewData = {
       "wordAudio": "assets/audio/c.mp3",
       "sentenceText": "C c cat car.",
       "sentenceAudio": "assets/audio/c-sentence.mp3"
+    },
+    {
+      "key": "d",
+      "title": "D",
+      "image": "assets/images/d.webp",
+      "alt": "D",
+      "wordAudio": "assets/audio/d.mp3",
+      "sentenceText": "D d dog doll",
+      "sentenceAudio": "assets/audio/d-sentence.mp3"
+    },
+    {
+      "key": "e",
+      "title": "E",
+      "image": "assets/images/e.webp",
+      "alt": "E",
+      "wordAudio": "assets/audio/e.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/e-sentence.mp3"
     }
   ]
 }
