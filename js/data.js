@@ -170,6 +170,42 @@ const reviewData = {
       "wordAudio": "assets/audio/dog.mp3",
       "sentenceText": "It's a dog.",
       "sentenceAudio": "assets/audio/dog-sentence.mp3"
+    },
+    {
+      "key": "eyes",
+      "title": "Eyes",
+      "image": "assets/images/eyes.webp",
+      "alt": "Eyes",
+      "wordAudio": "assets/audio/eyes.mp3",
+      "sentenceText": "My eyes",
+      "sentenceAudio": "assets/audio/eyes-sentence.mp3"
+    },
+    {
+      "key": "ears",
+      "title": "Ears",
+      "image": "assets/images/ears.webp",
+      "alt": "Ears",
+      "wordAudio": "assets/audio/ears.mp3",
+      "sentenceText": "My ears",
+      "sentenceAudio": "assets/audio/ears-sentence.mp3"
+    },
+    {
+      "key": "nose",
+      "title": "Nose",
+      "image": "assets/images/nose.webp",
+      "alt": "Nose",
+      "wordAudio": "assets/audio/nose.mp3",
+      "sentenceText": "My nose",
+      "sentenceAudio": "assets/audio/nose-sentence.mp3"
+    },
+    {
+      "key": "mouth",
+      "title": "Mouth",
+      "image": "assets/images/mouth.webp",
+      "alt": "Mouth",
+      "wordAudio": "assets/audio/mouth.mp3",
+      "sentenceText": "My mouth",
+      "sentenceAudio": "assets/audio/mouth-sentence.mp3"
     }
   ],
   "small": [
@@ -379,6 +415,42 @@ const reviewData = {
       "wordAudio": "assets/audio/dice.mp3",
       "sentenceText": "I don't like dice.",
       "sentenceAudio": "assets/audio/dice-sentence.mp3"
+    },
+    {
+      "key": "sick",
+      "title": "Sick",
+      "image": "assets/images/sick.webp",
+      "alt": "Sick",
+      "wordAudio": "assets/audio/sick.mp3",
+      "sentenceText": "I am sick.",
+      "sentenceAudio": "assets/audio/sick-sentence.mp3"
+    },
+    {
+      "key": "hot",
+      "title": "Hot",
+      "image": "assets/images/hot.webp",
+      "alt": "Hot",
+      "wordAudio": "assets/audio/hot.mp3",
+      "sentenceText": "I am hot.",
+      "sentenceAudio": "assets/audio/hot-sentence.mp3"
+    },
+    {
+      "key": "cold",
+      "title": "Cold",
+      "image": "assets/images/cold.webp",
+      "alt": "Cold",
+      "wordAudio": "assets/audio/cold.mp3",
+      "sentenceText": "I am cold",
+      "sentenceAudio": "assets/audio/cold-sentence.mp3"
+    },
+    {
+      "key": "tired",
+      "title": "Tired",
+      "image": "assets/images/tired.webp",
+      "alt": "Tired",
+      "wordAudio": "assets/audio/tired.mp3",
+      "sentenceText": "I am tired",
+      "sentenceAudio": "assets/audio/tired-sentence.mp3"
     }
   ],
   "middle": [
@@ -579,6 +651,60 @@ const reviewData = {
       "wordAudio": "assets/audio/oranges.mp3",
       "sentenceText": "I don't like oranges.",
       "sentenceAudio": "assets/audio/oranges-sentence.mp3"
+    },
+    {
+      "key": "living-room",
+      "title": "Living room",
+      "image": "assets/images/living-room.webp",
+      "alt": "Living room",
+      "wordAudio": "assets/audio/living-room.mp3",
+      "sentenceText": "He is in the living room.",
+      "sentenceAudio": "assets/audio/living-room-sentence.mp3"
+    },
+    {
+      "key": "kitchen",
+      "title": "Kitchen",
+      "image": "assets/images/kitchen.webp",
+      "alt": "Kitchen",
+      "wordAudio": "assets/audio/kitchen.mp3",
+      "sentenceText": "She is in the kitchen.",
+      "sentenceAudio": "assets/audio/kitchen-sentence.mp3"
+    },
+    {
+      "key": "bathroom",
+      "title": "Bathroom",
+      "image": "assets/images/bathroom.webp",
+      "alt": "Bathroom",
+      "wordAudio": "assets/audio/bathroom.mp3",
+      "sentenceText": "She is in the bathroom.",
+      "sentenceAudio": "assets/audio/bathroom-sentence.mp3"
+    },
+    {
+      "key": "bedroom",
+      "title": "Bedroom",
+      "image": "assets/images/bedroom.webp",
+      "alt": "Bedroom",
+      "wordAudio": "assets/audio/bedroom.mp3",
+      "sentenceText": "He is in the bedroom.",
+      "sentenceAudio": "assets/audio/bedroom-sentence.mp3"
+    },
+    {
+      "key": "dining-room",
+      "title": "Dining room",
+      "image": "assets/images/dining-room.webp",
+      "alt": "Dining room",
+      "wordAudio": "assets/audio/dining-room.mp3",
+      "sentenceText": "She is in the dining room.",
+      "sentenceAudio": "assets/audio/dining-room-sentence.mp3"
+    },
+    {
+      "key": "garage",
+      "title": "Garage",
+      "image": "assets/images/garage.webp",
+      "alt": "Garage",
+      "wordAudio": "assets/audio/garage.mp3",
+      "sentenceText": "He is in the garage.",
+      "sentenceAudio": "assets/audio/garage-sentence.mp3"
     }
   ],
   "big": [
@@ -923,6 +1049,78 @@ const reviewData = {
       "wordAudio": "assets/audio/twenty.mp3",
       "sentenceText": "",
       "sentenceAudio": "assets/audio/twenty-sentence.mp3"
+    },
+    {
+      "key": "thirty",
+      "title": "Thirty",
+      "image": "assets/images/thirty.webp",
+      "alt": "Thirty",
+      "wordAudio": "assets/audio/thirty.mp3",
+      "sentenceText": "It's thirty dollars.",
+      "sentenceAudio": "assets/audio/thirty-sentence.mp3"
+    },
+    {
+      "key": "forty",
+      "title": "Forty",
+      "image": "assets/images/forty.webp",
+      "alt": "Forty",
+      "wordAudio": "assets/audio/forty.mp3",
+      "sentenceText": "It's forty dollars.",
+      "sentenceAudio": "assets/audio/forty-sentence.mp3"
+    },
+    {
+      "key": "fifty",
+      "title": "Fifty",
+      "image": "assets/images/fifty.webp",
+      "alt": "Fifty",
+      "wordAudio": "assets/audio/fifty.mp3",
+      "sentenceText": "It's fifty dollars.",
+      "sentenceAudio": "assets/audio/fifty-sentence.mp3"
+    },
+    {
+      "key": "sixty",
+      "title": "Sixty",
+      "image": "assets/images/sixty.webp",
+      "alt": "Sixty",
+      "wordAudio": "assets/audio/sixty.mp3",
+      "sentenceText": "It's sixty dollars.",
+      "sentenceAudio": "assets/audio/sixty-sentence.mp3"
+    },
+    {
+      "key": "seventy",
+      "title": "Seventy",
+      "image": "assets/images/seventy.webp",
+      "alt": "Seventy",
+      "wordAudio": "assets/audio/seventy.mp3",
+      "sentenceText": "It's seventy dollars.",
+      "sentenceAudio": "assets/audio/seventy-sentence.mp3"
+    },
+    {
+      "key": "eighty",
+      "title": "Eighty",
+      "image": "assets/images/eighty.webp",
+      "alt": "Eighty",
+      "wordAudio": "assets/audio/eighty.mp3",
+      "sentenceText": "It's eighty dollars.",
+      "sentenceAudio": "assets/audio/eighty-sentence.mp3"
+    },
+    {
+      "key": "ninety",
+      "title": "Ninety",
+      "image": "assets/images/ninety.webp",
+      "alt": "Ninety",
+      "wordAudio": "assets/audio/ninety.mp3",
+      "sentenceText": "It's ninety dollars.",
+      "sentenceAudio": "assets/audio/ninety-sentence.mp3"
+    },
+    {
+      "key": "hundred",
+      "title": "Hundred",
+      "image": "assets/images/hundred.webp",
+      "alt": "Hundred",
+      "wordAudio": "assets/audio/hundred.mp3",
+      "sentenceText": "It's one hundred dollars.",
+      "sentenceAudio": "assets/audio/hundred-sentence.mp3"
     }
   ],
   "alphabet": [
@@ -959,7 +1157,7 @@ const reviewData = {
       "image": "assets/images/d.webp",
       "alt": "D",
       "wordAudio": "assets/audio/d.mp3",
-      "sentenceText": "D d dog doll",
+      "sentenceText": "D d dog duck",
       "sentenceAudio": "assets/audio/d-sentence.mp3"
     },
     {
@@ -968,7 +1166,7 @@ const reviewData = {
       "image": "assets/images/e.webp",
       "alt": "E",
       "wordAudio": "assets/audio/e.mp3",
-      "sentenceText": "",
+      "sentenceText": "E e elephant egg",
       "sentenceAudio": "assets/audio/e-sentence.mp3"
     }
   ]
