@@ -967,7 +967,7 @@ const reviewData = {
       "alt": "Eleven",
       "wordAudio": "assets/audio/eleven.mp3",
       "sentenceText": "",
-      "sentenceAudio": "assets/audio/eleven-sentence.mp3"
+      "sentenceAudio": ""
     },
     {
       "key": "twelve",
@@ -976,7 +976,7 @@ const reviewData = {
       "alt": "Twelve",
       "wordAudio": "assets/audio/twelve.mp3",
       "sentenceText": "",
-      "sentenceAudio": "assets/audio/twelve-sentence.mp3"
+      "sentenceAudio": ""
     },
     {
       "key": "thirteen",
@@ -985,7 +985,7 @@ const reviewData = {
       "alt": "Thirteen",
       "wordAudio": "assets/audio/thirteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": "assets/audio/thirteen-sentence.mp3"
+      "sentenceAudio": ""
     },
     {
       "key": "fourteen",
@@ -994,7 +994,7 @@ const reviewData = {
       "alt": "Fourteen",
       "wordAudio": "assets/audio/fourteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": "assets/audio/fourteen-sentence.mp3"
+      "sentenceAudio": ""
     },
     {
       "key": "fifteen-",
@@ -1003,7 +1003,7 @@ const reviewData = {
       "alt": "Fifteen ",
       "wordAudio": "assets/audio/fifteen-.mp3",
       "sentenceText": "",
-      "sentenceAudio": "assets/audio/fifteen--sentence.mp3"
+      "sentenceAudio": ""
     },
     {
       "key": "sixteen",
@@ -1012,7 +1012,7 @@ const reviewData = {
       "alt": "Sixteen",
       "wordAudio": "assets/audio/sixteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": "assets/audio/sixteen-sentence.mp3"
+      "sentenceAudio": ""
     },
     {
       "key": "seventeen",
@@ -1021,7 +1021,7 @@ const reviewData = {
       "alt": "Seventeen",
       "wordAudio": "assets/audio/seventeen.mp3",
       "sentenceText": "",
-      "sentenceAudio": "assets/audio/seventeen-sentence.mp3"
+      "sentenceAudio": ""
     },
     {
       "key": "eighteen",
@@ -1030,7 +1030,7 @@ const reviewData = {
       "alt": "Eighteen",
       "wordAudio": "assets/audio/eighteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": "assets/audio/eighteen-sentence.mp3"
+      "sentenceAudio": ""
     },
     {
       "key": "nineteen",
@@ -1039,7 +1039,7 @@ const reviewData = {
       "alt": "Nineteen",
       "wordAudio": "assets/audio/nineteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": "assets/audio/nineteen-sentence.mp3"
+      "sentenceAudio": ""
     },
     {
       "key": "twenty",
