@@ -803,3 +803,155 @@ button:focus-visible {
 .play-btn.is-playing {
   opacity: 0.8;
 }
+
+
+/* ================================
+   Unit accordion layout
+   Added after data refactor
+================================ */
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.unit-section {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 211, 185, 0.42);
+  border-radius: 24px;
+  box-shadow: 0 10px 24px rgba(101, 78, 54, 0.08);
+  overflow: hidden;
+}
+
+.unit-section[open] {
+  box-shadow: 0 14px 30px rgba(101, 78, 54, 0.11);
+}
+
+.unit-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(255, 248, 241, 0.92)
+  );
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.unit-summary::-webkit-details-marker {
+  display: none;
+}
+
+.unit-summary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1;
+  box-shadow: var(--play-shadow);
+}
+
+.unit-section[open] .unit-summary::after {
+  content: "−";
+}
+
+.unit-title {
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.unit-count {
+  margin-left: auto;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+.unit-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 16px;
+}
+
+.unit-card-grid .card {
+  box-shadow: 0 8px 20px rgba(42, 54, 88, 0.08);
+}
+
+/* Desktop card grid now belongs inside each accordion */
+@media (min-width: 700px) {
+  .card-container {
+    display: flex;
+    grid-template-columns: none;
+    gap: 18px;
+  }
+
+  .unit-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    padding: 18px;
+  }
+}
+
+/* Mobile accordion polish */
+@media (max-width: 600px) {
+  .card-container {
+    gap: 12px;
+  }
+
+  .unit-section {
+    border-radius: 20px;
+  }
+
+  .unit-summary {
+    padding: 14px 15px;
+  }
+
+  .unit-title {
+    font-size: 1rem;
+  }
+
+  .unit-count {
+    font-size: 0.8rem;
+  }
+
+  .unit-summary::after {
+    width: 28px;
+    height: 28px;
+    font-size: 1.15rem;
+  }
+
+  .unit-card-grid {
+    gap: 14px;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .unit-summary {
+    gap: 8px;
+    padding: 13px;
+  }
+
+  .unit-count {
+    display: none;
+  }
+
+  .unit-card-grid {
+    padding: 12px;
+  }
+}

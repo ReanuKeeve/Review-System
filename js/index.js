@@ -21,16 +21,20 @@ function setPlayingState(playing, activeCardKey = null) {
   const buttons = document.querySelectorAll('.play-btn');
   buttons.forEach((button) => {
     const buttonCardKey = button.dataset.cardKey;
-    const isActiveButton = playing && activeCardKey && buttonCardKey === activeCardKey;
+    const isActiveButton =
+      playing && activeCardKey && buttonCardKey === activeCardKey;
 
     button.disabled = playing;
     button.classList.toggle('is-playing', isActiveButton);
+
     button.textContent = isActiveButton
       ? 'Playing...'
       : currentMode === 'words'
         ? 'Play Word'
         : 'Play Sentence';
   });
+
+  updateTabUI(currentMode);
 }
 
 function cleanupPlayback(audio = currentAudio) {
@@ -129,7 +133,10 @@ function playSound(audioId, cardKey) {
   };
 
   audio.onwaiting = () => {
-    const activeButton = document.querySelector(`.play-btn[data-card-key="${cardKey}"]`);
+    const activeButton = document.querySelector(
+      `.play-btn[data-card-key="${cardKey}"]`
+    );
+
     if (activeButton) {
       activeButton.textContent = 'Loading...';
     }
@@ -137,7 +144,10 @@ function playSound(audioId, cardKey) {
 
   audio.oncanplay = () => {
     if (currentAudioId === audioId) {
-      const activeButton = document.querySelector(`.play-btn[data-card-key="${cardKey}"]`);
+      const activeButton = document.querySelector(
+        `.play-btn[data-card-key="${cardKey}"]`
+      );
+
       if (activeButton) {
         activeButton.textContent = 'Playing...';
       }
@@ -171,19 +181,21 @@ function updateTabUI(mode) {
     const isActive = mode === 'words';
     wordsTab.classList.toggle('active', isActive);
     wordsTab.setAttribute('aria-selected', String(isActive));
+    wordsTab.disabled = isPlaying;
+    wordsTab.setAttribute('aria-disabled', String(isPlaying));
   }
 
   if (sentencesTab) {
     const isActive = mode === 'sentences' && sentenceModeAvailable;
+
     sentencesTab.disabled = !sentenceModeAvailable || isPlaying;
-    sentencesTab.setAttribute('aria-disabled', String(!sentenceModeAvailable || isPlaying));
+    sentencesTab.setAttribute(
+      'aria-disabled',
+      String(!sentenceModeAvailable || isPlaying)
+    );
+
     sentencesTab.classList.toggle('active', isActive);
     sentencesTab.setAttribute('aria-selected', String(isActive));
-  }
-
-  if (wordsTab) {
-    wordsTab.disabled = isPlaying;
-    wordsTab.setAttribute('aria-disabled', String(isPlaying));
   }
 }
 
@@ -205,9 +217,10 @@ function createCardButton(card) {
   button.type = 'button';
   button.dataset.cardKey = card.key;
 
-  const hasAudio = currentMode === 'words'
-    ? Boolean(card.wordAudio)
-    : Boolean(card.sentenceAudio);
+  const hasAudio =
+    currentMode === 'words'
+      ? Boolean(card.wordAudio)
+      : Boolean(card.sentenceAudio);
 
   button.textContent = currentMode === 'words' ? 'Play Word' : 'Play Sentence';
   button.disabled = !hasAudio || isPlaying;
@@ -220,61 +233,129 @@ function createCardButton(card) {
   return button;
 }
 
+function getCardUnit(card) {
+  return card.unit || 'Other';
+}
+
+function groupCardsByUnit(cards) {
+  const groupedCards = new Map();
+
+  cards.forEach((card) => {
+    const unitName = getCardUnit(card);
+
+    if (!groupedCards.has(unitName)) {
+      groupedCards.set(unitName, []);
+    }
+
+    groupedCards.get(unitName).push(card);
+  });
+
+  return groupedCards;
+}
+
+function createCardElement(card) {
+  const article = document.createElement('article');
+  article.className = 'card';
+
+  if (card.image) {
+    const imageFrame = document.createElement('div');
+    imageFrame.className = 'image-frame';
+
+    const img = document.createElement('img');
+    img.src = card.image;
+    img.alt = card.alt || card.title;
+    img.loading = 'lazy';
+
+    imageFrame.appendChild(img);
+    article.appendChild(imageFrame);
+  }
+
+  const body = document.createElement('div');
+  body.className = 'card-body';
+
+  const title = document.createElement('h2');
+  title.className = 'card-title';
+
+  const displayTitle =
+    currentMode === 'words'
+      ? card.title
+      : card.sentenceTitle || card.sentenceText || card.title;
+
+  title.textContent = displayTitle;
+  body.appendChild(title);
+
+  if (
+    currentMode === 'sentences' &&
+    card.sentenceText &&
+    card.sentenceText !== displayTitle
+  ) {
+    const sentence = document.createElement('p');
+    sentence.className = 'card-text';
+    sentence.textContent = card.sentenceText;
+    body.appendChild(sentence);
+  }
+
+  body.appendChild(createCardButton(card));
+  article.appendChild(body);
+
+  return article;
+}
+
+function createUnitSection(unitName, cards, index) {
+  const details = document.createElement('details');
+  details.className = 'unit-section';
+
+  if (index === 0) {
+    details.open = true;
+  }
+
+  const summary = document.createElement('summary');
+  summary.className = 'unit-summary';
+
+  const title = document.createElement('span');
+  title.className = 'unit-title';
+  title.textContent = unitName;
+
+  const count = document.createElement('span');
+  count.className = 'unit-count';
+  count.textContent = `${cards.length} ${cards.length === 1 ? 'card' : 'cards'}`;
+
+  summary.appendChild(title);
+  summary.appendChild(count);
+
+  const cardGrid = document.createElement('div');
+  cardGrid.className = 'unit-card-grid';
+
+  cards.forEach((card) => {
+    cardGrid.appendChild(createCardElement(card));
+  });
+
+  details.appendChild(summary);
+  details.appendChild(cardGrid);
+
+  return details;
+}
+
 function renderCards() {
   const container = document.getElementById('card-container');
   if (!container) return;
 
   container.innerHTML = '';
 
-  const cardsToRender = currentMode === 'sentences'
-    ? currentCards.filter(hasSentenceAudio)
-    : currentCards;
+  const cardsToRender =
+    currentMode === 'sentences'
+      ? currentCards.filter(hasSentenceAudio)
+      : currentCards;
 
-  cardsToRender.forEach((card) => {
-    const article = document.createElement('article');
-    article.className = 'card';
+  const groupedCards = groupCardsByUnit(cardsToRender);
+  const fragment = document.createDocumentFragment();
 
-    if (card.image) {
-      const imageFrame = document.createElement('div');
-      imageFrame.className = 'image-frame';
-
-      const img = document.createElement('img');
-      img.src = card.image;
-      img.alt = card.alt || card.title;
-      img.loading = 'lazy';
-
-      imageFrame.appendChild(img);
-      article.appendChild(imageFrame);
-    }
-
-    const body = document.createElement('div');
-    body.className = 'card-body';
-
-    const title = document.createElement('h2');
-    title.className = 'card-title';
-
-    const displayTitle = currentMode === 'words'
-      ? card.title
-      : (card.sentenceTitle || card.sentenceText || card.title);
-
-    title.textContent = displayTitle;
-    body.appendChild(title);
-
-    if (
-      currentMode === 'sentences' &&
-      card.sentenceText &&
-      card.sentenceText !== displayTitle
-    ) {
-      const sentence = document.createElement('p');
-      sentence.className = 'card-text';
-      sentence.textContent = card.sentenceText;
-      body.appendChild(sentence);
-    }
-
-    body.appendChild(createCardButton(card));
-    article.appendChild(body);
-    container.appendChild(article);
+  Array.from(groupedCards.entries()).forEach(([unitName, cards], index) => {
+    const unitSection = createUnitSection(unitName, cards, index);
+    fragment.appendChild(unitSection);
   });
+
+  container.appendChild(fragment);
 
   updateTabUI(currentMode);
 }
@@ -303,14 +384,24 @@ function renderAudioElements() {
 
     if (card.wordAudio) {
       const wordId = `audio-${card.key}-words`;
-      const wordAudio = createAudioElement(wordId, card.wordAudio, preloadValue);
+      const wordAudio = createAudioElement(
+        wordId,
+        card.wordAudio,
+        preloadValue
+      );
+
       audioRegistry.set(wordId, wordAudio);
       fragment.appendChild(wordAudio);
     }
 
     if (card.sentenceAudio) {
       const sentenceId = `audio-${card.key}-sentences`;
-      const sentenceAudio = createAudioElement(sentenceId, card.sentenceAudio, preloadValue);
+      const sentenceAudio = createAudioElement(
+        sentenceId,
+        card.sentenceAudio,
+        preloadValue
+      );
+
       audioRegistry.set(sentenceId, sentenceAudio);
       fragment.appendChild(sentenceAudio);
     }
@@ -337,9 +428,11 @@ function initCardPage(cards, defaultMode = 'words') {
   if (!container || !Array.isArray(cards)) return;
 
   currentCards = cards;
-  currentMode = defaultMode === 'sentences' && hasSentenceMode(cards)
-    ? 'sentences'
-    : 'words';
+
+  currentMode =
+    defaultMode === 'sentences' && hasSentenceMode(cards)
+      ? 'sentences'
+      : 'words';
 
   initTabs();
   renderAudioElements();
