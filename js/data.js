@@ -204,8 +204,80 @@ const reviewData = {
       "image": "assets/images/mouth.webp",
       "alt": "Mouth",
       "wordAudio": "assets/audio/mouth.mp3",
-      "sentenceText": "My mouth",
+      "sentenceText": "My mouth.",
       "sentenceAudio": "assets/audio/mouth-sentence.mp3"
+    },
+    {
+      "key": "mommy",
+      "title": "Mommy",
+      "image": "assets/images/mommy.webp",
+      "alt": "Mommy",
+      "wordAudio": "assets/audio/mommy.mp3",
+      "sentenceText": "My mommy.",
+      "sentenceAudio": "assets/audio/mommy-sentence.mp3"
+    },
+    {
+      "key": "daddy",
+      "title": "Daddy",
+      "image": "assets/images/daddy.webp",
+      "alt": "Daddy",
+      "wordAudio": "assets/audio/daddy.mp3",
+      "sentenceText": "My daddy.",
+      "sentenceAudio": "assets/audio/daddy-sentence.mp3"
+    },
+    {
+      "key": "grandma",
+      "title": "Grandma",
+      "image": "assets/images/grandma.webp",
+      "alt": "Grandma",
+      "wordAudio": "assets/audio/grandma.mp3",
+      "sentenceText": "My grandma.",
+      "sentenceAudio": "assets/audio/grandma-sentence.mp3"
+    },
+    {
+      "key": "grandpa",
+      "title": "Grandpa",
+      "image": "assets/images/grandpa.webp",
+      "alt": "Grandpa",
+      "wordAudio": "assets/audio/grandpa.mp3",
+      "sentenceText": "My grandpa.",
+      "sentenceAudio": "assets/audio/grandpa-sentence.mp3"
+    },
+    {
+      "key": "brother",
+      "title": "Brother",
+      "image": "assets/images/brother.webp",
+      "alt": "Brother",
+      "wordAudio": "assets/audio/brother.mp3",
+      "sentenceText": "My brother",
+      "sentenceAudio": "assets/audio/brother-sentence.mp3"
+    },
+    {
+      "key": "sister",
+      "title": "Sister",
+      "image": "assets/images/sister.webp",
+      "alt": "Sister",
+      "wordAudio": "assets/audio/sister.mp3",
+      "sentenceText": "My sister",
+      "sentenceAudio": "assets/audio/sister-sentence.mp3"
+    },
+    {
+      "key": "cousin",
+      "title": "Cousin",
+      "image": "assets/images/cousin.webp",
+      "alt": "Cousin",
+      "wordAudio": "assets/audio/cousin.mp3",
+      "sentenceText": "My cousin",
+      "sentenceAudio": "assets/audio/cousin-sentence.mp3"
+    },
+    {
+      "key": "baby",
+      "title": "Baby",
+      "image": "assets/images/baby.webp",
+      "alt": "Baby",
+      "wordAudio": "assets/audio/baby.mp3",
+      "sentenceText": "It's a baby",
+      "sentenceAudio": "assets/audio/baby-sentence.mp3"
     }
   ],
   "small": [
@@ -451,6 +523,69 @@ const reviewData = {
       "wordAudio": "assets/audio/tired.mp3",
       "sentenceText": "I am tired",
       "sentenceAudio": "assets/audio/tired-sentence.mp3"
+    },
+    {
+      "key": "run",
+      "title": "Run",
+      "image": "assets/images/run.gif",
+      "alt": "Run",
+      "wordAudio": "assets/audio/run1.mp3",
+      "sentenceText": "Please, don't run!",
+      "sentenceAudio": "assets/audio/run1-sentence.mp3"
+    },
+    {
+      "key": "touch",
+      "title": "Touch",
+      "image": "assets/images/touch.webp",
+      "alt": "Touch",
+      "wordAudio": "assets/audio/touch.mp3",
+      "sentenceText": "Please, don't touch!",
+      "sentenceAudio": "assets/audio/touch-sentence.mp3"
+    },
+    {
+      "key": "push",
+      "title": "Push",
+      "image": "assets/images/push.webp",
+      "alt": "Push",
+      "wordAudio": "assets/audio/push.mp3",
+      "sentenceText": "Please, don't push!",
+      "sentenceAudio": "assets/audio/push-sentence.mp3"
+    },
+    {
+      "key": "fight",
+      "title": "Fight",
+      "image": "assets/images/fight.webp",
+      "alt": "Fight",
+      "wordAudio": "assets/audio/fight.mp3",
+      "sentenceText": "Please, don't fight!",
+      "sentenceAudio": "assets/audio/fight-sentence.mp3"
+    },
+    {
+      "key": "pick-up",
+      "title": "Pick up",
+      "image": "assets/images/pick-up.webp",
+      "alt": "Pick up",
+      "wordAudio": "assets/audio/pick-up.mp3",
+      "sentenceText": "Please, pick up ___ (a chair).",
+      "sentenceAudio": "assets/audio/pick-up-sentence.mp3"
+    },
+    {
+      "key": "put-down",
+      "title": "Put down",
+      "image": "assets/images/put-down.webp",
+      "alt": "Put down",
+      "wordAudio": "assets/audio/put-down.mp3",
+      "sentenceText": "Please, put down ___.",
+      "sentenceAudio": "assets/audio/put-down-sentence.mp3"
+    },
+    {
+      "key": "line-up",
+      "title": "Line up",
+      "image": "assets/images/line-up.webp",
+      "alt": "Line up",
+      "wordAudio": "assets/audio/line-up.mp3",
+      "sentenceText": "Please, line up!",
+      "sentenceAudio": "assets/audio/line-up-sentence.mp3"
     }
   ],
   "middle": [
@@ -705,6 +840,96 @@ const reviewData = {
       "wordAudio": "assets/audio/garage.mp3",
       "sentenceText": "He is in the garage.",
       "sentenceAudio": "assets/audio/garage-sentence.mp3"
+    },
+    {
+      "key": "turtle",
+      "title": "Turtle",
+      "image": "assets/images/turtle.webp",
+      "alt": "Turtle",
+      "wordAudio": "assets/audio/turtle.mp3",
+      "sentenceText": "I have a turtle.",
+      "sentenceAudio": "assets/audio/turtle-sentence.mp3"
+    },
+    {
+      "key": "rabbit",
+      "title": "Rabbit",
+      "image": "assets/images/rabbit.webp",
+      "alt": "Rabbit",
+      "wordAudio": "assets/audio/rabbit.mp3",
+      "sentenceText": "I have a rabbit.",
+      "sentenceAudio": "assets/audio/rabbit-sentence.mp3"
+    },
+    {
+      "key": "guinea-pig",
+      "title": "Guinea pig",
+      "image": "assets/images/guinea-pig.webp",
+      "alt": "Guinea pig",
+      "wordAudio": "assets/audio/guinea-pig.mp3",
+      "sentenceText": "I have a guinea pig.",
+      "sentenceAudio": "assets/audio/guinea-pig-sentence.mp3"
+    },
+    {
+      "key": "goldfish",
+      "title": "Goldfish",
+      "image": "assets/images/goldfish.webp",
+      "alt": "Goldfish",
+      "wordAudio": "assets/audio/goldfish.mp3",
+      "sentenceText": "I want a goldfish.",
+      "sentenceAudio": "assets/audio/goldfish-sentence.mp3"
+    },
+    {
+      "key": "bird",
+      "title": "Bird",
+      "image": "assets/images/bird.webp",
+      "alt": "Bird",
+      "wordAudio": "assets/audio/bird1.mp3",
+      "sentenceText": "I want a bird.",
+      "sentenceAudio": "assets/audio/bird1-sentence.mp3"
+    },
+    {
+      "key": "kitten",
+      "title": "Kitten",
+      "image": "assets/images/kitten.webp",
+      "alt": "Kitten",
+      "wordAudio": "assets/audio/kitten.mp3",
+      "sentenceText": "I want a kitten.",
+      "sentenceAudio": "assets/audio/kitten-sentence.mp3"
+    },
+    {
+      "key": "puppy",
+      "title": "Puppy",
+      "image": "assets/images/puppy.webp",
+      "alt": "Puppy",
+      "wordAudio": "assets/audio/puppy.mp3",
+      "sentenceText": "I want a puppy.",
+      "sentenceAudio": "assets/audio/puppy-sentence.mp3"
+    },
+    {
+      "key": "snake",
+      "title": "Snake",
+      "image": "assets/images/snake.webp",
+      "alt": "Snake",
+      "wordAudio": "assets/audio/snake.mp3",
+      "sentenceText": "I want a snake.",
+      "sentenceAudio": "assets/audio/snake-sentence.mp3"
+    },
+    {
+      "key": "lizard",
+      "title": "Lizard",
+      "image": "assets/images/lizard.webp",
+      "alt": "Lizard",
+      "wordAudio": "assets/audio/lizard.mp3",
+      "sentenceText": "I have a pet lizard.",
+      "sentenceAudio": "assets/audio/lizard-sentence.mp3"
+    },
+    {
+      "key": "mouse",
+      "title": "Mouse",
+      "image": "assets/images/mouse.webp",
+      "alt": "Mouse",
+      "wordAudio": "assets/audio/mouse.mp3",
+      "sentenceText": "I have a pet mouse.",
+      "sentenceAudio": "assets/audio/mouse-sentence.mp3"
     }
   ],
   "big": [
@@ -967,7 +1192,7 @@ const reviewData = {
       "alt": "Eleven",
       "wordAudio": "assets/audio/eleven.mp3",
       "sentenceText": "",
-      "sentenceAudio": ""
+      "sentenceAudio": "assets/audio/eleven-sentence.mp3"
     },
     {
       "key": "twelve",
@@ -976,7 +1201,7 @@ const reviewData = {
       "alt": "Twelve",
       "wordAudio": "assets/audio/twelve.mp3",
       "sentenceText": "",
-      "sentenceAudio": ""
+      "sentenceAudio": "assets/audio/twelve-sentence.mp3"
     },
     {
       "key": "thirteen",
@@ -985,7 +1210,7 @@ const reviewData = {
       "alt": "Thirteen",
       "wordAudio": "assets/audio/thirteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": ""
+      "sentenceAudio": "assets/audio/thirteen-sentence.mp3"
     },
     {
       "key": "fourteen",
@@ -994,16 +1219,16 @@ const reviewData = {
       "alt": "Fourteen",
       "wordAudio": "assets/audio/fourteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": ""
+      "sentenceAudio": "assets/audio/fourteen-sentence.mp3"
     },
     {
-      "key": "fifteen-",
-      "title": "Fifteen ",
-      "image": "assets/images/fifteen-.webp",
-      "alt": "Fifteen ",
-      "wordAudio": "assets/audio/fifteen-.mp3",
+      "key": "fifteen",
+      "title": "Fifteen",
+      "image": "assets/images/fifteen.webp",
+      "alt": "Fifteen",
+      "wordAudio": "assets/audio/fifteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": ""
+      "sentenceAudio": "assets/audio/fifteen-sentence.mp3"
     },
     {
       "key": "sixteen",
@@ -1012,7 +1237,7 @@ const reviewData = {
       "alt": "Sixteen",
       "wordAudio": "assets/audio/sixteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": ""
+      "sentenceAudio": "assets/audio/sixteen-sentence.mp3"
     },
     {
       "key": "seventeen",
@@ -1021,7 +1246,7 @@ const reviewData = {
       "alt": "Seventeen",
       "wordAudio": "assets/audio/seventeen.mp3",
       "sentenceText": "",
-      "sentenceAudio": ""
+      "sentenceAudio": "assets/audio/seventeen-sentence.mp3"
     },
     {
       "key": "eighteen",
@@ -1030,7 +1255,7 @@ const reviewData = {
       "alt": "Eighteen",
       "wordAudio": "assets/audio/eighteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": ""
+      "sentenceAudio": "assets/audio/eighteen-sentence.mp3"
     },
     {
       "key": "nineteen",
@@ -1039,7 +1264,7 @@ const reviewData = {
       "alt": "Nineteen",
       "wordAudio": "assets/audio/nineteen.mp3",
       "sentenceText": "",
-      "sentenceAudio": ""
+      "sentenceAudio": "assets/audio/nineteen-sentence.mp3"
     },
     {
       "key": "twenty",
@@ -1121,6 +1346,114 @@ const reviewData = {
       "wordAudio": "assets/audio/hundred.mp3",
       "sentenceText": "It's one hundred dollars.",
       "sentenceAudio": "assets/audio/hundred-sentence.mp3"
+    },
+    {
+      "key": "doctor",
+      "title": "Doctor",
+      "image": "assets/images/doctor.webp",
+      "alt": "Doctor",
+      "wordAudio": "assets/audio/doctor.mp3",
+      "sentenceText": "I am a doctor?",
+      "sentenceAudio": "assets/audio/doctor-sentence.mp3"
+    },
+    {
+      "key": "nurse",
+      "title": "Nurse",
+      "image": "assets/images/nurse.webp",
+      "alt": "Nurse",
+      "wordAudio": "assets/audio/nurse.mp3",
+      "sentenceText": "I am a nurse.",
+      "sentenceAudio": "assets/audio/nurse-sentence.mp3"
+    },
+    {
+      "key": "cook",
+      "title": "Cook",
+      "image": "assets/images/cook.webp",
+      "alt": "Cook",
+      "wordAudio": "assets/audio/cook.mp3",
+      "sentenceText": "I am a cook.",
+      "sentenceAudio": "assets/audio/cook-sentence.mp3"
+    },
+    {
+      "key": "firefighter",
+      "title": "Firefighter",
+      "image": "assets/images/firefighter.webp",
+      "alt": "Firefighter",
+      "wordAudio": "assets/audio/firefighter.mp3",
+      "sentenceText": "I am a firefighter.",
+      "sentenceAudio": "assets/audio/firefighter-sentence.mp3"
+    },
+    {
+      "key": "mail-carrier",
+      "title": "Mail carrier",
+      "image": "assets/images/mail-carrier.webp",
+      "alt": "Mail carrier",
+      "wordAudio": "assets/audio/mail-carrier.mp3",
+      "sentenceText": "I am a mail carrier.",
+      "sentenceAudio": "assets/audio/mail-carrier-sentence.mp3"
+    },
+    {
+      "key": "police-officer",
+      "title": "Police officer",
+      "image": "assets/images/police-officer.webp",
+      "alt": "Police officer",
+      "wordAudio": "assets/audio/police-officer.mp3",
+      "sentenceText": "I am a police officer.",
+      "sentenceAudio": "assets/audio/police-officer-sentence.mp3"
+    },
+    {
+      "key": "teacher",
+      "title": "Teacher",
+      "image": "assets/images/teacher.webp",
+      "alt": "Teacher",
+      "wordAudio": "assets/audio/teacher.mp3",
+      "sentenceText": "I want to be a teacher.",
+      "sentenceAudio": "assets/audio/teacher-sentence.mp3"
+    },
+    {
+      "key": "driver",
+      "title": "Driver",
+      "image": "assets/images/driver.webp",
+      "alt": "Driver",
+      "wordAudio": "assets/audio/driver.mp3",
+      "sentenceText": "I want to be a driver.",
+      "sentenceAudio": "assets/audio/driver-sentence.mp3"
+    },
+    {
+      "key": "astronaut",
+      "title": "Astronaut",
+      "image": "assets/images/astronaut.webp",
+      "alt": "Astronaut",
+      "wordAudio": "assets/audio/astronaut.mp3",
+      "sentenceText": "I want to be an astronaut.",
+      "sentenceAudio": "assets/audio/astronaut-sentence.mp3"
+    },
+    {
+      "key": "janitor",
+      "title": "Janitor",
+      "image": "assets/images/janitor.webp",
+      "alt": "Janitor",
+      "wordAudio": "assets/audio/janitor.mp3",
+      "sentenceText": "I want to be a janitor.",
+      "sentenceAudio": "assets/audio/janitor-sentence.mp3"
+    },
+    {
+      "key": "pilot",
+      "title": "Pilot",
+      "image": "assets/images/pilot.webp",
+      "alt": "Pilot",
+      "wordAudio": "assets/audio/pilot.mp3",
+      "sentenceText": "I want to be a pilot.",
+      "sentenceAudio": "assets/audio/pilot-sentence.mp3"
+    },
+    {
+      "key": "mechanic",
+      "title": "Mechanic",
+      "image": "assets/images/mechanic.webp",
+      "alt": "Mechanic",
+      "wordAudio": "assets/audio/mechanic.mp3",
+      "sentenceText": "I want to be a mechanic.",
+      "sentenceAudio": "assets/audio/mechanic-sentence.mp3"
     }
   ],
   "alphabet": [
