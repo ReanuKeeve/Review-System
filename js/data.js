@@ -278,6 +278,51 @@ const reviewData = {
       "wordAudio": "assets/audio/baby.mp3",
       "sentenceText": "It's a baby",
       "sentenceAudio": "assets/audio/baby-sentence.mp3"
+    },
+    {
+      "key": "one",
+      "title": "One",
+      "image": "assets/images/one.webp",
+      "alt": "One",
+      "wordAudio": "assets/audio/one.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/one-sentence.mp3"
+    },
+    {
+      "key": "two",
+      "title": "Two",
+      "image": "assets/images/two.webp",
+      "alt": "Two",
+      "wordAudio": "assets/audio/two.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/two-sentence.mp3"
+    },
+    {
+      "key": "three",
+      "title": "Three",
+      "image": "assets/images/three.webp",
+      "alt": "Three",
+      "wordAudio": "assets/audio/three.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/three-sentence.mp3"
+    },
+    {
+      "key": "four",
+      "title": "Four",
+      "image": "assets/images/four.webp",
+      "alt": "Four",
+      "wordAudio": "assets/audio/four.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/four-sentence.mp3"
+    },
+    {
+      "key": "five",
+      "title": "Five",
+      "image": "assets/images/five.webp",
+      "alt": "Five",
+      "wordAudio": "assets/audio/five.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/five-sentence.mp3"
     }
   ],
   "small": [
@@ -586,6 +631,42 @@ const reviewData = {
       "wordAudio": "assets/audio/line-up.mp3",
       "sentenceText": "Please, line up!",
       "sentenceAudio": "assets/audio/line-up-sentence.mp3"
+    },
+    {
+      "key": "dog",
+      "title": "Dog",
+      "image": "assets/images/dog.webp",
+      "alt": "Dog",
+      "wordAudio": "assets/audio/dog.mp3",
+      "sentenceText": "I have a dog",
+      "sentenceAudio": "assets/audio/dog-sentence.mp3"
+    },
+    {
+      "key": "cat",
+      "title": "Cat",
+      "image": "assets/images/cat.webp",
+      "alt": "Cat",
+      "wordAudio": "assets/audio/cat.mp3",
+      "sentenceText": "I have a cat",
+      "sentenceAudio": "assets/audio/cat-sentence.mp3"
+    },
+    {
+      "key": "goldfish",
+      "title": "Goldfish",
+      "image": "assets/images/goldfish.webp",
+      "alt": "Goldfish",
+      "wordAudio": "assets/audio/goldfish.mp3",
+      "sentenceText": "I have a goldfish",
+      "sentenceAudio": "assets/audio/goldfish-sentence.mp3"
+    },
+    {
+      "key": "bird",
+      "title": "Bird",
+      "image": "assets/images/bird.webp",
+      "alt": "Bird",
+      "wordAudio": "assets/audio/bird.mp3",
+      "sentenceText": "I have a bird",
+      "sentenceAudio": "assets/audio/bird-sentence.mp3"
     }
   ],
   "middle": [
@@ -882,7 +963,7 @@ const reviewData = {
       "title": "Bird",
       "image": "assets/images/bird.webp",
       "alt": "Bird",
-      "wordAudio": "assets/audio/bird1.mp3",
+      "wordAudio": "assets/audio/bird1  .mp3",
       "sentenceText": "I want a bird.",
       "sentenceAudio": "assets/audio/bird1-sentence.mp3"
     },
