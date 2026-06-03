@@ -323,6 +323,51 @@ const reviewData = {
       "wordAudio": "assets/audio/five.mp3",
       "sentenceText": "",
       "sentenceAudio": "assets/audio/five-sentence.mp3"
+    },
+    {
+      "key": "six",
+      "title": "Six",
+      "image": "assets/images/six.webp",
+      "alt": "Six",
+      "wordAudio": "assets/audio/six.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/six-sentence.mp3"
+    },
+    {
+      "key": "seven",
+      "title": "Seven",
+      "image": "assets/images/seven.webp",
+      "alt": "Seven",
+      "wordAudio": "assets/audio/seven.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/seven-sentence.mp3"
+    },
+    {
+      "key": "eight",
+      "title": "Eight",
+      "image": "assets/images/eight.webp",
+      "alt": "Eight",
+      "wordAudio": "assets/audio/eight.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/eight-sentence.mp3"
+    },
+    {
+      "key": "nine",
+      "title": "Nine",
+      "image": "assets/images/nine.webp",
+      "alt": "Nine",
+      "wordAudio": "assets/audio/nine.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/nine-sentence.mp3"
+    },
+    {
+      "key": "ten",
+      "title": "Ten",
+      "image": "assets/images/ten.webp",
+      "alt": "Ten",
+      "wordAudio": "assets/audio/ten.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/ten-sentence.mp3"
     }
   ],
   "small": [
@@ -667,6 +712,42 @@ const reviewData = {
       "wordAudio": "assets/audio/bird.mp3",
       "sentenceText": "I have a bird",
       "sentenceAudio": "assets/audio/bird-sentence.mp3"
+    },
+    {
+      "key": "guinea-pig",
+      "title": "Guinea pig",
+      "image": "assets/images/guinea-pig.webp",
+      "alt": "Guinea pig",
+      "wordAudio": "assets/audio/guinea-pig.mp3",
+      "sentenceText": "I have a guinea pig.",
+      "sentenceAudio": "assets/audio/guinea-pig-sentence.mp3"
+    },
+    {
+      "key": "lizard",
+      "title": "Lizard",
+      "image": "assets/images/lizard.webp",
+      "alt": "Lizard",
+      "wordAudio": "assets/audio/lizard.mp3",
+      "sentenceText": "I have a lizard.",
+      "sentenceAudio": "assets/audio/lizard-sentence.mp3"
+    },
+    {
+      "key": "snake",
+      "title": "Snake",
+      "image": "assets/images/snake.webp",
+      "alt": "Snake",
+      "wordAudio": "assets/audio/snake.mp3",
+      "sentenceText": "I have a snake.",
+      "sentenceAudio": "assets/audio/snake-sentence.mp3"
+    },
+    {
+      "key": "mouse",
+      "title": "Mouse",
+      "image": "assets/images/mouse.webp",
+      "alt": "Mouse",
+      "wordAudio": "assets/audio/mouse.mp3",
+      "sentenceText": "I have a mouse.",
+      "sentenceAudio": "assets/audio/mouse-sentence.mp3"
     }
   ],
   "middle": [
@@ -1065,6 +1146,42 @@ const reviewData = {
       "wordAudio": "assets/audio/hit-a-ball.mp3",
       "sentenceText": "I can hit a ball outside.",
       "sentenceAudio": "assets/audio/hit-a-ball-sentence.mp3"
+    },
+    {
+      "key": "kick-a-ball",
+      "title": "Kick a ball",
+      "image": "assets/images/kick-a-ball.webp",
+      "alt": "Kick a ball",
+      "wordAudio": "assets/audio/kick-a-ball.mp3",
+      "sentenceText": "I can kick a ball outside.",
+      "sentenceAudio": "assets/audio/kick-a-ball-sentence.mp3"
+    },
+    {
+      "key": "hike",
+      "title": "Hike",
+      "image": "assets/images/hike.webp",
+      "alt": "Hike",
+      "wordAudio": "assets/audio/hike.mp3",
+      "sentenceText": "I can hike outside.",
+      "sentenceAudio": "assets/audio/hike-sentence.mp3"
+    },
+    {
+      "key": "camp",
+      "title": "Camp",
+      "image": "assets/images/camp.webp",
+      "alt": "Camp",
+      "wordAudio": "assets/audio/camp.mp3",
+      "sentenceText": "I can camp outside.",
+      "sentenceAudio": "assets/audio/camp-sentence.mp3"
+    },
+    {
+      "key": "fish",
+      "title": "Fish",
+      "image": "assets/images/fish1.webp",
+      "alt": "Fish",
+      "wordAudio": "assets/audio/fish1.mp3",
+      "sentenceText": "I can fish outside. ",
+      "sentenceAudio": "assets/audio/fish1-sentence.mp3"
     }
   ],
   "big": [
@@ -1643,6 +1760,42 @@ const reviewData = {
       "wordAudio": "assets/audio/singing.mp3",
       "sentenceText": "They are singing.",
       "sentenceAudio": "assets/audio/singing-sentence.mp3"
+    },
+    {
+      "key": "talking",
+      "title": "Talking",
+      "image": "assets/images/talking.webp",
+      "alt": "Talking",
+      "wordAudio": "assets/audio/talking.mp3",
+      "sentenceText": "He is talking.",
+      "sentenceAudio": "assets/audio/talking-sentence.mp3"
+    },
+    {
+      "key": "running",
+      "title": "Running",
+      "image": "assets/images/running.webp",
+      "alt": "Running",
+      "wordAudio": "assets/audio/running.mp3",
+      "sentenceText": "They are running.",
+      "sentenceAudio": "assets/audio/running-sentence.mp3"
+    },
+    {
+      "key": "swimming",
+      "title": "Swimming",
+      "image": "assets/images/swimming.webp",
+      "alt": "Swimming",
+      "wordAudio": "assets/audio/swimming.mp3",
+      "sentenceText": "She is swimming.",
+      "sentenceAudio": "assets/audio/swimming-sentence.mp3"
+    },
+    {
+      "key": "stretching",
+      "title": "Stretching",
+      "image": "assets/images/stretching.webp",
+      "alt": "Stretching",
+      "wordAudio": "assets/audio/stretching.mp3",
+      "sentenceText": "They are stretching.",
+      "sentenceAudio": "assets/audio/stretching-sentence.mp3"
     }
   ],
   "alphabet": [
