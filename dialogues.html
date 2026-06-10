@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dialogues</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/dialogues.css" />
+    <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f8b92809d3f247148b5bb4eb91309f70"}'></script><!-- End Cloudflare Web Analytics -->
+  </head>
+  <body>
+    <main class="page">
+      <a href="index.html" class="back-link">← Back</a>
+
+      <header class="page-header">
+        <h1>Dialogues</h1>
+        <p class="page-description">Listen to the question, then choose and practise an answer.</p>
+      </header>
+
+      <section class="dialogue-container" id="dialogue-container" aria-label="Dialogue practice cards"></section>
+    </main>
+
+    <script src="js/data-dia.js"></script>
+    <script src="js/dialogues.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        initDialoguePage(dialogueData);
+      });
+    </script>
+  </body>
+</html>
