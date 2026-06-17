@@ -368,6 +368,42 @@ const reviewData = {
       "wordAudio": "assets/audio/ten.mp3",
       "sentenceText": "",
       "sentenceAudio": "assets/audio/ten-sentence.mp3"
+    },
+    {
+      "key": "morning",
+      "title": "Morning",
+      "image": "assets/images/morning.webp",
+      "alt": "Morning",
+      "wordAudio": "assets/audio/morning.mp3",
+      "sentenceText": "Good morning!",
+      "sentenceAudio": "assets/audio/morning-sentence.mp3"
+    },
+    {
+      "key": "afternoon",
+      "title": "Afternoon",
+      "image": "assets/images/afternoon.webp",
+      "alt": "Afternoon",
+      "wordAudio": "assets/audio/afternoon.mp3",
+      "sentenceText": "Good afternoon!",
+      "sentenceAudio": "assets/audio/afternoon-sentence.mp3"
+    },
+    {
+      "key": "evening",
+      "title": "Evening",
+      "image": "assets/images/evening.webp",
+      "alt": "Evening",
+      "wordAudio": "assets/audio/evening.mp3",
+      "sentenceText": "Good evening!",
+      "sentenceAudio": "assets/audio/evening-sentence.mp3"
+    },
+    {
+      "key": "night",
+      "title": "Night",
+      "image": "assets/images/night.webp",
+      "alt": "Night",
+      "wordAudio": "assets/audio/night.mp3",
+      "sentenceText": "Good night!",
+      "sentenceAudio": "assets/audio/night-sentence.mp3"
     }
   ],
   "small": [
@@ -748,6 +784,69 @@ const reviewData = {
       "wordAudio": "assets/audio/mouse.mp3",
       "sentenceText": "I have a mouse.",
       "sentenceAudio": "assets/audio/mouse-sentence.mp3"
+    },
+    {
+      "key": "monday",
+      "title": "Monday",
+      "image": "assets/images/monday.webp",
+      "alt": "Monday",
+      "wordAudio": "assets/audio/monday.mp3",
+      "sentenceText": "Today is Monday.",
+      "sentenceAudio": "assets/audio/monday-sentence.mp3"
+    },
+    {
+      "key": "tuesday",
+      "title": "Tuesday",
+      "image": "assets/images/tuesday.webp",
+      "alt": "Tuesday",
+      "wordAudio": "assets/audio/tuesday.mp3",
+      "sentenceText": "Today is Tuesday.",
+      "sentenceAudio": "assets/audio/tuesday-sentence.mp3"
+    },
+    {
+      "key": "wednesday",
+      "title": "Wednesday",
+      "image": "assets/images/wednesday.webp",
+      "alt": "Wednesday",
+      "wordAudio": "assets/audio/wednesday.mp3",
+      "sentenceText": "Today is Wednesday.",
+      "sentenceAudio": "assets/audio/wednesday-sentence.mp3"
+    },
+    {
+      "key": "thursday",
+      "title": "Thursday",
+      "image": "assets/images/thursday.webp",
+      "alt": "Thursday",
+      "wordAudio": "assets/audio/thursday.mp3",
+      "sentenceText": "Today is Thursday.",
+      "sentenceAudio": "assets/audio/thursday-sentence.mp3"
+    },
+    {
+      "key": "friday",
+      "title": "Friday",
+      "image": "assets/images/friday.webp",
+      "alt": "Friday",
+      "wordAudio": "assets/audio/friday.mp3",
+      "sentenceText": "Today is Friday.",
+      "sentenceAudio": "assets/audio/friday-sentence.mp3"
+    },
+    {
+      "key": "saturday",
+      "title": "Saturday",
+      "image": "assets/images/saturday.webp",
+      "alt": "Saturday",
+      "wordAudio": "assets/audio/saturday.mp3",
+      "sentenceText": "Today is Saturday.",
+      "sentenceAudio": "assets/audio/saturday-sentence.mp3"
+    },
+    {
+      "key": "sunday",
+      "title": "Sunday",
+      "image": "assets/images/sunday.webp",
+      "alt": "Sunday",
+      "wordAudio": "assets/audio/sunday.mp3",
+      "sentenceText": "Today is Sunday.",
+      "sentenceAudio": "assets/audio/sunday-sentence.mp3"
     }
   ],
   "middle": [
@@ -1182,6 +1281,51 @@ const reviewData = {
       "wordAudio": "assets/audio/fish1.mp3",
       "sentenceText": "I can fish outside. ",
       "sentenceAudio": "assets/audio/fish1-sentence.mp3"
+    },
+    {
+      "key": "get-up",
+      "title": "Get up",
+      "image": "assets/images/get-up.webp",
+      "alt": "Get up",
+      "wordAudio": "assets/audio/get-up.mp3",
+      "sentenceText": "I get up in the morning.",
+      "sentenceAudio": "assets/audio/get-up-sentence.mp3"
+    },
+    {
+      "key": "brush-my-teeth",
+      "title": "Brush my teeth",
+      "image": "assets/images/brush-my-teeth.webp",
+      "alt": "Brush my teeth",
+      "wordAudio": "assets/audio/brush-my-teeth.mp3",
+      "sentenceText": "I brush my teeth in the morning.",
+      "sentenceAudio": "assets/audio/brush-my-teeth-sentence.mp3"
+    },
+    {
+      "key": "wash-my-face",
+      "title": "Wash my face",
+      "image": "assets/images/wash-my-face.webp",
+      "alt": "Wash my face",
+      "wordAudio": "assets/audio/wash-my-face.mp3",
+      "sentenceText": "I wash my face in the morning.",
+      "sentenceAudio": "assets/audio/wash-my-face-sentence.mp3"
+    },
+    {
+      "key": "wash-my-hands",
+      "title": "Wash my hands",
+      "image": "assets/images/wash-my-hands.webp",
+      "alt": "Wash my hands",
+      "wordAudio": "assets/audio/wash-my-hands.mp3",
+      "sentenceText": "I wash my hands in the morning.",
+      "sentenceAudio": "assets/audio/wash-my-hands-sentence.mp3"
+    },
+    {
+      "key": "get-dressed",
+      "title": "Get dressed",
+      "image": "assets/images/get-dressed.webp",
+      "alt": "Get dressed",
+      "wordAudio": "assets/audio/get-dressed.mp3",
+      "sentenceText": "I get dressed in the morning.",
+      "sentenceAudio": "assets/audio/get-dressed-sentence.mp3"
     }
   ],
   "big": [
@@ -1796,6 +1940,69 @@ const reviewData = {
       "wordAudio": "assets/audio/stretching.mp3",
       "sentenceText": "They are stretching.",
       "sentenceAudio": "assets/audio/stretching-sentence.mp3"
+    },
+    {
+      "key": "on",
+      "title": "On",
+      "image": "assets/images/on.webp",
+      "alt": "On",
+      "wordAudio": "assets/audio/on.mp3",
+      "sentenceText": "The cat is on the box.",
+      "sentenceAudio": "assets/audio/on-sentence.mp3"
+    },
+    {
+      "key": "in",
+      "title": "In",
+      "image": "assets/images/in.webp",
+      "alt": "In",
+      "wordAudio": "assets/audio/in.mp3",
+      "sentenceText": "The cat is in the box.",
+      "sentenceAudio": "assets/audio/in-sentence.mp3"
+    },
+    {
+      "key": "under",
+      "title": "Under",
+      "image": "assets/images/under.webp",
+      "alt": "Under",
+      "wordAudio": "assets/audio/under.mp3",
+      "sentenceText": "The cat is under the box.",
+      "sentenceAudio": "assets/audio/under-sentence.mp3"
+    },
+    {
+      "key": "behind",
+      "title": "Behind",
+      "image": "assets/images/behind.webp",
+      "alt": "Behind",
+      "wordAudio": "assets/audio/behind.mp3",
+      "sentenceText": "The cat is behind the box.",
+      "sentenceAudio": "assets/audio/behind-sentence.mp3"
+    },
+    {
+      "key": "in-front-of",
+      "title": "In front of",
+      "image": "assets/images/in-front-of.webp",
+      "alt": "In front of",
+      "wordAudio": "assets/audio/in-front-of.mp3",
+      "sentenceText": "The cat is in front of the box.",
+      "sentenceAudio": "assets/audio/in-front-of-sentence.mp3"
+    },
+    {
+      "key": "next-to",
+      "title": "Next to",
+      "image": "assets/images/next-to.webp",
+      "alt": "Next to",
+      "wordAudio": "assets/audio/next-to.mp3",
+      "sentenceText": "The cat is next to the box.",
+      "sentenceAudio": "assets/audio/next-to-sentence.mp3"
+    },
+    {
+      "key": "between",
+      "title": "Between",
+      "image": "assets/images/between.webp",
+      "alt": "Between",
+      "wordAudio": "assets/audio/between.mp3",
+      "sentenceText": "The cat is between boxes.",
+      "sentenceAudio": "assets/audio/between-sentence.mp3"
     }
   ],
   "alphabet": [
@@ -1879,6 +2086,33 @@ const reviewData = {
       "wordAudio": "assets/audio/i.mp3",
       "sentenceText": "I i igloo ink",
       "sentenceAudio": "assets/audio/i-sentence.mp3"
+    },
+    {
+      "key": "j",
+      "title": "J",
+      "image": "assets/images/j.webp",
+      "alt": "J",
+      "wordAudio": "assets/audio/j.mp3",
+      "sentenceText": "J j juice jello",
+      "sentenceAudio": "assets/audio/j-sentence.mp3"
+    },
+    {
+      "key": "k",
+      "title": "K",
+      "image": "assets/images/k.webp",
+      "alt": "K",
+      "wordAudio": "assets/audio/k.mp3",
+      "sentenceText": "K k kangaroo kite",
+      "sentenceAudio": "assets/audio/k-sentence.mp3"
+    },
+    {
+      "key": "l",
+      "title": "L",
+      "image": "assets/images/l.webp",
+      "alt": "L",
+      "wordAudio": "assets/audio/l.mp3",
+      "sentenceText": "L l lion lemon",
+      "sentenceAudio": "assets/audio/l-sentence.mp3"
     }
   ]
 }
