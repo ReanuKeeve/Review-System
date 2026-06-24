@@ -404,6 +404,60 @@ const reviewData = {
       "wordAudio": "assets/audio/night.mp3",
       "sentenceText": "Good night!",
       "sentenceAudio": "assets/audio/night-sentence.mp3"
+    },
+    {
+      "key": "red",
+      "title": "Red",
+      "image": "assets/images/red.webp",
+      "alt": "Red",
+      "wordAudio": "assets/audio/red.mp3",
+      "sentenceText": "The ball is red.",
+      "sentenceAudio": "assets/audio/red-sentence.mp3"
+    },
+    {
+      "key": "orange",
+      "title": "Orange",
+      "image": "assets/images/orange.webp",
+      "alt": "Orange",
+      "wordAudio": "assets/audio/orange.mp3",
+      "sentenceText": "The ball is orange",
+      "sentenceAudio": "assets/audio/orange-sentence.mp3"
+    },
+    {
+      "key": "yellow",
+      "title": "Yellow",
+      "image": "assets/images/yellow.webp",
+      "alt": "Yellow",
+      "wordAudio": "assets/audio/yellow.mp3",
+      "sentenceText": "The ball is yellow",
+      "sentenceAudio": "assets/audio/yellow-sentence.mp3"
+    },
+    {
+      "key": "green",
+      "title": "Green",
+      "image": "assets/images/green.webp",
+      "alt": "Green",
+      "wordAudio": "assets/audio/green.mp3",
+      "sentenceText": "The ball is green.",
+      "sentenceAudio": "assets/audio/green-sentence.mp3"
+    },
+    {
+      "key": "blue",
+      "title": "Blue",
+      "image": "assets/images/blue.webp",
+      "alt": "Blue",
+      "wordAudio": "assets/audio/blue.mp3",
+      "sentenceText": "The ball is blue.",
+      "sentenceAudio": "assets/audio/blue-sentence.mp3"
+    },
+    {
+      "key": "purple",
+      "title": "Purple",
+      "image": "assets/images/purple.webp",
+      "alt": "Purple",
+      "wordAudio": "assets/audio/purple.mp3",
+      "sentenceText": "The ball is purple.",
+      "sentenceAudio": "assets/audio/purple-sentence.mp3"
     }
   ],
   "small": [
@@ -847,6 +901,42 @@ const reviewData = {
       "wordAudio": "assets/audio/sunday.mp3",
       "sentenceText": "Today is Sunday.",
       "sentenceAudio": "assets/audio/sunday-sentence.mp3"
+    },
+    {
+      "key": "sunny",
+      "title": "Sunny",
+      "image": "assets/images/sunny.webp",
+      "alt": "Sunny",
+      "wordAudio": "assets/audio/sunny.mp3",
+      "sentenceText": "It's sunny today.",
+      "sentenceAudio": "assets/audio/sunny-sentence.mp3"
+    },
+    {
+      "key": "cloudy",
+      "title": "Cloudy",
+      "image": "assets/images/cloudy.webp",
+      "alt": "Cloudy",
+      "wordAudio": "assets/audio/cloudy.mp3",
+      "sentenceText": "It's cloudy today.",
+      "sentenceAudio": "assets/audio/cloudy-sentence.mp3"
+    },
+    {
+      "key": "windy",
+      "title": "Windy",
+      "image": "assets/images/windy.webp",
+      "alt": "Windy",
+      "wordAudio": "assets/audio/windy.mp3",
+      "sentenceText": "It's windy today.",
+      "sentenceAudio": "assets/audio/windy-sentence.mp3"
+    },
+    {
+      "key": "rainy",
+      "title": "Rainy",
+      "image": "assets/images/rainy.webp",
+      "alt": "Rainy",
+      "wordAudio": "assets/audio/rainy.mp3",
+      "sentenceText": "It's rainy today.",
+      "sentenceAudio": "assets/audio/rainy-sentence.mp3"
     }
   ],
   "middle": [
@@ -1326,6 +1416,42 @@ const reviewData = {
       "wordAudio": "assets/audio/get-dressed.mp3",
       "sentenceText": "I get dressed in the morning.",
       "sentenceAudio": "assets/audio/get-dressed-sentence.mp3"
+    },
+    {
+      "key": "breakfast",
+      "title": "Breakfast",
+      "image": "assets/images/breakfast.webp",
+      "alt": "Breakfast",
+      "wordAudio": "assets/audio/breakfast.mp3",
+      "sentenceText": "It's time for breakfast.",
+      "sentenceAudio": "assets/audio/breakfast-sentence.mp3"
+    },
+    {
+      "key": "lunch",
+      "title": "Lunch",
+      "image": "assets/images/lunch.webp",
+      "alt": "Lunch",
+      "wordAudio": "assets/audio/lunch.mp3",
+      "sentenceText": "It's time for lunch.",
+      "sentenceAudio": "assets/audio/lunch-sentence.mp3"
+    },
+    {
+      "key": "dinner",
+      "title": "Dinner",
+      "image": "assets/images/dinner.webp",
+      "alt": "Dinner",
+      "wordAudio": "assets/audio/dinner.mp3",
+      "sentenceText": "It's time for dinner.",
+      "sentenceAudio": "assets/audio/dinner-sentence.mp3"
+    },
+    {
+      "key": "snack",
+      "title": "Snack",
+      "image": "assets/images/snack.webp",
+      "alt": "Snack",
+      "wordAudio": "assets/audio/snack.mp3",
+      "sentenceText": "It's time for snack.",
+      "sentenceAudio": "assets/audio/snack-sentence.mp3"
     }
   ],
   "big": [
@@ -2003,6 +2129,78 @@ const reviewData = {
       "wordAudio": "assets/audio/between.mp3",
       "sentenceText": "The cat is between boxes.",
       "sentenceAudio": "assets/audio/between-sentence.mp3"
+    },
+    {
+      "key": "fast",
+      "title": "Fast",
+      "image": "assets/images/fast.webp",
+      "alt": "Fast",
+      "wordAudio": "assets/audio/fast.mp3",
+      "sentenceText": "This car is fast.",
+      "sentenceAudio": "assets/audio/fast-sentence.mp3"
+    },
+    {
+      "key": "slow",
+      "title": "Slow",
+      "image": "assets/images/slow.webp",
+      "alt": "Slow",
+      "wordAudio": "assets/audio/slow.mp3",
+      "sentenceText": "This car is slow.",
+      "sentenceAudio": "assets/audio/slow-sentence.mp3"
+    },
+    {
+      "key": "big",
+      "title": "Big",
+      "image": "assets/images/big.webp",
+      "alt": "Big",
+      "wordAudio": "assets/audio/big.mp3",
+      "sentenceText": "This bike is big.",
+      "sentenceAudio": "assets/audio/big-sentence.mp3"
+    },
+    {
+      "key": "small",
+      "title": "Small",
+      "image": "assets/images/small.webp",
+      "alt": "Small",
+      "wordAudio": "assets/audio/small.mp3",
+      "sentenceText": "This bike is small.",
+      "sentenceAudio": "assets/audio/small-sentence.mp3"
+    },
+    {
+      "key": "car",
+      "title": "Car",
+      "image": "assets/images/car-big.webp",
+      "alt": "Car",
+      "wordAudio": "assets/audio/car.mp3",
+      "sentenceText": "I see a small fast car.",
+      "sentenceAudio": "assets/audio/car-sentence-big.mp3"
+    },
+    {
+      "key": "truck",
+      "title": "Truck",
+      "image": "assets/images/truck.webp",
+      "alt": "Truck",
+      "wordAudio": "assets/audio/truck.mp3",
+      "sentenceText": "I see a big slow truck.",
+      "sentenceAudio": "assets/audio/truck-sentence.mp3"
+    },
+    {
+      "key": "train",
+      "title": "Train",
+      "image": "assets/images/train.webp",
+      "alt": "Train",
+      "wordAudio": "assets/audio/train.mp3",
+      "sentenceText": "I see a big fast train.",
+      "sentenceAudio": "assets/audio/train-sentence.mp3"
+    },
+    {
+      "key": "bike",
+      "title": "Bike",
+      "image": "assets/images/bike.webp",
+      "alt": "Bike",
+      "wordAudio": "assets/audio/bike.mp3",
+      "sentenceText": "I see a small slow bike.",
+      "sentenceAudio": "assets/audio/bike-sentence.mp3"
     }
   ],
   "alphabet": [
@@ -2113,6 +2311,15 @@ const reviewData = {
       "wordAudio": "assets/audio/l.mp3",
       "sentenceText": "L l lion lemon",
       "sentenceAudio": "assets/audio/l-sentence.mp3"
+    },
+    {
+      "key": "m",
+      "title": "M",
+      "image": "assets/images/m.webp",
+      "alt": "M",
+      "wordAudio": "assets/audio/m.mp3",
+      "sentenceText": "M m monkey milk",
+      "sentenceAudio": "assets/audio/m-sentence.mp3"
     }
   ]
 }
