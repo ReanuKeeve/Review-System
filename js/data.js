@@ -458,6 +458,51 @@ const reviewData = {
       "wordAudio": "assets/audio/purple.mp3",
       "sentenceText": "The ball is purple.",
       "sentenceAudio": "assets/audio/purple-sentence.mp3"
+    },
+     {
+      "key": "white",
+      "title": "White",
+      "image": "assets/images/white.webp",
+      "alt": "White",
+      "wordAudio": "assets/audio/white.mp3",
+      "sentenceText": "A white ball",
+      "sentenceAudio": "assets/audio/white-sentence.mp3"
+    },
+    {
+      "key": "grey",
+      "title": "Grey",
+      "image": "assets/images/grey.webp",
+      "alt": "Grey",
+      "wordAudio": "assets/audio/grey.mp3",
+      "sentenceText": "A grey ball",
+      "sentenceAudio": "assets/audio/grey-sentence.mp3"
+    },
+    {
+      "key": "black",
+      "title": "Black",
+      "image": "assets/images/black.webp",
+      "alt": "Black",
+      "wordAudio": "assets/audio/black.mp3",
+      "sentenceText": "A black ball",
+      "sentenceAudio": "assets/audio/black-sentence.mp3"
+    },
+    {
+      "key": "pink",
+      "title": "Pink",
+      "image": "assets/images/pink.webp",
+      "alt": "Pink",
+      "wordAudio": "assets/audio/pink.mp3",
+      "sentenceText": "A pink ball",
+      "sentenceAudio": "assets/audio/pink-sentence.mp3"
+    },
+    {
+      "key": "brown",
+      "title": "Brown",
+      "image": "assets/images/brown.webp",
+      "alt": "Brown",
+      "wordAudio": "assets/audio/brown.mp3",
+      "sentenceText": "A brown ball",
+      "sentenceAudio": "assets/audio/brown-sentence.mp3"
     }
   ],
   "small": [
@@ -937,6 +982,33 @@ const reviewData = {
       "wordAudio": "assets/audio/rainy.mp3",
       "sentenceText": "It's rainy today.",
       "sentenceAudio": "assets/audio/rainy-sentence.mp3"
+    },
+    {
+      "key": "snowy",
+      "title": "Snowy",
+      "image": "assets/images/snowy.webp",
+      "alt": "Snowy",
+      "wordAudio": "assets/audio/snowy.mp3",
+      "sentenceText": "It's snowy today.",
+      "sentenceAudio": "assets/audio/snowy-sentence.mp3"
+    },
+    {
+      "key": "storm",
+      "title": "Storm",
+      "image": "assets/images/storm.webp",
+      "alt": "Storm",
+      "wordAudio": "assets/audio/storm.mp3",
+      "sentenceText": "It's a storm.",
+      "sentenceAudio": "assets/audio/storm-sentence.mp3"
+    },
+    {
+      "key": "lightning",
+      "title": "Lightning",
+      "image": "assets/images/lightning.webp",
+      "alt": "Lightning",
+      "wordAudio": "assets/audio/lightning.mp3",
+      "sentenceText": "It's a lightning.",
+      "sentenceAudio": "assets/audio/lightning-sentence.mp3"
     }
   ],
   "middle": [
@@ -1452,6 +1524,33 @@ const reviewData = {
       "wordAudio": "assets/audio/snack.mp3",
       "sentenceText": "It's time for snack.",
       "sentenceAudio": "assets/audio/snack-sentence.mp3"
+    },
+    {
+      "key": "o'clock",
+      "title": "O'clock",
+      "image": "assets/images/o'clock.webp",
+      "alt": "O'clock",
+      "wordAudio": "assets/audio/o'clock.mp3",
+      "sentenceText": "It's ___ (12) o'clock.",
+      "sentenceAudio": "assets/audio/o'clock-sentence.mp3"
+    },
+    {
+      "key": "hour",
+      "title": "Hour",
+      "image": "assets/images/hour.webp",
+      "alt": "Hour",
+      "wordAudio": "assets/audio/hour.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/hour-sentence.mp3"
+    },
+    {
+      "key": "minute",
+      "title": "Minute",
+      "image": "assets/images/minute.webp",
+      "alt": "Minute",
+      "wordAudio": "assets/audio/minute.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/minute-sentence.mp3"
     }
   ],
   "big": [
@@ -2201,6 +2300,60 @@ const reviewData = {
       "wordAudio": "assets/audio/bike.mp3",
       "sentenceText": "I see a small slow bike.",
       "sentenceAudio": "assets/audio/bike-sentence.mp3"
+    },
+    {
+      "key": "clean",
+      "title": "Clean",
+      "image": "assets/images/clean.webp",
+      "alt": "Clean",
+      "wordAudio": "assets/audio/clean.mp3",
+      "sentenceText": "This car is clean.",
+      "sentenceAudio": "assets/audio/clean-sentence.mp3"
+    },
+    {
+      "key": "dirty",
+      "title": "Dirty",
+      "image": "assets/images/dirty.webp",
+      "alt": "Dirty",
+      "wordAudio": "assets/audio/dirty.mp3",
+      "sentenceText": "This car is dirty.",
+      "sentenceAudio": "assets/audio/dirty-sentence.mp3"
+    },
+    {
+      "key": "fat",
+      "title": "Fat",
+      "image": "assets/images/fat.webp",
+      "alt": "Fat",
+      "wordAudio": "assets/audio/fat.mp3",
+      "sentenceText": "This cat is fat.",
+      "sentenceAudio": "assets/audio/fat-sentence.mp3"
+    },
+    {
+      "key": "thin",
+      "title": "Thin",
+      "image": "assets/images/thin.webp",
+      "alt": "Thin",
+      "wordAudio": "assets/audio/thin.mp3",
+      "sentenceText": "This cat is thin.",
+      "sentenceAudio": "assets/audio/thin-sentence.mp3"
+    },
+    {
+      "key": "tall",
+      "title": "Tall",
+      "image": "assets/images/tall.webp",
+      "alt": "Tall",
+      "wordAudio": "assets/audio/tall.mp3",
+      "sentenceText": "He is tall.",
+      "sentenceAudio": "assets/audio/tall-sentence.mp3"
+    },
+    {
+      "key": "short",
+      "title": "Short",
+      "image": "assets/images/short.webp",
+      "alt": "Short",
+      "wordAudio": "assets/audio/short.mp3",
+      "sentenceText": "She is short.",
+      "sentenceAudio": "assets/audio/short-sentence.mp3"
     }
   ],
   "alphabet": [
@@ -2320,6 +2473,15 @@ const reviewData = {
       "wordAudio": "assets/audio/m.mp3",
       "sentenceText": "M m monkey milk",
       "sentenceAudio": "assets/audio/m-sentence.mp3"
+    },
+    {
+      "key": "n",
+      "title": "N",
+      "image": "assets/images/n.webp",
+      "alt": "N",
+      "wordAudio": "assets/audio/n.mp3",
+      "sentenceText": "N n nose noodles",
+      "sentenceAudio": "assets/audio/n-sentence.mp3"
     }
   ]
 }
