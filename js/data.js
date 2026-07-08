@@ -503,6 +503,42 @@ const reviewData = {
       "wordAudio": "assets/audio/brown.mp3",
       "sentenceText": "A brown ball",
       "sentenceAudio": "assets/audio/brown-sentence.mp3"
+    },
+    {
+      "key": "wash-my-face",
+      "title": "wash my face",
+      "image": "assets/images/wash-my-face.webp",
+      "alt": "wash my face",
+      "wordAudio": "assets/audio/wash-my-face.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/wash-my-face-sentence.mp3"
+    },
+    {
+      "key": "brush-my-teeth",
+      "title": "brush my teeth",
+      "image": "assets/images/brush-my-teeth.webp",
+      "alt": "brush my teeth",
+      "wordAudio": "assets/audio/brush-my-teeth.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/brush-my-teeth-sentence.mp3"
+    },
+    {
+      "key": "make-my-bed",
+      "title": "make my bed",
+      "image": "assets/images/make-my-bed.webp",
+      "alt": "make my bed",
+      "wordAudio": "assets/audio/make-my-bed.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/make-my-bed-sentence.mp3"
+    },
+    {
+      "key": "get-up",
+      "title": "get up",
+      "image": "assets/images/get-up.webp",
+      "alt": "get up",
+      "wordAudio": "assets/audio/get-up.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/get-up-sentence.mp3"
     }
   ],
   "small": [
@@ -1009,6 +1045,60 @@ const reviewData = {
       "wordAudio": "assets/audio/lightning.mp3",
       "sentenceText": "It's a lightning.",
       "sentenceAudio": "assets/audio/lightning-sentence.mp3"
+    },
+    {
+      "key": "sofa",
+      "title": "Sofa",
+      "image": "assets/images/sofa.webp",
+      "alt": "Sofa",
+      "wordAudio": "assets/audio/sofa.mp3",
+      "sentenceText": "A sofa is in the living room.",
+      "sentenceAudio": "assets/audio/sofa-sentence.mp3"
+    },
+    {
+      "key": "bed",
+      "title": "Bed",
+      "image": "assets/images/bed.webp",
+      "alt": "Bed",
+      "wordAudio": "assets/audio/bed.mp3",
+      "sentenceText": "A bed is in the bedroom.",
+      "sentenceAudio": "assets/audio/bed-sentence-1.mp3"
+    },
+    {
+      "key": "fridge",
+      "title": "Fridge",
+      "image": "assets/images/fridge.webp",
+      "alt": "Fridge",
+      "wordAudio": "assets/audio/fridge.mp3",
+      "sentenceText": "A fridge is in the kitchen.",
+      "sentenceAudio": "assets/audio/fridge-sentence.mp3"
+    },
+    {
+      "key": "living-room",
+      "title": "Living room",
+      "image": "assets/images/living-room.webp",
+      "alt": "Living room",
+      "wordAudio": "assets/audio/living-room.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/living-room-sentence.mp3"
+    },
+    {
+      "key": "bedroom",
+      "title": "Bedroom",
+      "image": "assets/images/bedroom.webp",
+      "alt": "Bedroom",
+      "wordAudio": "assets/audio/bedroom.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/bedroom-sentence.mp3"
+    },
+    {
+      "key": "kitchen",
+      "title": "Kitchen",
+      "image": "assets/images/kitchen.webp",
+      "alt": "Kitchen",
+      "wordAudio": "assets/audio/kitchen.mp3",
+      "sentenceText": "",
+      "sentenceAudio": "assets/audio/kitchen-sentence.mp3"
     }
   ],
   "middle": [
@@ -2354,6 +2444,78 @@ const reviewData = {
       "wordAudio": "assets/audio/short.mp3",
       "sentenceText": "She is short.",
       "sentenceAudio": "assets/audio/short-sentence.mp3"
+    },
+    {
+      "key": "violin",
+      "title": "Violin",
+      "image": "assets/images/violin.webp",
+      "alt": "Violin",
+      "wordAudio": "assets/audio/violin.mp3",
+      "sentenceText": "Can you play a violin?",
+      "sentenceAudio": "assets/audio/violin-sentence.mp3"
+    },
+    {
+      "key": "piano",
+      "title": "Piano",
+      "image": "assets/images/piano.webp",
+      "alt": "Piano",
+      "wordAudio": "assets/audio/piano.mp3",
+      "sentenceText": "Can you play a piano?",
+      "sentenceAudio": "assets/audio/piano-sentence.mp3"
+    },
+    {
+      "key": "guitar",
+      "title": "Guitar",
+      "image": "assets/images/guitar.webp",
+      "alt": "Guitar",
+      "wordAudio": "assets/audio/guitar.mp3",
+      "sentenceText": "Can you play a guitar?",
+      "sentenceAudio": "assets/audio/guitar-sentence.mp3"
+    },
+    {
+      "key": "drum",
+      "title": "Drum",
+      "image": "assets/images/drum.webp",
+      "alt": "Drum",
+      "wordAudio": "assets/audio/drum.mp3",
+      "sentenceText": "Can you play a drum?",
+      "sentenceAudio": "assets/audio/drum-sentence.mp3"
+    },
+    {
+      "key": "trombone",
+      "title": "Trombone",
+      "image": "assets/images/trombone.webp",
+      "alt": "Trombone",
+      "wordAudio": "assets/audio/trombone.mp3",
+      "sentenceText": "Can you play a trombone?",
+      "sentenceAudio": "assets/audio/trombone-sentence.mp3"
+    },
+    {
+      "key": "tuba",
+      "title": "Tuba",
+      "image": "assets/images/tuba.webp",
+      "alt": "Tuba",
+      "wordAudio": "assets/audio/tuba.mp3",
+      "sentenceText": "Can you play a tuba?",
+      "sentenceAudio": "assets/audio/tuba-sentence.mp3"
+    },
+    {
+      "key": "flute",
+      "title": "Flute",
+      "image": "assets/images/flute.webp",
+      "alt": "Flute",
+      "wordAudio": "assets/audio/flute.mp3",
+      "sentenceText": "Can you play a flute?",
+      "sentenceAudio": "assets/audio/flute-sentence.mp3"
+    },
+    {
+      "key": "cymbals",
+      "title": "Cymbals",
+      "image": "assets/images/cymbals.webp",
+      "alt": "Cymbals",
+      "wordAudio": "assets/audio/cymbals.mp3",
+      "sentenceText": "Can you play cymbals?",
+      "sentenceAudio": "assets/audio/cymbals-sentence.mp3"
     }
   ],
   "alphabet": [

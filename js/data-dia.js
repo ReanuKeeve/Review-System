@@ -113,8 +113,8 @@ const dialogueData = [
         answerAudio: 'assets/audio/dialogues/guangzhou.mp3',
       },
     ]
-  }
-  /*{
+  },
+  {
     id: 'how-old-are-you',
     unit: 'Self Introduction',
     questionText: 'How old are you? 你多大了？',
@@ -142,6 +142,78 @@ const dialogueData = [
       },
     ],
   },
+  {
+    id: "what-is-the-weather-like-today",
+    unit: "Weather",
+    questionText: "What is the weather like today? 今天天气怎么样？",
+    questionAudio: "assets/audio/dialogues/weather-question.mp3",
+    answers: [
+      {
+        id: "sunny",
+        answerText: "It is sunny. 今天天气晴朗。",
+        answerAudio: "assets/audio/dialogues/sunny.mp3",
+      },
+      {
+        id: "rainy",
+        answerText: "It is rainy. 今天天气下雨。",
+        answerAudio: "assets/audio/dialogues/rainy.mp3",
+      },
+      {
+        id: "cloudy",
+        answerText: "It is cloudy. 今天天气多云。",
+        answerAudio: "assets/audio/dialogues/cloudy.mp3",
+      },
+      {
+        id: "snowy",
+        answerText: "It is snowy. 今天天气下雪。",
+        answerAudio: "assets/audio/dialogues/snowy.mp3",
+      },
+    ],
+  },
+  {
+    id: "what-day-is-it-today",
+    unit: "Date",
+    questionText: "What day is it today? 今天星期几？",
+    questionAudio: "assets/audio/dialogues/day-question.mp3",
+    answers: [
+      {
+        id: "monday",
+        answerText: "Today is Monday. 今天星期一。",
+        answerAudio: "assets/audio/dialogues/monday.mp3",
+      },
+      {
+        id: "tuesday",
+        answerText: "Today is Tuesday. 今天星期二。",
+        answerAudio: "assets/audio/dialogues/tuesday.mp3",
+      },
+      {
+        id: "wednesday",
+        answerText: "Today is Wednesday. 今天星期三。",
+        answerAudio: "assets/audio/dialogues/wednesday.mp3",
+      },
+      {
+        id: "thursday",
+        answerText: "Today is Thursday. 今天星期四。",
+        answerAudio: "assets/audio/dialogues/thursday.mp3",
+      },
+      {
+        id: "friday",
+        answerText: "Today is Friday. 今天星期五。",
+        answerAudio: "assets/audio/dialogues/friday.mp3",
+      },
+      {
+        id: "saturday",
+        answerText: "Today is Saturday. 今天星期六。",
+        answerAudio: "assets/audio/dialogues/saturday.mp3",
+      },
+      {
+        id: "sunday",
+        answerText: "Today is Sunday. 今天星期日。",
+        answerAudio: "assets/audio/dialogues/sunday.mp3",
+      },
+    ],
+  }
+  /*
   {
     id: 'do-you-like-apples',
     unit: 'Food',
