@@ -4,6 +4,7 @@ let isPlaying = false;
 let currentMode = 'words';
 let currentCards = [];
 let audioRegistry = new Map();
+let audioSourceRegistry = new Map();
 let playbackResetTimer = null;
 
 const AUDIO_RESET_TIMEOUT = 12000;
@@ -81,7 +82,16 @@ function getAudioId(cardKey) {
 }
 
 function getAudioElement(audioId) {
-  return audioRegistry.get(audioId) || document.getElementById(audioId);
+  const existingAudio = audioRegistry.get(audioId);
+  if (existingAudio) return existingAudio;
+
+  const source = audioSourceRegistry.get(audioId);
+  if (!source) return null;
+
+  const audio = createAudioElement(audioId, source);
+  audioRegistry.set(audioId, audio);
+  document.body.appendChild(audio);
+  return audio;
 }
 
 function playSound(audioId, cardKey) {
@@ -165,12 +175,14 @@ function playCard(cardKey) {
 function updateTabUI(mode) {
   const wordsTab = document.getElementById('tab-words');
   const sentencesTab = document.getElementById('tab-sentences');
+  const cardContainer = document.getElementById('card-container');
   const sentenceModeAvailable = hasSentenceMode(currentCards);
 
   if (wordsTab) {
     const isActive = mode === 'words';
     wordsTab.classList.toggle('active', isActive);
     wordsTab.setAttribute('aria-selected', String(isActive));
+    wordsTab.tabIndex = isActive ? 0 : -1;
   }
 
   if (sentencesTab) {
@@ -179,11 +191,16 @@ function updateTabUI(mode) {
     sentencesTab.setAttribute('aria-disabled', String(!sentenceModeAvailable || isPlaying));
     sentencesTab.classList.toggle('active', isActive);
     sentencesTab.setAttribute('aria-selected', String(isActive));
+    sentencesTab.tabIndex = isActive ? 0 : -1;
   }
 
   if (wordsTab) {
     wordsTab.disabled = isPlaying;
     wordsTab.setAttribute('aria-disabled', String(isPlaying));
+  }
+
+  if (cardContainer) {
+    cardContainer.setAttribute('aria-labelledby', mode === 'sentences' ? 'tab-sentences' : 'tab-words');
   }
 }
 
@@ -229,6 +246,24 @@ function renderCards() {
   const cardsToRender = currentMode === 'sentences'
     ? currentCards.filter(hasSentenceAudio)
     : currentCards;
+
+  if (cardsToRender.length === 0) {
+    const emptyCard = document.createElement('article');
+    emptyCard.className = 'card empty-review-card';
+
+    const title = document.createElement('h2');
+    title.className = 'card-title';
+    title.textContent = 'No review cards available yet.';
+
+    const message = document.createElement('p');
+    message.className = 'card-text';
+    message.textContent = 'Please choose another class or check back later.';
+
+    emptyCard.append(title, message);
+    container.appendChild(emptyCard);
+    updateTabUI(currentMode);
+    return;
+  }
 
   cardsToRender.forEach((card) => {
     const article = document.createElement('article');
@@ -279,11 +314,11 @@ function renderCards() {
   updateTabUI(currentMode);
 }
 
-function createAudioElement(id, src, preloadValue = 'metadata') {
+function createAudioElement(id, src) {
   const audio = document.createElement('audio');
   audio.id = id;
   audio.src = src;
-  audio.preload = preloadValue;
+  audio.preload = 'none';
   audio.dataset.cardAudio = 'true';
   return audio;
 }
@@ -291,37 +326,50 @@ function createAudioElement(id, src, preloadValue = 'metadata') {
 function renderAudioElements() {
   stopCurrentAudio();
   audioRegistry.clear();
+  audioSourceRegistry.clear();
 
   document.querySelectorAll('audio[data-card-audio]').forEach((audio) => {
     audio.remove();
   });
 
-  const fragment = document.createDocumentFragment();
-
-  currentCards.forEach((card, index) => {
-    const preloadValue = index < 3 ? 'auto' : 'metadata';
-
+  currentCards.forEach((card) => {
     if (card.wordAudio) {
       const wordId = `audio-${card.key}-words`;
-      const wordAudio = createAudioElement(wordId, card.wordAudio, preloadValue);
-      audioRegistry.set(wordId, wordAudio);
-      fragment.appendChild(wordAudio);
+      audioSourceRegistry.set(wordId, card.wordAudio);
     }
 
     if (card.sentenceAudio) {
       const sentenceId = `audio-${card.key}-sentences`;
-      const sentenceAudio = createAudioElement(sentenceId, card.sentenceAudio, preloadValue);
-      audioRegistry.set(sentenceId, sentenceAudio);
-      fragment.appendChild(sentenceAudio);
+      audioSourceRegistry.set(sentenceId, card.sentenceAudio);
     }
   });
+}
 
-  document.body.appendChild(fragment);
+function handleTabKeydown(event) {
+  if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+
+  const tabList = event.currentTarget;
+  const tabs = Array.from(tabList.querySelectorAll('[role="tab"]'))
+    .filter((tab) => !tab.disabled);
+  const currentIndex = tabs.indexOf(document.activeElement);
+  if (currentIndex === -1 || tabs.length === 0) return;
+
+  event.preventDefault();
+
+  let nextIndex = currentIndex;
+  if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+  if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+  if (event.key === 'Home') nextIndex = 0;
+  if (event.key === 'End') nextIndex = tabs.length - 1;
+
+  tabs[nextIndex].focus();
+  tabs[nextIndex].click();
 }
 
 function initTabs() {
   const wordsTab = document.getElementById('tab-words');
   const sentencesTab = document.getElementById('tab-sentences');
+  const tabList = wordsTab?.closest('[role="tablist"]');
 
   if (wordsTab) {
     wordsTab.onclick = () => setMode('words');
@@ -329,6 +377,10 @@ function initTabs() {
 
   if (sentencesTab) {
     sentencesTab.onclick = () => setMode('sentences');
+  }
+
+  if (tabList) {
+    tabList.addEventListener('keydown', handleTabKeydown);
   }
 }
 

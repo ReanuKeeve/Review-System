@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='description' content='Review class vocabulary, pronunciation, and sentences.' />
+    <title>Class Review</title>
+    <link rel='stylesheet' href='css/main.css' />
+  </head>
+  <body>
+    <main class='page'>
+      <a href='index.html' class='back-link' aria-label='Back to the home page'>&larr; Back</a>
+
+      <header class='page-header'>
+        <h1 id='review-title'>Class Review</h1>
+        <p id='review-subtitle' class='page-subtitle'>Choose words or sentences to practice.</p>
+      </header>
+
+      <div class='mode-tabs' role='tablist' aria-label='Review type'>
+        <button id='tab-words' class='mode-tab active' type='button' role='tab' aria-selected='true' aria-controls='card-container'>Words</button>
+        <button id='tab-sentences' class='mode-tab' type='button' role='tab' aria-selected='false' aria-controls='card-container'>Sentences</button>
+      </div>
+
+      <section id='card-container' class='card-container' role='tabpanel' aria-labelledby='tab-words'></section>
+    </main>
+
+    <script src='js/data.js'></script>
+    <script src='js/index.js'></script>
+    <script src='js/review-page.js'></script>
+  </body>
+</html>

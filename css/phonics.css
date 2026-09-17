@@ -92,7 +92,7 @@ body.phonics-page {
   font-weight: 800;
 }
 
-.now-playing span {
+.now-playing > span:first-child {
   width: 8px;
   height: 8px;
   background: #6fd19d;
@@ -114,6 +114,43 @@ body.phonics-page {
   height: 100%;
   object-fit: contain;
   background: #171520;
+}
+
+.phonics-navigation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+}
+
+.lesson-nav-button {
+  min-height: 44px;
+  padding: 10px 14px;
+  color: var(--accent);
+  background: #f7f4ff;
+  border: 1px solid rgba(118, 87, 232, 0.14);
+  border-radius: 14px;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.lesson-nav-button:last-child {
+  justify-self: end;
+}
+
+.lesson-nav-button:disabled {
+  color: #aaa5b8;
+  background: #f3f1f5;
+  cursor: not-allowed;
+}
+
+.lesson-progress {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .lesson-picker {
@@ -195,6 +232,19 @@ body.phonics-page {
   box-shadow: 0 9px 20px rgba(118, 87, 232, 0.27);
 }
 
+.lesson-button.completed::after {
+  content: '✓';
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  color: #4bae7a;
+  font-size: 0.68rem;
+}
+
+.lesson-button.completed.active::after {
+  color: #ffffff;
+}
+
 .lesson-button:focus-visible {
   outline: 3px solid rgba(118, 87, 232, 0.28);
   outline-offset: 3px;
@@ -238,6 +288,17 @@ body.phonics-page {
   .player-heading { padding: 5px 4px 12px; }
   .now-playing { padding: 7px 9px; font-size: 0.7rem; }
   .video-frame { border-radius: 15px; }
+
+  .phonics-navigation {
+    gap: 8px;
+    padding-top: 11px;
+  }
+
+  .lesson-nav-button {
+    min-height: 42px;
+    padding: 8px;
+    font-size: 0.82rem;
+  }
   .lesson-picker { margin-top: 14px; padding: 15px; border-radius: 22px; }
 
   .lesson-picker-heading {

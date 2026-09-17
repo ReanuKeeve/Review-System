@@ -19,7 +19,7 @@ function createVideoCard(video) {
         <a class="download-btn" href="${video.file}" download>
           Download
         </a>
-        <a class="preview-btn" href="${video.file}" target="_blank">
+        <a class="preview-btn" href="${video.file}" target="_blank" rel="noopener">
           Open
         </a>
       </div>

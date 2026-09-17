@@ -132,7 +132,59 @@ body::after {
 .group-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 22px;
+}
+
+.home-section {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border-soft);
+  border-radius: 26px;
+  box-shadow: 0 12px 28px rgba(101, 78, 54, 0.07);
+}
+
+.home-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 0 2px;
+}
+
+.home-section-number {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: linear-gradient(135deg, #7657e8, #ff8f70);
+  border-radius: 13px;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.home-section-heading h2,
+.home-section-heading p {
+  margin: 0;
+}
+
+.home-section-heading h2 {
+  color: var(--text-main);
+  font-size: 1.05rem;
+}
+
+.home-section-heading p {
+  margin-top: 3px;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.home-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .group-card {
@@ -411,6 +463,12 @@ body::after {
   text-align: center;
 }
 
+.empty-review-card {
+  grid-column: 1 / -1;
+  padding: 32px 20px;
+  text-align: center;
+}
+
 .card-title {
   margin: 0 0 10px;
   font-size: 1.3rem;
@@ -544,50 +602,6 @@ button:focus-visible {
   }
 }
 
-/* Small phones */
-@media (max-width: 420px) {
-  .app,
-  .page {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-
-  .header,
-  .page-header {
-    border-radius: 26px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .mode-tabs {
-    gap: 8px;
-    padding: 7px;
-  }
-
-  .mode-tab {
-    min-width: 0;
-    flex: 1;
-    padding: 11px 12px;
-    font-size: 0.92rem;
-  }
-
-  .card {
-    border-radius: 24px;
-  }
-
-  .image-frame {
-    min-height: 220px;
-  }
-
-  .card img {
-    height: 190px;
-  }
-
-  .play-btn {
-    width: 100%;
-  }
-}
-
 /* Game page fixes */
 .play-button {
   border: none;
@@ -623,19 +637,19 @@ button:focus-visible {
 
 @media (max-width: 600px) {
   .page {
-    padding: 0.75rem;
+    padding: 0.9rem;
   }
 
   .back-link {
-    margin-bottom: 0.65rem;
-    padding: 0.65rem 0.95rem;
-    font-size: 0.92rem;
+    margin-bottom: 0.75rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
   }
 
   .page-header {
-    padding: 0.9rem 0.8rem;
-    margin-bottom: 0.85rem;
-    border-radius: 22px;
+    padding: 1rem 0.9rem;
+    margin-bottom: 1rem;
+    border-radius: 24px;
   }
 
   .page-header::before {
@@ -653,10 +667,10 @@ button:focus-visible {
   }
 
   .page-header h1 {
-    font-size: 1.65rem;
-    line-height: 1.08;
-    margin-bottom: 0.35rem;
-    overflow-wrap: anywhere;
+    font-size: 1.9rem;
+    line-height: 1.05;
+    margin-bottom: 0.45rem;
+    word-break: break-word;
   }
 
   .page-subtitle,
@@ -683,7 +697,7 @@ button:focus-visible {
   .mode-tab {
     min-width: 0;
     width: 100%;
-    padding: 0.8rem 0.45rem;
+    padding: 0.78rem 0.4rem;
     font-size: 0.95rem;
     border-radius: 14px;
     box-shadow: 0 6px 14px rgba(42, 54, 88, 0.08);
@@ -695,20 +709,26 @@ button:focus-visible {
     padding: 0.85rem 1rem;
     font-size: 0.98rem;
   }
+
+  .play-btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 420px) {
+  .app,
   .page {
-    padding: 0.65rem;
+    padding: 0.75rem;
   }
 
+  .header,
   .page-header {
     padding: 0.8rem 0.7rem;
     border-radius: 20px;
   }
 
   .page-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .page-subtitle,
@@ -719,80 +739,29 @@ button:focus-visible {
 
   .mode-tab {
     font-size: 0.9rem;
-    padding: 0.75rem 0.35rem;
+    padding: 0.72rem 0.35rem;
+  }
+
+  .card {
+    border-radius: 24px;
+  }
+
+  .image-frame {
+    min-height: 220px;
+  }
+
+  .card img {
+    height: 190px;
   }
 
   .play-button {
     font-size: 0.95rem;
     padding: 0.8rem 0.9rem;
   }
-}
 
-@media (max-width: 600px) {
-  .page {
-    padding: 0.9rem;
-  }
-
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 0.75rem;
-    padding: 0.7rem 1rem;
-    font-size: 0.95rem;
-  }
-
-  .page-header {
-    padding: 1rem 0.9rem;
-    margin-bottom: 1rem;
-    border-radius: 24px;
-  }
-
-  .page-header h1 {
-    font-size: 1.9rem;
-    line-height: 1.05;
-    margin-bottom: 0.45rem;
-    word-break: break-word;
-  }
-
-  .page-subtitle {
-    font-size: 0.95rem;
-    line-height: 1.35;
-  }
-
-  .mode-tabs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.55rem;
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .mode-tab {
-    width: 100%;
-    min-width: 0;
-    padding: 0.78rem 0.4rem;
-    font-size: 0.95rem;
-    border-radius: 14px;
-  }
-}
-
-@media (max-width: 420px) {
-  .page {
-    padding: 0.75rem;
-  }
-
-  .page-header h1 {
-    font-size: 1.7rem;
-  }
-
-  .page-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .mode-tab {
-    font-size: 0.9rem;
-    padding: 0.72rem 0.35rem;
+  .home-section {
+    padding: 13px;
+    border-radius: 22px;
   }
 }
 

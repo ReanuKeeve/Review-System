@@ -11,6 +11,7 @@ const movesDisplayEl = document.getElementById("moves-display");
 const matchesDisplayEl = document.getElementById("matches-display");
 const restartButtonEl = document.getElementById("restart-button");
 const feedbackEl = document.getElementById("memory-feedback");
+const modeTabs = Array.from(document.querySelectorAll(".mode-tab[data-mode]"));
 
 function shuffleArray(array) {
   const copy = [...array];
@@ -92,12 +93,41 @@ function updateStatus() {
 
 function setActiveTab(mode) {
   const tabs = document.querySelectorAll(".mode-tab");
+  const gamePanel = document.getElementById("memory-game");
 
   tabs.forEach((tab) => {
     const isActive = tab.id === `tab-${mode}`;
     tab.classList.toggle("active", isActive);
     tab.setAttribute("aria-selected", isActive ? "true" : "false");
+    tab.tabIndex = isActive ? 0 : -1;
   });
+
+  gamePanel?.setAttribute("aria-labelledby", `tab-${mode}`);
+}
+
+function handleModeTabKeydown(event) {
+  if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+
+  const currentIndex = modeTabs.indexOf(document.activeElement);
+  if (currentIndex === -1) return;
+  event.preventDefault();
+
+  let nextIndex = currentIndex;
+  if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % modeTabs.length;
+  if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + modeTabs.length) % modeTabs.length;
+  if (event.key === "Home") nextIndex = 0;
+  if (event.key === "End") nextIndex = modeTabs.length - 1;
+
+  modeTabs[nextIndex].focus();
+  modeTabs[nextIndex].click();
+}
+
+function initModeTabs() {
+  modeTabs.forEach((tab) => {
+    tab.addEventListener("click", () => startGame(tab.dataset.mode));
+  });
+
+  modeTabs[0]?.closest('[role="tablist"]')?.addEventListener("keydown", handleModeTabKeydown);
 }
 
 function createCardElement(card, index) {
@@ -295,6 +325,5 @@ if (restartButtonEl) {
   });
 }
 
-window.setMode = setMode;
-
+initModeTabs();
 startGame();

@@ -36,13 +36,19 @@
             <span id='current-level' class='player-kicker'>Level 1 &middot; Letter sound</span>
             <h2 id='current-lesson'>Letter A</h2>
           </div>
-          <div class='now-playing' aria-hidden='true'><span></span>Now playing</div>
+          <div class='now-playing' aria-live='polite'><span></span><span id='player-state'>Ready to play</span></div>
         </div>
 
         <div class='video-frame'>
-          <video id='phonics-video' controls playsinline preload='metadata' src='assets/video/phonics/level-1/a.mp4' aria-label='Phonics video for letter A'>
+          <video id='phonics-video' controls playsinline preload='none' src='assets/video/phonics/level-1/a.mp4' aria-label='Phonics video for letter A'>
             Your browser does not support HTML video.
           </video>
+        </div>
+
+        <div class='phonics-navigation' aria-label='Lesson navigation'>
+          <button id='previous-lesson' class='lesson-nav-button' type='button'>&larr; Previous</button>
+          <span id='lesson-progress' class='lesson-progress'>1 of 26</span>
+          <button id='next-lesson' class='lesson-nav-button' type='button'>Next &rarr;</button>
         </div>
       </section>
 

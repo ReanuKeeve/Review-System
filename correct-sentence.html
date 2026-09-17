@@ -26,14 +26,15 @@
       <section class="correct-sentence-container">
         <h3>Choose level:</h3>
 
-        <div class="mode-tabs">
+        <div class="mode-tabs" role="tablist" aria-label="Game level">
           <button
             id="tab-toddler"
             class="mode-tab active"
             type="button"
-            onclick="setMode('toddler')"
             role="tab"
             aria-selected="true"
+            aria-controls="sentence-game"
+            data-mode="toddler"
           >
             Toddler
           </button>
@@ -41,9 +42,10 @@
             id="tab-small"
             class="mode-tab"
             type="button"
-            onclick="setMode('small')"
             role="tab"
             aria-selected="false"
+            aria-controls="sentence-game"
+            data-mode="small"
           >
             Small
           </button>
@@ -51,9 +53,10 @@
             id="tab-middle"
             class="mode-tab"
             type="button"
-            onclick="setMode('middle')"
             role="tab"
             aria-selected="false"
+            aria-controls="sentence-game"
+            data-mode="middle"
           >
             Middle
           </button>
@@ -61,15 +64,16 @@
             id="tab-big"
             class="mode-tab"
             type="button"
-            onclick="setMode('big')"
             role="tab"
             aria-selected="false"
+            aria-controls="sentence-game"
+            data-mode="big"
           >
             Big
           </button>
         </div>
 
-        <div class="game-area">
+        <div id="sentence-game" class="game-area" role="tabpanel" aria-labelledby="tab-toddler">
           <div class="game-status">
             <p id="score-display">Score: 0</p>
             <p id="progress-display">Question: 0 / 0</p>

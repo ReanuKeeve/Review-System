@@ -12,11 +12,15 @@ Kids can select a group, review vocabulary cards, and play word + sentence audio
 
 ## Project Structure
 
-- `index.html`: group selector
-- `small.html`, `middle.html`, `big.html`: group pages that load the shared renderer
+- `index.html`: sectioned home navigation
+- `review.html`: shared Small, Middle, Big, and Alphabet review page
+- `small.html`, `middle.html`, `big.html`, `alphabet.html`: compatibility redirects for older links
+- `phonics.html`: Level 1 and Level 2 video-based phonics practice
 - `css/main.css`: layout and UI styles
 - `js/data.js`: groups and card data
+- `js/data-old.js`: archived historical study data; keep for reference
 - `js/index.js`: UI rendering, tab switching, and audio control
+- `js/review-page.js`: reads the selected review group and initializes the shared page
 - `assets/images/`: card image files
 - `assets/audio/`: word/sentence audio files
 - `review-admin-panel/`: admin interface (if used for dataset management)
@@ -24,8 +28,8 @@ Kids can select a group, review vocabulary cards, and play word + sentence audio
 ## User Flow
 
 1. Open `index.html`.
-2. Click a group tile (`Small`, `Middle`, `Big`).
-3. Group page loads data and calls `initCardPage(reviewData.<group>)`.
+2. Choose a class or learning activity.
+3. Class and Alphabet links open `review.html?group=<group>`.
 4. `js/index.js` renders cards in `#card-container`.
 5. Use tabs to switch between `Words` and `Sentences` (if available).
 6. Tap card audio buttons to play the audio.
@@ -54,6 +58,7 @@ Rules
 ## Behavior
 
 - One audio source plays at a time; playing new audio stops + rewinds previous.
+- Audio elements are created only after the user presses Play; recordings are not preloaded on page load.
 - `Words` mode: show every card in the group.
 - `Sentences` mode: show only cards with `sentenceAudio`.
 - If sentence mode is unavailable, tab is shown disabled.
@@ -82,7 +87,8 @@ Example card entry:
 ## QA Checklist
 
 - [ ] `index.html` opens without JS errors
-- [ ] each group page renders cards correctly
+- [ ] each shared review group renders cards correctly
+- [ ] initial review load creates no audio elements or recording requests
 - [ ] word audio plays for cards with `wordAudio`
 - [ ] sentence mode works where `sentenceAudio` exists
 - [ ] sentence tab is disabled when no sentence cards exist

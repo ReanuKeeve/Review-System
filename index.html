@@ -1,87 +1,92 @@
 <!doctype html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='description' content='Choose a class, learning activity, or review game.' />
     <title>Daily Review</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f8b92809d3f247148b5bb4eb91309f70"}'></script><!-- End Cloudflare Web Analytics -->
+    <link rel='stylesheet' href='css/main.css' />
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f8b92809d3f247148b5bb4eb91309f70"}'></script>
+    <!-- End Cloudflare Web Analytics -->
   </head>
 
   <body>
-    <div class="app">
-      <div class="header">
+    <main class='app'>
+      <header class='header'>
         <h1>Daily Review</h1>
-        <p>Select your child's group</p>
+        <p>Choose a class or learning activity.</p>
+      </header>
+
+      <div class='group-container'>
+        <section class='home-section' aria-labelledby='classes-heading'>
+          <div class='home-section-heading'>
+            <span class='home-section-number'>01</span>
+            <div>
+              <h2 id='classes-heading'>Classes</h2>
+              <p>Review vocabulary and sentences by class.</p>
+            </div>
+          </div>
+          <div class='home-card-list'>
+            <a href='review.html?group=small' class='group-card small'>
+              <div class='emoji'>📘</div>
+              <div class='text'><h2>Small Class</h2><span>小班</span></div>
+            </a>
+            <a href='review.html?group=middle' class='group-card middle'>
+              <div class='emoji'>🎓</div>
+              <div class='text'><h2>Middle Class</h2><span>中班</span></div>
+            </a>
+            <a href='review.html?group=big' class='group-card big'>
+              <div class='emoji'>🚀</div>
+              <div class='text'><h2>Big Class</h2><span>大班</span></div>
+            </a>
+          </div>
+        </section>
+
+        <section class='home-section' aria-labelledby='learning-heading'>
+          <div class='home-section-heading'>
+            <span class='home-section-number'>02</span>
+            <div>
+              <h2 id='learning-heading'>Learning</h2>
+              <p>Practice letters, sounds, and conversations.</p>
+            </div>
+          </div>
+          <div class='home-card-list'>
+            <a href='review.html?group=alphabet' class='group-card alphabet'>
+              <div class='emoji'>🔤</div>
+              <div class='text'><h2>Alphabet</h2><span>字母表</span></div>
+            </a>
+            <a href='phonics.html' class='group-card phonics'>
+              <div class='emoji'>🔊</div>
+              <div class='text'><h2>Phonics</h2><span>自然拼读</span></div>
+            </a>
+            <a href='dialogues.html' class='group-card dialogues'>
+              <div class='emoji'>💬</div>
+              <div class='text'><h2>Dialogues</h2><span>对话练习</span></div>
+            </a>
+          </div>
+        </section>
+
+        <section class='home-section' aria-labelledby='activities-heading'>
+          <div class='home-section-heading'>
+            <span class='home-section-number'>03</span>
+            <div>
+              <h2 id='activities-heading'>Activities</h2>
+              <p>Play a review game or choose a download.</p>
+            </div>
+          </div>
+          <div class='home-card-list'>
+            <a href='minigames.html' class='group-card minigames'>
+              <div class='emoji'>🎮</div>
+              <div class='text'><h2>Minigames</h2><span>小游戏</span></div>
+            </a>
+            <a href='downloads.html' class='group-card downloads'>
+              <div class='emoji'>📥</div>
+              <div class='text'><h2>Download Center</h2><span>下载中心</span></div>
+            </a>
+          </div>
+        </section>
       </div>
-
-      <div class="group-container">
-        <a href="small.html" class="group-card small">
-          <div class="emoji">📘</div>
-          <div class="text">
-            <h2>Small Class</h2>
-            <span>小班</span>
-          </div>
-        </a>
-
-        <a href="middle.html" class="group-card middle">
-          <div class="emoji">🎓</div>
-          <div class="text">
-            <h2>Middle Class</h2>
-            <span>中班</span>
-          </div>
-        </a>
-
-        <a href="big.html" class="group-card big">
-          <div class="emoji">👶</div>
-          <div class="text">
-            <h2>Big Class</h2>
-            <span>大班</span>
-          </div>
-        </a>
-
-        <a href="alphabet.html" class="group-card alphabet">
-          <div class="emoji">🔤</div>
-          <div class="text">
-            <h2>Alphabet</h2>
-            <span>字母表</span>
-          </div>
-        </a>
-
-        <a href="phonics.html" class="group-card phonics">
-          <div class="emoji">🔊</div>
-          <div class="text">
-            <h2>Phonics</h2>
-            <span>自然拼读</span>
-          </div>
-        </a>
-
-        <a href="minigames.html" class="group-card minigames">
-          <div class="emoji">🎮</div>
-          <div class="text">
-            <h2>Minigames</h2>
-            <span>小游戏</span>
-          </div>
-        </a>
-        
-        <a href="dialogues.html" class="group-card dialogues">
-          <div class="emoji">💬</div>
-          <div class="text">
-            <h2>Dialogues</h2>
-            <span>对话练习</span>
-          </div>
-        </a>
-
-        <a href="downloads.html" class="group-card downloads">
-          <div class="emoji"></div>
-          <div class="text">
-            <h2>Download Center</h2>
-            <span>下载中心</span>
-          </div>
-        </a>
-
-        
-      </div>
-    </div>
-  </body>
+    </main>
+   </body>
 </html>
