@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='description' content='Practice Level 1 letter sounds and Level 2 phonics word families.' />
+    <title>Phonics Practice</title>
+    <link rel='stylesheet' href='css/main.css' />
+    <link rel='stylesheet' href='css/phonics.css' />
+  </head>
+
+  <body class='phonics-page'>
+    <main class='page'>
+      <a href='index.html' class='back-link' aria-label='Back to the home page'>&larr; Back</a>
+
+      <header class='page-header phonics-header'>
+        <span class='phonics-eyebrow'>Listen, repeat, learn</span>
+        <h1>Phonics Practice</h1>
+        <p class='page-subtitle'>Choose a level, then tap a sound to start the video.</p>
+      </header>
+
+      <div class='mode-tabs level-tabs' role='tablist' aria-label='Phonics levels'>
+        <button id='level-1-tab' class='mode-tab active' type='button' role='tab' aria-selected='true' aria-controls='phonics-lessons' data-level='1'>
+          <span>Level 1</span>
+          <small>Letter sounds</small>
+        </button>
+        <button id='level-2-tab' class='mode-tab' type='button' role='tab' aria-selected='false' aria-controls='phonics-lessons' data-level='2'>
+          <span>Level 2</span>
+          <small>Word families</small>
+        </button>
+      </div>
+
+      <section class='phonics-player-card' aria-labelledby='current-lesson'>
+        <div class='player-heading'>
+          <div>
+            <span id='current-level' class='player-kicker'>Level 1 &middot; Letter sound</span>
+            <h2 id='current-lesson'>Letter A</h2>
+          </div>
+          <div class='now-playing' aria-hidden='true'><span></span>Now playing</div>
+        </div>
+
+        <div class='video-frame'>
+          <video id='phonics-video' controls playsinline preload='metadata' src='assets/video/phonics/level-1/a.mp4' aria-label='Phonics video for letter A'>
+            Your browser does not support HTML video.
+          </video>
+        </div>
+      </section>
+
+      <section id='phonics-lessons' class='lesson-picker' role='tabpanel' aria-labelledby='level-1-tab'>
+        <div class='lesson-picker-heading'>
+          <div>
+            <span class='section-number'>01</span>
+            <h2 id='lesson-picker-title'>Choose a letter</h2>
+          </div>
+          <p id='lesson-picker-help'>Tap any letter to change the video.</p>
+        </div>
+        <div id='lesson-buttons' class='lesson-buttons' aria-label='Level 1 letter sounds'></div>
+      </section>
+
+      <p id='video-status' class='sr-only' aria-live='polite'></p>
+    </main>
+
+    <script src='js/phonics.js'></script>
+  </body>
+</html>

@@ -211,10 +211,6 @@ body::after {
   color: rgba(255, 255, 255, 0.92);
 }
 
-.group-card.toddler {
-  background: linear-gradient(135deg, #ffb19e 0%, #ff7f9f 100%);
-}
-
 .group-card.small {
   background: linear-gradient(135deg, #80d58a 0%, #43b883 100%);
 }
@@ -229,6 +225,10 @@ body::after {
 
 .group-card.alphabet {
   background: linear-gradient(135deg, #f4d66d 0%, #f3ae3d 100%);
+}
+
+.group-card.phonics {
+  background: linear-gradient(135deg, #7657e8 0%, #ff8f70 100%);
 }
 
 .group-card.minigames {
@@ -462,14 +462,6 @@ body::after {
 }
 
 /* Group page themes via body class if you add them later */
-body.toddler-page,
-body[data-group="toddler"] {
-  --accent: #ff8fa3;
-  --accent-2: #ffb28f;
-  --frame-bg: linear-gradient(180deg, #fff8fb 0%, #fff0ea 100%);
-  --play-shadow: 0 10px 24px rgba(255, 145, 163, 0.24);
-}
-
 body.small-page,
 body[data-group="small"] {
   --accent: #5ccf88;

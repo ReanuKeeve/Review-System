@@ -13,7 +13,7 @@ Kids can select a group, review vocabulary cards, and play word + sentence audio
 ## Project Structure
 
 - `index.html`: group selector
-- `toddler.html`, `small.html`, `middle.html`, `big.html`: group pages that load the shared renderer
+- `small.html`, `middle.html`, `big.html`: group pages that load the shared renderer
 - `css/main.css`: layout and UI styles
 - `js/data.js`: groups and card data
 - `js/index.js`: UI rendering, tab switching, and audio control
@@ -24,7 +24,7 @@ Kids can select a group, review vocabulary cards, and play word + sentence audio
 ## User Flow
 
 1. Open `index.html`.
-2. Click a group tile (`Toddler`, `Small`, `Middle`, `Big`).
+2. Click a group tile (`Small`, `Middle`, `Big`).
 3. Group page loads data and calls `initCardPage(reviewData.<group>)`.
 4. `js/index.js` renders cards in `#card-container`.
 5. Use tabs to switch between `Words` and `Sentences` (if available).
@@ -94,4 +94,3 @@ Example card entry:
 
 - Fully static app; suitable for GitHub Pages, Netlify, Vercel, etc.
 - `js/data.js` drives all group content; maintain the dataset to update.
-

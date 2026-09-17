@@ -1,0 +1,262 @@
+body.phonics-page {
+  --accent: #7657e8;
+  --accent-2: #ff8f70;
+  --ink: #29273a;
+  --muted: #777489;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 190, 112, 0.3), transparent 24rem),
+    radial-gradient(circle at 88% 26%, rgba(124, 101, 235, 0.18), transparent 26rem),
+    #fff9f2;
+}
+
+.phonics-page .page { width: min(100%, 1040px); }
+.phonics-header { padding-block: 30px 26px; }
+
+.phonics-eyebrow {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 9px;
+  color: #7657e8;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.level-tabs {
+  width: min(100%, 560px);
+  margin-inline: auto;
+}
+
+.level-tabs .mode-tab {
+  flex: 1;
+  padding: 12px 22px;
+}
+
+.level-tabs .mode-tab span,
+.level-tabs .mode-tab small { display: block; }
+
+.level-tabs .mode-tab small {
+  margin-top: 3px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.72;
+}
+
+.phonics-player-card,
+.lesson-picker {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(111, 90, 191, 0.11);
+  box-shadow: 0 18px 45px rgba(54, 43, 92, 0.1);
+}
+
+.phonics-player-card {
+  padding: 18px;
+  border-radius: 30px;
+}
+
+.player-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 4px 6px 16px;
+}
+
+.player-kicker {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.player-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+}
+
+.now-playing {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 8px 11px;
+  color: #625e75;
+  background: #f6f3ff;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.now-playing span {
+  width: 8px;
+  height: 8px;
+  background: #6fd19d;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(111, 209, 157, 0.18);
+}
+
+.video-frame {
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #171520;
+  border-radius: 22px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #171520;
+}
+
+.lesson-picker {
+  margin-top: 22px;
+  padding: 22px;
+  border-radius: 28px;
+}
+
+.lesson-picker-heading,
+.lesson-picker-heading > div {
+  display: flex;
+  align-items: center;
+}
+
+.lesson-picker-heading {
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.lesson-picker-heading > div { gap: 12px; }
+
+.lesson-picker-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
+.lesson-picker-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.section-number {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), #a67af1);
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.lesson-buttons {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.lesson-button {
+  position: relative;
+  min-height: 54px;
+  padding: 8px 5px;
+  color: #4a465e;
+  background: #faf8ff;
+  border: 1px solid rgba(118, 87, 232, 0.12);
+  border-radius: 15px;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.16s ease, color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.lesson-button:hover {
+  transform: translateY(-2px);
+  color: var(--accent);
+  box-shadow: 0 8px 18px rgba(73, 57, 132, 0.1);
+}
+
+.lesson-button.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), #9a6de9);
+  border-color: transparent;
+  box-shadow: 0 9px 20px rgba(118, 87, 232, 0.27);
+}
+
+.lesson-button:focus-visible {
+  outline: 3px solid rgba(118, 87, 232, 0.28);
+  outline-offset: 3px;
+}
+
+.lesson-button[data-group-start='true'] { margin-left: 10px; }
+
+.lesson-button[data-group-start='true']::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: -11px;
+  width: 1px;
+  background: rgba(118, 87, 232, 0.16);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 800px) {
+  .lesson-buttons { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .lesson-button[data-group-start='true'] { margin-left: 0; }
+  .lesson-button[data-group-start='true']::before { display: none; }
+}
+
+@media (max-width: 600px) {
+  .phonics-header { padding-block: 20px 18px; }
+  .level-tabs { display: grid; grid-template-columns: 1fr 1fr; }
+  .level-tabs .mode-tab { padding: 11px 8px; }
+  .phonics-player-card { padding: 11px; border-radius: 22px; }
+  .player-heading { padding: 5px 4px 12px; }
+  .now-playing { padding: 7px 9px; font-size: 0.7rem; }
+  .video-frame { border-radius: 15px; }
+  .lesson-picker { margin-top: 14px; padding: 15px; border-radius: 22px; }
+
+  .lesson-picker-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 14px;
+  }
+
+  .lesson-picker-heading p { padding-left: 48px; }
+  .lesson-buttons { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+  .lesson-button { min-height: 48px; border-radius: 13px; }
+}
+
+@media (max-width: 390px) {
+  .now-playing { display: none; }
+  .lesson-buttons { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-button { transition: none; }
+}
