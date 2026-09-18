@@ -69,6 +69,24 @@ body::after {
   background: rgba(186, 225, 255, 0.35);
 }
 
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  padding: 10px 14px;
+  color: #ffffff;
+  background: #29273a;
+  border-radius: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .app {
   width: min(100%, 540px);
   margin: 0 auto;
@@ -293,6 +311,10 @@ body::after {
 
 .group-card.dialogues {
   background: linear-gradient(135deg, #f05e7b 0%, #f3ae3d 100%);
+}
+
+.group-card.archive {
+  background: linear-gradient(135deg, #66758f 0%, #9b7bb5 100%);
 }
 
 .page {
@@ -767,4 +789,15 @@ button:focus-visible {
 
 .play-btn.is-playing {
   opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

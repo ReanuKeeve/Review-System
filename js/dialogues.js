@@ -67,6 +67,7 @@ function createAudioButton(label, audioPath) {
   button.className = 'audio-button';
   button.type = 'button';
   button.textContent = label;
+  button.setAttribute('aria-pressed', 'false');
 
   button.addEventListener('click', () => {
     playAudio(audioPath, button);
@@ -76,8 +77,10 @@ function createAudioButton(label, audioPath) {
 }
 
 function playAudio(audioPath, button) {
+  const playbackStatus = document.getElementById('dialogue-status');
+
   if (!audioPath) {
-    console.warn('Missing audio path for this item.');
+    if (playbackStatus) playbackStatus.textContent = 'No recording is available for this item.';
     return;
   }
 
@@ -88,24 +91,39 @@ function playAudio(audioPath, button) {
 
   if (currentButton) {
     currentButton.classList.remove('playing');
+    currentButton.setAttribute('aria-pressed', 'false');
   }
 
   currentAudio = new Audio(audioPath);
   currentButton = button;
   button.classList.add('playing');
+  button.setAttribute('aria-pressed', 'true');
+  if (playbackStatus) playbackStatus.textContent = 'Playing ' + button.textContent + '.';
 
   currentAudio.addEventListener('ended', () => {
     button.classList.remove('playing');
+    button.setAttribute('aria-pressed', 'false');
+    if (playbackStatus) playbackStatus.textContent = 'Playback finished.';
     currentAudio = null;
     currentButton = null;
   });
 
   currentAudio.addEventListener('error', () => {
     button.classList.remove('playing');
+    button.setAttribute('aria-pressed', 'false');
+    if (playbackStatus) playbackStatus.textContent = 'This recording is unavailable.';
     currentAudio = null;
     currentButton = null;
     console.error(`Could not load audio: ${audioPath}`);
   });
 
-  currentAudio.play();
+  currentAudio.play().catch(() => {
+    button.classList.remove('playing');
+    button.setAttribute('aria-pressed', 'false');
+    if (playbackStatus) playbackStatus.textContent = 'Playback could not start.';
+  });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof dialogueData !== 'undefined') initDialoguePage(dialogueData);
+});

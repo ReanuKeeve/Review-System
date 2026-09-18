@@ -15,35 +15,29 @@
     <title>Correct Sentence</title>
   </head>
   <body>
-    <main class="page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <main id="main-content" class="page">
       <a href="minigames.html" class="back-link">← Back</a>
 
       <header class="page-header">
         <h1>Correct Sentence</h1>
-        <h2 class="page-subtitle">Choose the correct sentence that matches the image.</h2>
+        <h2 class="page-subtitle">Choose the sentence that matches the picture and build your best score.</h2>
       </header>
 
-      <section class="correct-sentence-container">
-        <h3>Choose level:</h3>
+      <section class="game-shell correct-sentence-container" aria-label="Correct sentence game">
+        <div class="game-intro">
+          <span class="game-eyebrow">How to play</span>
+          <h2>Choose the matching sentence</h2>
+          <p>Look at the picture, choose an answer to hear it, then submit your choice.</p>
+        </div>
 
-        <div class="mode-tabs" role="tablist" aria-label="Game level">
+        <div class="mode-tabs game-level-tabs" role="tablist" aria-label="Choose a class level">
           <button
-            id="tab-toddler"
+            id="tab-small"
             class="mode-tab active"
             type="button"
             role="tab"
             aria-selected="true"
-            aria-controls="sentence-game"
-            data-mode="toddler"
-          >
-            Toddler
-          </button>
-          <button
-            id="tab-small"
-            class="mode-tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
             aria-controls="sentence-game"
             data-mode="small"
           >
@@ -73,26 +67,31 @@
           </button>
         </div>
 
-        <div id="sentence-game" class="game-area" role="tabpanel" aria-labelledby="tab-toddler">
-          <div class="game-status">
-            <p id="score-display">Score: 0</p>
-            <p id="progress-display">Question: 0 / 0</p>
+        <div id="sentence-game" class="game-area" role="tabpanel" aria-labelledby="tab-small">
+          <div class="game-status" aria-label="Current quiz status">
+            <p><span>Level</span><strong id="level-display">Small</strong></p>
+            <p><span>Score</span><strong id="score-display">0</strong></p>
+            <p><span>Question</span><strong id="progress-display">0 / 0</strong></p>
+            <p><span>Best</span><strong id="best-display">—</strong></p>
           </div>
 
-          <div class="question-card">
+          <progress class="question-progress" id="question-progress" value="0" max="1">0%</progress>
+
+          <div class="question-card" aria-labelledby="question-heading">
+            <h2 class="question-heading" id="question-heading">Question 1</h2>
             <div class="image-wrap">
-              <img id="question-image" src="" alt="" />
+              <img id="question-image" alt="" hidden />
             </div>
 
             <div id="answer-buttons" class="answer-buttons"></div>
 
             <div class="game-controls">
-              <button id="submit-button" type="button" class="play-button">Submit</button>
+              <button id="submit-button" type="button" class="play-button" disabled>Submit answer</button>
               <button id="next-button" type="button" class="play-button" hidden>Next</button>
-              <button id="restart-button" type="button" class="play-button">Restart</button>
+              <button id="restart-button" type="button" class="play-button secondary-button">New quiz</button>
             </div>
 
-            <p id="feedback-message" aria-live="polite"></p>
+            <p id="feedback-message" class="game-feedback" role="status" aria-live="polite">Choose an answer to begin.</p>
           </div>
         </div>
       </section>

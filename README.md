@@ -23,7 +23,7 @@ Kids can select a group, review vocabulary cards, and play word + sentence audio
 - `js/review-page.js`: reads the selected review group and initializes the shared page
 - `assets/images/`: card image files
 - `assets/audio/`: word/sentence audio files
-- `review-admin-panel/`: admin interface (if used for dataset management)
+- `review-admin-panel/`: preservation-first editor for exact `data.js` fields and paths
 
 ## User Flow
 
@@ -62,6 +62,19 @@ Rules
 - `Words` mode: show every card in the group.
 - `Sentences` mode: show only cards with `sentenceAudio`.
 - If sentence mode is unavailable, tab is shown disabled.
+- Keyboard users can move through tabs with Left/Right, Home, and End.
+- Skip links and live playback status are available to assistive technology.
+
+## Admin Workflow
+
+The admin panel edits every stored card field directly. It does not generate keys, filenames, folders, suffixes, or extensions from a title.
+
+1. Open `review-admin-panel/admin.html` through the local site.
+2. Edit the currently loaded website data, or choose **Open existing data.js** in a compatible browser.
+3. Review and edit exact keys, text, image paths, and audio paths.
+4. Use **Save opened data.js**, **Copy exact source**, or **Download exact copy**.
+
+Only open trusted JavaScript data files. `js/data-old.js` is a historical archive and should remain unchanged unless it is intentionally being maintained as an archive.
 
 ## Add/Update Content
 

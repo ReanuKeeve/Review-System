@@ -1,0 +1,111 @@
+.archive-notice {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(121, 106, 148, 0.2);
+  border-left: 5px solid #8873a5;
+  border-radius: 18px;
+  background: rgba(249, 246, 255, 0.9);
+  color: var(--text-main);
+  box-shadow: 0 7px 20px rgba(78, 65, 99, 0.06);
+}
+
+.archive-notice strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.archive-notice p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.archive-controls {
+  margin-bottom: 1.25rem;
+  padding: 1.15rem;
+  border: 1px solid rgba(255, 206, 179, 0.42);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-soft);
+}
+
+.archive-controls h2 {
+  margin: 0 0 0.85rem;
+  color: var(--text-main);
+  font-size: 1.12rem;
+  text-align: center;
+}
+
+.archive-group-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.archive-group-tabs .mode-tab {
+  min-width: 0;
+  width: 100%;
+}
+
+.archive-search-wrap {
+  width: min(100%, 560px);
+  margin: 0 auto;
+}
+
+.archive-search-wrap label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #50566a;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.archive-search-wrap input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem 0.9rem;
+  border: 2px solid #dedfe6;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--text-main);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.archive-search-wrap input:focus-visible {
+  border-color: #8873a5;
+  outline: 3px solid rgba(136, 115, 165, 0.2);
+  outline-offset: 2px;
+}
+
+.archive-results-status {
+  min-height: 1.4em;
+  margin: 0.75rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.review-mode-tabs {
+  width: min(100%, 520px);
+  margin-inline: auto;
+}
+
+@media (max-width: 700px) {
+  .archive-group-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .archive-notice,
+  .archive-controls {
+    padding: 0.9rem;
+    border-radius: 19px;
+  }
+
+  .archive-group-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

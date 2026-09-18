@@ -1,17 +1,32 @@
-let currentMode = "toddler";
+let currentMode = "small";
 let deck = [];
 let flippedCards = [];
 let matchedPairs = 0;
 let moves = 0;
 let boardLocked = false;
 let currentAudio = null;
+let mismatchTimer = null;
 
+const MEMORY_BEST_KEY = "review-memory-best-v1";
 const cardsContainerEl = document.getElementById("memory-cards");
 const movesDisplayEl = document.getElementById("moves-display");
 const matchesDisplayEl = document.getElementById("matches-display");
+const levelDisplayEl = document.getElementById("level-display");
+const bestDisplayEl = document.getElementById("best-display");
 const restartButtonEl = document.getElementById("restart-button");
 const feedbackEl = document.getElementById("memory-feedback");
 const modeTabs = Array.from(document.querySelectorAll(".mode-tab[data-mode]"));
+
+function loadBestScores() {
+  try {
+    const savedScores = JSON.parse(localStorage.getItem(MEMORY_BEST_KEY));
+    return savedScores && typeof savedScores === "object" ? savedScores : {};
+  } catch {
+    return {};
+  }
+}
+
+let bestScores = loadBestScores();
 
 function shuffleArray(array) {
   const copy = [...array];
@@ -26,7 +41,6 @@ function shuffleArray(array) {
 
 function stopCurrentAudio() {
   if (!currentAudio) return;
-
   currentAudio.pause();
   currentAudio.currentTime = 0;
   currentAudio = null;
@@ -34,11 +48,10 @@ function stopCurrentAudio() {
 
 function playAudio(src) {
   if (!src) return;
-
   stopCurrentAudio();
   currentAudio = new Audio(src);
   currentAudio.play().catch(() => {
-    // Ignore playback errors
+    // Playback may be unavailable; the visual game remains usable.
   });
 }
 
@@ -51,10 +64,12 @@ function getPlayableItems(mode) {
 }
 
 function getPairCount(mode) {
-  if (mode === "toddler") return 4;
   if (mode === "small") return 5;
-  if (mode === "middle") return 6;
   return 6;
+}
+
+function getModeLabel(mode) {
+  return mode.charAt(0).toUpperCase() + mode.slice(1);
 }
 
 function buildDeck(mode) {
@@ -63,7 +78,6 @@ function buildDeck(mode) {
 
   playableItems.forEach((item) => {
     cards.push({
-      id: `${item.key}-word`,
       pairKey: item.key,
       type: "word",
       text: item.title,
@@ -71,9 +85,7 @@ function buildDeck(mode) {
       alt: item.alt || item.title,
       audio: item.wordAudio || ""
     });
-
     cards.push({
-      id: `${item.key}-image`,
       pairKey: item.key,
       type: "image",
       text: "",
@@ -87,16 +99,20 @@ function buildDeck(mode) {
 }
 
 function updateStatus() {
-  movesDisplayEl.textContent = `Moves: ${moves}`;
-  matchesDisplayEl.textContent = `Matches: ${matchedPairs}`;
+  const totalPairs = deck.length / 2;
+  movesDisplayEl.textContent = String(moves);
+  matchesDisplayEl.textContent = `${matchedPairs} / ${totalPairs}`;
+  levelDisplayEl.textContent = getModeLabel(currentMode);
+  bestDisplayEl.textContent = bestScores[currentMode]
+    ? `${bestScores[currentMode]} moves`
+    : "—";
 }
 
 function setActiveTab(mode) {
-  const tabs = document.querySelectorAll(".mode-tab");
   const gamePanel = document.getElementById("memory-game");
 
-  tabs.forEach((tab) => {
-    const isActive = tab.id === `tab-${mode}`;
+  modeTabs.forEach((tab) => {
+    const isActive = tab.dataset.mode === mode;
     tab.classList.toggle("active", isActive);
     tab.setAttribute("aria-selected", isActive ? "true" : "false");
     tab.tabIndex = isActive ? 0 : -1;
@@ -126,7 +142,6 @@ function initModeTabs() {
   modeTabs.forEach((tab) => {
     tab.addEventListener("click", () => startGame(tab.dataset.mode));
   });
-
   modeTabs[0]?.closest('[role="tablist"]')?.addEventListener("keydown", handleModeTabKeydown);
 }
 
@@ -135,16 +150,18 @@ function createCardElement(card, index) {
   button.type = "button";
   button.className = "memory-card";
   button.dataset.index = String(index);
-  button.setAttribute("aria-label", "Memory card");
+  button.setAttribute("aria-label", `Card ${index + 1}, face down`);
+  button.setAttribute("aria-pressed", "false");
 
-  const inner = document.createElement("div");
+  const inner = document.createElement("span");
   inner.className = "memory-card-inner";
+  inner.setAttribute("aria-hidden", "true");
 
-  const front = document.createElement("div");
+  const front = document.createElement("span");
   front.className = "memory-card-face memory-card-front";
   front.textContent = "?";
 
-  const back = document.createElement("div");
+  const back = document.createElement("span");
   back.className = "memory-card-face memory-card-back";
 
   if (card.type === "word") {
@@ -156,26 +173,18 @@ function createCardElement(card, index) {
     const image = document.createElement("img");
     image.className = "memory-card-image";
     image.src = card.image;
-    image.alt = card.alt;
+    image.alt = "";
     back.appendChild(image);
   }
 
-  inner.appendChild(front);
-  inner.appendChild(back);
+  inner.append(front, back);
   button.appendChild(inner);
-
   button.addEventListener("click", () => handleCardClick(index));
-
   return button;
 }
 
 function renderBoard() {
-  cardsContainerEl.innerHTML = "";
-
-  deck.forEach((card, index) => {
-    const cardEl = createCardElement(card, index);
-    cardsContainerEl.appendChild(cardEl);
-  });
+  cardsContainerEl.replaceChildren(...deck.map(createCardElement));
 }
 
 function getCardElements() {
@@ -184,9 +193,12 @@ function getCardElements() {
 
 function revealCard(index) {
   const cardEl = getCardElements()[index];
-  if (!cardEl) return;
+  const card = deck[index];
+  if (!cardEl || !card) return;
 
   cardEl.classList.add("is-flipped");
+  cardEl.setAttribute("aria-pressed", "true");
+  cardEl.setAttribute("aria-label", `${card.text || card.alt}, face up`);
 }
 
 function hideCard(index) {
@@ -194,6 +206,8 @@ function hideCard(index) {
   if (!cardEl) return;
 
   cardEl.classList.remove("is-flipped");
+  cardEl.setAttribute("aria-pressed", "false");
+  cardEl.setAttribute("aria-label", `Card ${index + 1}, face down`);
 }
 
 function markMatched(index) {
@@ -201,6 +215,8 @@ function markMatched(index) {
   if (!cardEl) return;
 
   cardEl.classList.add("is-matched");
+  cardEl.setAttribute("aria-label", `${deck[index].text || deck[index].alt}, matched`);
+  cardEl.setAttribute("aria-disabled", "true");
 }
 
 function resetTurn() {
@@ -209,56 +225,59 @@ function resetTurn() {
 }
 
 function finishGame() {
-  feedbackEl.textContent = `Great job! You matched all pairs in ${moves} moves.`;
+  const previousBest = Number(bestScores[currentMode]) || 0;
+  const isNewBest = previousBest === 0 || moves < previousBest;
+
+  if (isNewBest) {
+    bestScores[currentMode] = moves;
+    try {
+      localStorage.setItem(MEMORY_BEST_KEY, JSON.stringify(bestScores));
+    } catch {
+      // The game still works when browser storage is unavailable.
+    }
+  }
+
+  updateStatus();
+  feedbackEl.textContent = isNewBest
+    ? `New best! You matched all pairs in ${moves} moves.`
+    : `Great job! You matched all pairs in ${moves} moves.`;
 }
 
 function handleMismatch() {
   boardLocked = true;
-  feedbackEl.textContent = "Try again.";
+  cardsContainerEl.setAttribute("aria-busy", "true");
+  feedbackEl.textContent = "Not a match. Try again.";
 
-  setTimeout(() => {
-    flippedCards.forEach((index) => hideCard(index));
+  mismatchTimer = window.setTimeout(() => {
+    flippedCards.forEach(hideCard);
     resetTurn();
+    cardsContainerEl.setAttribute("aria-busy", "false");
+    mismatchTimer = null;
   }, 850);
 }
 
 function handleMatch() {
   const [firstIndex, secondIndex] = flippedCards;
-
   markMatched(firstIndex);
   markMatched(secondIndex);
-
   matchedPairs += 1;
   updateStatus();
-
-  const matchedCard = deck[firstIndex];
-  playAudio(matchedCard.audio);
   feedbackEl.textContent = "Match!";
-
   resetTurn();
 
-  if (matchedPairs === deck.length / 2) {
-    finishGame();
-  }
+  if (matchedPairs === deck.length / 2) finishGame();
 }
 
 function checkForMatch() {
   const [firstIndex, secondIndex] = flippedCards;
   const firstCard = deck[firstIndex];
   const secondCard = deck[secondIndex];
-
   moves += 1;
   updateStatus();
 
-  const isMatch =
-    firstCard.pairKey === secondCard.pairKey &&
-    firstCard.type !== secondCard.type;
-
-  if (isMatch) {
-    handleMatch();
-  } else {
-    handleMismatch();
-  }
+  const isMatch = firstCard.pairKey === secondCard.pairKey && firstCard.type !== secondCard.type;
+  if (isMatch) handleMatch();
+  else handleMismatch();
 }
 
 function handleCardClick(index) {
@@ -266,31 +285,25 @@ function handleCardClick(index) {
 
   const clickedCard = deck[index];
   const clickedEl = getCardElements()[index];
-
   if (!clickedCard || !clickedEl) return;
-  if (clickedEl.classList.contains("is-flipped")) return;
-  if (clickedEl.classList.contains("is-matched")) return;
+  if (clickedEl.classList.contains("is-flipped") || clickedEl.classList.contains("is-matched")) return;
 
   revealCard(index);
   flippedCards.push(index);
+  playAudio(clickedCard.audio);
 
-  if (clickedCard.audio) {
-    playAudio(clickedCard.audio);
-  }
-
-  if (flippedCards.length === 2) {
-    checkForMatch();
-  }
+  if (flippedCards.length === 2) checkForMatch();
 }
 
 function showEmptyState(message) {
   stopCurrentAudio();
-  cardsContainerEl.innerHTML = "";
+  cardsContainerEl.replaceChildren();
   feedbackEl.textContent = message;
   moves = 0;
   matchedPairs = 0;
   flippedCards = [];
   boardLocked = false;
+  cardsContainerEl.setAttribute("aria-busy", "false");
   updateStatus();
 }
 
@@ -298,32 +311,26 @@ function startGame(mode = currentMode) {
   currentMode = mode;
   setActiveTab(mode);
   stopCurrentAudio();
+  if (mismatchTimer !== null) window.clearTimeout(mismatchTimer);
+  mismatchTimer = null;
 
   deck = buildDeck(mode);
   flippedCards = [];
   matchedPairs = 0;
   moves = 0;
   boardLocked = false;
+  cardsContainerEl.setAttribute("aria-busy", "false");
 
   if (deck.length === 0) {
-    showEmptyState("No matching cards added for this level yet.");
+    showEmptyState("No matching cards have been added for this level yet.");
     return;
   }
 
   renderBoard();
   updateStatus();
-  feedbackEl.textContent = "";
+  feedbackEl.textContent = "Choose a card to begin.";
 }
 
-function setMode(mode) {
-  startGame(mode);
-}
-
-if (restartButtonEl) {
-  restartButtonEl.addEventListener("click", () => {
-    startGame(currentMode);
-  });
-}
-
+restartButtonEl?.addEventListener("click", () => startGame(currentMode));
 initModeTabs();
 startGame();

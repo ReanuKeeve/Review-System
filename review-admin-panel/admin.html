@@ -218,6 +218,7 @@
     }
 
     input[type="text"],
+    input[type="search"],
     textarea,
     select {
       width: 100%;
@@ -230,6 +231,7 @@
     }
 
     input[type="text"]:focus,
+    input[type="search"]:focus,
     textarea:focus,
     select:focus {
       outline: none;
@@ -286,6 +288,13 @@
     button:hover {
       transform: translateY(-1px);
       box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid rgba(59, 130, 246, 0.3);
+      outline-offset: 2px;
     }
 
     button.primary {
@@ -396,6 +405,29 @@
       font-family: Consolas, Monaco, monospace;
       font-size: 0.92rem;
       white-space: pre;
+      background: #f8fafc;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      color: #fff;
+      background: #162033;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    body[data-dirty="true"] #dirtyIndicator {
+      color: var(--warning);
     }
 
     .status {
@@ -477,15 +509,37 @@
         flex: 1 1 auto;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to editor</a>
   <div class="app">
-    <aside class="sidebar">
+    <aside class="sidebar" aria-label="Admin navigation">
       <div class="sidebar-inner">
         <section class="brand">
           <h1>Review Admin</h1>
-          <p>Quick editor for your review cards. Add simple entries, auto-build paths, and export a clean <code>data.js</code>.</p>
+          <p>Preservation-first editor for the real card fields in <code>data.js</code>. Paths, punctuation, and extensions are never generated or normalized.</p>
+          <p id="dirtyIndicator" class="helper" aria-live="polite">No unsaved changes.</p>
+        </section>
+
+        <section class="panel tight">
+          <div class="panel-title" style="margin-bottom: 14px;">
+            <h2>Data file</h2>
+            <p id="fileSupport" class="muted">Checking browser file support…</p>
+          </div>
+          <div class="form-stack">
+            <button id="openFileBtn" class="primary" type="button">Open existing data.js</button>
+            <button id="saveFileBtn" class="success" type="button" disabled>Save opened data.js</button>
+            <button id="resetBtn" type="button">Reload website data</button>
+          </div>
         </section>
 
         <section class="panel tight">
@@ -502,7 +556,7 @@
         <section class="panel tight">
           <div class="panel-title" style="margin-bottom: 14px;">
             <h2>Add section</h2>
-            <p class="muted">Use a short key like <code>toddler</code> or <code>alphabet</code>.</p>
+            <p class="muted">Use the exact group key required by the website, such as <code>small</code> or <code>alphabet</code>.</p>
           </div>
 
           <div class="form-stack">
@@ -519,16 +573,15 @@
             <h2>How it works</h2>
           </div>
           <p class="helper">
-            1. Pick a section.<br>
-            2. Enter titles and sentences.<br>
-            3. Generate the final file.<br>
-            4. Replace your current <code>/js/data.js</code>.
+            1. Edit the website data already loaded, or open a trusted <code>data.js</code>.<br>
+            2. Edit exact field values and paths.<br>
+            3. Save the opened file, or copy/download an exact source copy.
           </p>
         </section>
       </div>
     </aside>
 
-    <main class="content">
+    <main id="main-content" class="content">
       <section class="panel">
         <div class="panel-header">
           <div class="panel-title">
@@ -547,48 +600,14 @@
       <section class="panel">
         <div class="panel-header">
           <div class="panel-title">
-            <h2>Section defaults</h2>
-            <p class="muted">Set these once per section so each card stays simple.</p>
+            <h2>Find cards</h2>
+            <p class="muted">Search the active section across titles, keys, sentences, and exact paths.</p>
           </div>
         </div>
 
-        <div class="grid">
-          <div class="field">
-            <label for="imageFolder">Image folder</label>
-            <input id="imageFolder" type="text" placeholder="assets/images" />
-          </div>
-
-          <div class="field">
-            <label for="audioFolder">Audio folder</label>
-            <input id="audioFolder" type="text" placeholder="assets/audio" />
-          </div>
-
-          <div class="field">
-            <label for="imageExt">Image extension</label>
-            <input id="imageExt" type="text" placeholder=".webp" />
-          </div>
-
-          <div class="field">
-            <label for="audioExt">Audio extension</label>
-            <input id="audioExt" type="text" placeholder=".mp3" />
-          </div>
-
-          <div class="field full">
-            <label for="sentenceSuffix">Sentence audio suffix</label>
-            <input id="sentenceSuffix" type="text" placeholder="-sentence" />
-          </div>
-        </div>
-
-        <div class="checkbox-row" style="margin-top: 18px;">
-          <label class="checkbox">
-            <input id="autoKey" type="checkbox" checked />
-            <span>Generate key from title</span>
-          </label>
-
-          <label class="checkbox">
-            <input id="autoAlt" type="checkbox" checked />
-            <span>Generate alt from title</span>
-          </label>
+        <div class="field">
+          <label for="searchItems">Search active section</label>
+          <input id="searchItems" type="search" placeholder="Search values or paths" autocomplete="off" />
         </div>
       </section>
 
@@ -596,7 +615,7 @@
         <div class="panel-header">
           <div class="panel-title">
             <h2>Items</h2>
-            <p class="muted">Focus on title and sentence. Paths are previewed automatically.</p>
+            <p class="muted">Every stored field is shown. Nothing changes unless you edit it.</p>
           </div>
         </div>
 
@@ -606,26 +625,26 @@
       <section class="panel">
         <div class="panel-header">
           <div class="panel-title">
-            <h2>Export</h2>
-            <p class="muted">Generate a replacement for your current <code>/js/data.js</code>.</p>
+            <h2>Exact source preview</h2>
+            <p class="muted">This preserves the current section order, card order, values, filenames, and extensions.</p>
           </div>
 
           <div class="toolbar">
-            <button id="generateBtn" class="success" type="button">Generate</button>
-            <button id="copyBtn" type="button">Copy</button>
-            <button id="downloadBtn" type="button">Download</button>
+            <button id="previewBtn" class="success" type="button">Refresh preview</button>
+            <button id="copyBtn" type="button">Copy exact source</button>
+            <button id="downloadBtn" type="button">Download exact copy</button>
           </div>
         </div>
 
         <div class="output-wrap">
-          <textarea id="output" class="code-output" spellcheck="false"></textarea>
-          <div id="status" class="status"></div>
+          <textarea id="output" class="code-output" spellcheck="false" readonly aria-label="Exact data.js source preview"></textarea>
+          <div id="status" class="status" role="status" aria-live="polite"></div>
         </div>
       </section>
     </main>
   </div>
 
-  <script src="/js/data.js"></script>
+  <script src="../js/data.js"></script>
   <script src="./admin.js"></script>
 </body>
 </html>

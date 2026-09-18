@@ -1,4 +1,4 @@
-let currentMode = "toddler";
+let currentMode = "small";
 let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
@@ -6,30 +6,43 @@ let selectedAnswer = "";
 let submitted = false;
 let currentAudio = null;
 
+const SENTENCE_BEST_KEY = "review-sentence-best-v1";
 const imageEl = document.getElementById("question-image");
 const answerButtonsEl = document.getElementById("answer-buttons");
 const scoreDisplayEl = document.getElementById("score-display");
 const progressDisplayEl = document.getElementById("progress-display");
+const levelDisplayEl = document.getElementById("level-display");
+const bestDisplayEl = document.getElementById("best-display");
+const questionProgressEl = document.getElementById("question-progress");
+const questionHeadingEl = document.getElementById("question-heading");
 const feedbackMessageEl = document.getElementById("feedback-message");
 const submitButtonEl = document.getElementById("submit-button");
 const nextButtonEl = document.getElementById("next-button");
 const restartButtonEl = document.getElementById("restart-button");
 const modeTabs = Array.from(document.querySelectorAll(".mode-tab[data-mode]"));
 
+function loadBestScores() {
+  try {
+    const savedScores = JSON.parse(localStorage.getItem(SENTENCE_BEST_KEY));
+    return savedScores && typeof savedScores === "object" ? savedScores : {};
+  } catch {
+    return {};
+  }
+}
+
+let bestScores = loadBestScores();
+
 function shuffleArray(array) {
   const copy = [...array];
-
   for (let i = copy.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
     [copy[i], copy[j]] = [copy[j], copy[i]];
   }
-
   return copy;
 }
 
 function stopCurrentAudio() {
   if (!currentAudio) return;
-
   currentAudio.pause();
   currentAudio.currentTime = 0;
   currentAudio = null;
@@ -37,12 +50,10 @@ function stopCurrentAudio() {
 
 function playAudio(src) {
   if (!src) return;
-
   stopCurrentAudio();
   currentAudio = new Audio(src);
-
   currentAudio.play().catch(() => {
-    // Ignore playback errors
+    // Playback may be unavailable; the visual quiz remains usable.
   });
 }
 
@@ -55,39 +66,25 @@ function getPlayableItems(mode) {
 }
 
 function generateOptions(correctItem, items, optionCount = 3) {
-  const wrongPool = items.filter(
-    (item) => item.key !== correctItem.key && item.sentenceText
-  );
-
+  const wrongPool = items.filter((item) => item.key !== correctItem.key && item.sentenceText);
   const selectedWrongItems = shuffleArray(wrongPool).slice(0, optionCount - 1);
-
   const options = [
-    {
-      text: correctItem.sentenceText,
-      audio: correctItem.sentenceAudio || ""
-    },
+    { text: correctItem.sentenceText, audio: correctItem.sentenceAudio || "" },
     ...selectedWrongItems.map((item) => ({
       text: item.sentenceText,
       audio: item.sentenceAudio || ""
     }))
   ];
-
   return shuffleArray(options);
 }
 
 function buildQuestions(mode) {
   const items = getPlayableItems(mode);
-
   return items
     .map((item) => {
       const options = generateOptions(item, items);
-
-      if (options.length < 2) {
-        return null;
-      }
-
+      if (options.length < 2) return null;
       return {
-        key: item.key,
         image: item.image,
         alt: item.alt || item.title || "Question image",
         correct: item.sentenceText,
@@ -98,24 +95,39 @@ function buildQuestions(mode) {
     .filter(Boolean);
 }
 
+function getModeLabel(mode) {
+  return mode.charAt(0).toUpperCase() + mode.slice(1);
+}
+
+function getBestRecord(mode) {
+  const record = bestScores[mode];
+  if (record && typeof record === "object") return record;
+  if (Number.isFinite(Number(record))) return { score: Number(record), total: questions.length };
+  return null;
+}
+
 function updateStatus() {
-  scoreDisplayEl.textContent = `Score: ${score}`;
-  progressDisplayEl.textContent = `Question: ${
-    questions.length === 0 ? 0 : currentQuestionIndex + 1
-  } / ${questions.length}`;
+  const questionNumber = questions.length === 0 ? 0 : currentQuestionIndex + 1;
+  const bestRecord = getBestRecord(currentMode);
+
+  scoreDisplayEl.textContent = String(score);
+  progressDisplayEl.textContent = `${questionNumber} / ${questions.length}`;
+  levelDisplayEl.textContent = getModeLabel(currentMode);
+  bestDisplayEl.textContent = bestRecord ? `${bestRecord.score} / ${bestRecord.total}` : "—";
+  questionProgressEl.max = Math.max(questions.length, 1);
+  questionProgressEl.value = questionNumber;
+  questionProgressEl.textContent = `${questionNumber} of ${questions.length}`;
+  questionHeadingEl.textContent = questionNumber > 0 ? `Question ${questionNumber}` : "Question";
 }
 
 function setActiveTab(mode) {
-  const tabs = document.querySelectorAll(".mode-tab");
   const gamePanel = document.getElementById("sentence-game");
-
-  tabs.forEach((tab) => {
-    const isActive = tab.id === `tab-${mode}`;
+  modeTabs.forEach((tab) => {
+    const isActive = tab.dataset.mode === mode;
     tab.classList.toggle("active", isActive);
     tab.setAttribute("aria-selected", isActive ? "true" : "false");
     tab.tabIndex = isActive ? 0 : -1;
   });
-
   gamePanel?.setAttribute("aria-labelledby", `tab-${mode}`);
 }
 
@@ -140,74 +152,74 @@ function initModeTabs() {
   modeTabs.forEach((tab) => {
     tab.addEventListener("click", () => startGame(tab.dataset.mode));
   });
-
   modeTabs[0]?.closest('[role="tablist"]')?.addEventListener("keydown", handleModeTabKeydown);
-}
-
-function clearAnswers() {
-  answerButtonsEl.innerHTML = "";
 }
 
 function getCurrentQuestion() {
   return questions[currentQuestionIndex];
 }
 
-function setButtonsDisabled(disabled) {
-  const buttons = answerButtonsEl.querySelectorAll("button");
-
-  buttons.forEach((button) => {
+function setAnswerButtonsDisabled(disabled) {
+  answerButtonsEl.querySelectorAll("button").forEach((button) => {
     button.disabled = disabled;
   });
 }
 
 function selectAnswer(answerText, audioSrc) {
   if (submitted) return;
-
   selectedAnswer = answerText;
 
-  const buttons = answerButtonsEl.querySelectorAll("button");
-  buttons.forEach((button) => {
-    const isSelected = button.textContent === answerText;
+  answerButtonsEl.querySelectorAll("button").forEach((button) => {
+    const isSelected = button.dataset.answer === answerText;
     button.classList.toggle("selected", isSelected);
+    button.setAttribute("aria-pressed", isSelected ? "true" : "false");
   });
 
-  feedbackMessageEl.textContent = "";
+  submitButtonEl.disabled = false;
+  feedbackMessageEl.textContent = "Answer selected. Submit when you are ready.";
+  feedbackMessageEl.dataset.tone = "";
   playAudio(audioSrc);
 }
 
-function handleSubmit() {
-  if (submitted) return;
+function saveBestScore() {
+  const previousBest = getBestRecord(currentMode);
+  const currentRate = questions.length ? score / questions.length : 0;
+  const previousRate = previousBest?.total ? previousBest.score / previousBest.total : -1;
+  const isNewBest = !previousBest || currentRate > previousRate;
 
+  if (isNewBest) {
+    bestScores[currentMode] = { score, total: questions.length };
+    try {
+      localStorage.setItem(SENTENCE_BEST_KEY, JSON.stringify(bestScores));
+    } catch {
+      // The game still works when browser storage is unavailable.
+    }
+  }
+  return isNewBest;
+}
+
+function handleSubmit() {
+  if (submitted || !selectedAnswer) return;
   const question = getCurrentQuestion();
   if (!question) return;
 
-  if (!selectedAnswer) {
-    feedbackMessageEl.textContent = "Please choose an answer first.";
-    return;
-  }
-
   submitted = true;
-  setButtonsDisabled(true);
+  setAnswerButtonsDisabled(true);
+  submitButtonEl.disabled = true;
 
-  const buttons = answerButtonsEl.querySelectorAll("button");
-
-  buttons.forEach((button) => {
-    const buttonText = button.textContent;
-
-    if (buttonText === question.correct) {
-      button.classList.add("correct");
-    }
-
-    if (buttonText === selectedAnswer && selectedAnswer !== question.correct) {
-      button.classList.add("wrong");
-    }
+  answerButtonsEl.querySelectorAll("button").forEach((button) => {
+    const answer = button.dataset.answer;
+    if (answer === question.correct) button.classList.add("correct");
+    if (answer === selectedAnswer && selectedAnswer !== question.correct) button.classList.add("wrong");
   });
 
   if (selectedAnswer === question.correct) {
     score += 1;
     feedbackMessageEl.textContent = "Correct!";
+    feedbackMessageEl.dataset.tone = "success";
   } else {
     feedbackMessageEl.textContent = `Not quite. Correct answer: ${question.correct}`;
+    feedbackMessageEl.dataset.tone = "error";
   }
 
   playAudio(question.correctAudio);
@@ -217,36 +229,37 @@ function handleSubmit() {
   nextButtonEl.hidden = isLastQuestion;
 
   if (isLastQuestion) {
-    feedbackMessageEl.textContent += ` Final score: ${score}/${questions.length}`;
+    const isNewBest = saveBestScore();
+    updateStatus();
+    feedbackMessageEl.textContent += ` Final score: ${score}/${questions.length}.`;
+    if (isNewBest) feedbackMessageEl.textContent += " New best score!";
   }
 }
 
 function renderAnswers(question) {
-  clearAnswers();
-
-  question.options.forEach((option) => {
+  const buttons = question.options.map((option) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "answer-button";
     button.textContent = option.text;
-
-    button.addEventListener("click", () => {
-      selectAnswer(option.text, option.audio);
-    });
-
-    answerButtonsEl.appendChild(button);
+    button.dataset.answer = option.text;
+    button.setAttribute("aria-pressed", "false");
+    button.addEventListener("click", () => selectAnswer(option.text, option.audio));
+    return button;
   });
+  answerButtonsEl.replaceChildren(...buttons);
 }
 
 function showEmptyState(message) {
   stopCurrentAudio();
-  clearAnswers();
-
+  answerButtonsEl.replaceChildren();
   imageEl.removeAttribute("src");
   imageEl.alt = "";
+  imageEl.hidden = true;
   feedbackMessageEl.textContent = message;
+  feedbackMessageEl.dataset.tone = "";
   nextButtonEl.hidden = true;
-
+  submitButtonEl.disabled = true;
   score = 0;
   currentQuestionIndex = 0;
   selectedAnswer = "";
@@ -256,28 +269,28 @@ function showEmptyState(message) {
 
 function renderQuestion() {
   const question = getCurrentQuestion();
-
   if (!question) {
-    showEmptyState("No sentence questions available for this level yet.");
+    showEmptyState("No sentence questions have been added for this level yet.");
     return;
   }
 
   selectedAnswer = "";
   submitted = false;
-  feedbackMessageEl.textContent = "";
+  submitButtonEl.disabled = true;
   nextButtonEl.hidden = true;
+  feedbackMessageEl.textContent = "Choose an answer to begin.";
+  feedbackMessageEl.dataset.tone = "";
 
   imageEl.src = question.image;
   imageEl.alt = question.alt;
-
+  imageEl.hidden = false;
   renderAnswers(question);
-  setButtonsDisabled(false);
+  setAnswerButtonsDisabled(false);
   updateStatus();
 }
 
 function nextQuestion() {
   if (currentQuestionIndex >= questions.length - 1) return;
-
   currentQuestionIndex += 1;
   renderQuestion();
 }
@@ -286,7 +299,6 @@ function startGame(mode = currentMode) {
   currentMode = mode;
   setActiveTab(mode);
   stopCurrentAudio();
-
   questions = shuffleArray(buildQuestions(mode));
   currentQuestionIndex = 0;
   score = 0;
@@ -294,30 +306,14 @@ function startGame(mode = currentMode) {
   submitted = false;
 
   if (questions.length === 0) {
-    showEmptyState("No sentence questions added for this level yet.");
+    showEmptyState("No sentence questions have been added for this level yet.");
     return;
   }
-
   renderQuestion();
 }
 
-function setMode(mode) {
-  startGame(mode);
-}
-
-if (submitButtonEl) {
-  submitButtonEl.addEventListener("click", handleSubmit);
-}
-
-if (nextButtonEl) {
-  nextButtonEl.addEventListener("click", nextQuestion);
-}
-
-if (restartButtonEl) {
-  restartButtonEl.addEventListener("click", () => {
-    startGame(currentMode);
-  });
-}
-
+submitButtonEl?.addEventListener("click", handleSubmit);
+nextButtonEl?.addEventListener("click", nextQuestion);
+restartButtonEl?.addEventListener("click", () => startGame(currentMode));
 initModeTabs();
 startGame();

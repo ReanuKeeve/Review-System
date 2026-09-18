@@ -15,37 +15,43 @@
   <!-- End Cloudflare Web Analytics -->
 </head>
 <body>
-  <main class="page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" class="page">
     <a href="minigames.html" class="back-link">← Back</a>
 
     <header class="page-header">
       <h1>Memory Match</h1>
-      <h2 class="page-subtitle">Match words with their corresponding images.</h2>
+      <h2 class="page-subtitle">Match every picture with its word in as few moves as possible.</h2>
     </header>
 
-    <section class="memory-match-container">
-      <h3>Choose level:</h3>
+    <section class="game-shell memory-match-container" aria-label="Memory match game">
+      <div class="game-intro">
+        <span class="game-eyebrow">How to play</span>
+        <h2>Find every matching pair</h2>
+        <p>Choose two cards. A picture and its matching word stay open; different cards turn back over.</p>
+      </div>
 
-      <div class="mode-tabs" role="tablist" aria-label="Game level">
-        <button id="tab-toddler" class="mode-tab active" type="button" role="tab" aria-selected="true" aria-controls="memory-game" data-mode="toddler">Toddler</button>
-        <button id="tab-small" class="mode-tab" type="button" role="tab" aria-selected="false" aria-controls="memory-game" data-mode="small">Small</button>
+      <div class="mode-tabs game-level-tabs" role="tablist" aria-label="Choose a class level">
+        <button id="tab-small" class="mode-tab active" type="button" role="tab" aria-selected="true" aria-controls="memory-game" data-mode="small">Small</button>
         <button id="tab-middle" class="mode-tab" type="button" role="tab" aria-selected="false" aria-controls="memory-game" data-mode="middle">Middle</button>
         <button id="tab-big" class="mode-tab" type="button" role="tab" aria-selected="false" aria-controls="memory-game" data-mode="big">Big</button>
       </div>
 
-      <div id="memory-game" class="game-area" role="tabpanel" aria-labelledby="tab-toddler">
-        <div class="game-status">
-          <p id="moves-display">Moves: 0</p>
-          <p id="matches-display">Matches: 0</p>
+      <div id="memory-game" class="game-area" role="tabpanel" aria-labelledby="tab-small">
+        <div class="game-status" aria-label="Current game status">
+          <p><span>Level</span><strong id="level-display">Small</strong></p>
+          <p><span>Moves</span><strong id="moves-display">0</strong></p>
+          <p><span>Pairs</span><strong id="matches-display">0 / 5</strong></p>
+          <p><span>Best</span><strong id="best-display">—</strong></p>
         </div>
 
-        <div id="memory-cards" class="memory-cards"></div>
+        <div id="memory-cards" class="memory-cards" role="group" aria-label="Memory cards"></div>
 
         <div class="game-controls">
-          <button id="restart-button" type="button" class="play-button">Restart</button>
+          <button id="restart-button" type="button" class="play-button">New board</button>
         </div>
 
-        <p id="memory-feedback" aria-live="polite"></p>
+        <p id="memory-feedback" class="game-feedback" role="status" aria-live="polite">Choose a card to begin.</p>
       </div>
     </section>
   </main>

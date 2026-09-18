@@ -9,7 +9,8 @@
     <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f8b92809d3f247148b5bb4eb91309f70"}'></script><!-- End Cloudflare Web Analytics -->
   </head>
   <body>
-    <main class="page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <main id="main-content" class="page">
       <a href="index.html" class="back-link">← Back</a>
 
       <header class="page-header">
@@ -18,14 +19,10 @@
       </header>
 
       <section class="dialogue-container" id="dialogue-container" aria-label="Dialogue practice cards"></section>
+      <p id="dialogue-status" class="sr-only" aria-live="polite"></p>
     </main>
 
     <script src="js/data-dia.js"></script>
     <script src="js/dialogues.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        initDialoguePage(dialogueData);
-      });
-    </script>
   </body>
 </html>

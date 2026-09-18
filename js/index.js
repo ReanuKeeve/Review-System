@@ -96,6 +96,7 @@ function getAudioElement(audioId) {
 
 function playSound(audioId, cardKey) {
   const audio = getAudioElement(audioId);
+  const playbackStatus = document.getElementById('audio-status');
   if (!audio) return;
 
   if (isPlaying) {
@@ -108,12 +109,17 @@ function playSound(audioId, cardKey) {
   currentAudio.currentTime = 0;
 
   setPlayingState(true, cardKey);
+  const activeCard = currentCards.find((card) => card.key === cardKey);
+  if (playbackStatus) {
+    playbackStatus.textContent = 'Playing ' + (activeCard?.title || 'review audio') + '.';
+  }
 
   playbackResetTimer = setTimeout(() => {
     cleanupPlayback(audio);
   }, AUDIO_RESET_TIMEOUT);
 
   audio.onended = () => {
+    if (playbackStatus) playbackStatus.textContent = 'Playback finished.';
     cleanupPlayback(audio);
   };
 
@@ -124,6 +130,7 @@ function playSound(audioId, cardKey) {
   };
 
   audio.onerror = () => {
+    if (playbackStatus) playbackStatus.textContent = 'This recording is unavailable.';
     cleanupPlayback(audio);
   };
 
@@ -379,21 +386,26 @@ function initTabs() {
     sentencesTab.onclick = () => setMode('sentences');
   }
 
-  if (tabList) {
+  if (tabList && tabList.dataset.tabsReady !== 'true') {
     tabList.addEventListener('keydown', handleTabKeydown);
+    tabList.dataset.tabsReady = 'true';
   }
 }
 
-function initCardPage(cards, defaultMode = 'words') {
+function updateCardPage(cards, preferredMode = currentMode) {
   const container = document.getElementById('card-container');
   if (!container || !Array.isArray(cards)) return;
 
   currentCards = cards;
-  currentMode = defaultMode === 'sentences' && hasSentenceMode(cards)
+  currentMode = preferredMode === 'sentences' && hasSentenceMode(cards)
     ? 'sentences'
     : 'words';
 
-  initTabs();
   renderAudioElements();
   renderCards();
+}
+
+function initCardPage(cards, defaultMode = 'words') {
+  initTabs();
+  updateCardPage(cards, defaultMode);
 }

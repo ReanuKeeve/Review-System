@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='description' content='Look up vocabulary and sentences from previous Daily Review materials.' />
+    <title>Learning Archive</title>
+    <link rel='stylesheet' href='css/main.css' />
+    <link rel='stylesheet' href='css/archive.css' />
+  </head>
+  <body>
+    <a class='skip-link' href='#main-content'>Skip to main content</a>
+    <main id='main-content' class='page'>
+      <a href='index.html' class='back-link' aria-label='Back to the home page'>&larr; Back</a>
+
+      <header class='page-header'>
+        <h1>Learning Archive</h1>
+        <p class='page-subtitle'>Look up words and sentences studied previously.</p>
+      </header>
+
+      <aside class='archive-notice' aria-label='About the archive'>
+        <strong>Previous materials</strong>
+        <p>This page is for reference. Toddler materials remain available here, but Toddler is not a current class.</p>
+      </aside>
+
+      <section class='archive-controls' aria-labelledby='archive-groups-heading'>
+        <h2 id='archive-groups-heading'>Choose an archived group</h2>
+        <div class='mode-tabs archive-group-tabs' aria-label='Archived groups'>
+          <button class='mode-tab' type='button' data-archive-group='toddler' aria-pressed='false'>Toddler</button>
+          <button class='mode-tab active' type='button' data-archive-group='small' aria-pressed='true'>Small</button>
+          <button class='mode-tab' type='button' data-archive-group='middle' aria-pressed='false'>Middle</button>
+          <button class='mode-tab' type='button' data-archive-group='big' aria-pressed='false'>Big</button>
+          <button class='mode-tab' type='button' data-archive-group='alphabet' aria-pressed='false'>Alphabet</button>
+        </div>
+
+        <div class='archive-search-wrap'>
+          <label for='archive-search'>Find archived material</label>
+          <input id='archive-search' type='search' placeholder='Search words or sentences' autocomplete='off' />
+        </div>
+        <p id='archive-results-status' class='archive-results-status' role='status' aria-live='polite'></p>
+      </section>
+
+      <div class='mode-tabs review-mode-tabs' role='tablist' aria-label='Review type'>
+        <button id='tab-words' class='mode-tab active' type='button' role='tab' aria-selected='true' aria-controls='card-container'>Words</button>
+        <button id='tab-sentences' class='mode-tab' type='button' role='tab' aria-selected='false' aria-controls='card-container'>Sentences</button>
+      </div>
+
+      <section id='card-container' class='card-container' role='tabpanel' aria-labelledby='tab-words'></section>
+      <p id='audio-status' class='sr-only' aria-live='polite'></p>
+    </main>
+
+    <script src='js/data-old.js'></script>
+    <script src='js/index.js'></script>
+    <script src='js/archive.js'></script>
+  </body>
+</html>
