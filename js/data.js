@@ -313,7 +313,7 @@ const reviewData = {
       sentenceAudio: "assets/audio/good-friend-sentence-1.mp3",
     },
     {
-      key: "good-friend",
+      key: "good-friend-1",
       title: "Good Friend",
       image: "assets/images/good-friend-1.webp",
       alt: "Good Friend",
