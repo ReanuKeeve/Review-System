@@ -16,6 +16,7 @@ Kids can select a group, review vocabulary cards, and play word + sentence audio
 - `review.html`: shared Small, Middle, Big, and Alphabet review page
 - `small.html`, `middle.html`, `big.html`, `alphabet.html`: compatibility redirects for older links
 - `phonics.html`: Level 1 and Level 2 video-based phonics practice
+- `phonics-game.html`: beginning-sound minigame using the Level 1 picture-card deck
 - `css/main.css`: layout and UI styles
 - `js/data.js`: groups and card data
 - `js/data-old.js`: archived historical study data; keep for reference

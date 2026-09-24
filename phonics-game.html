@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Practise beginning letter sounds with phonics picture cards."
+    />
+    <title>Sound Hunt</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+  <body class="phonics-game-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <main id="main-content" class="page">
+      <a href="minigames.html" class="back-link">&larr; Back</a>
+
+      <header class="page-header phonics-game-header">
+        <span class="phonics-game-kicker">Picture &middot; Sound &middot; Letter</span>
+        <h1>Sound Hunt</h1>
+        <p class="page-subtitle">Look closely, say the word, and find its beginning sound.</p>
+      </header>
+
+      <section class="game-shell phonics-game-container" aria-label="Beginning sound game">
+        <div class="game-intro phonics-game-intro">
+          <span class="game-eyebrow">How to play</span>
+          <h2>Which letter starts the picture?</h2>
+          <p>Say what you see out loud, listen to its first sound, then choose a letter. You can try again if you miss.</p>
+        </div>
+
+        <div class="mode-tabs phonics-set-tabs" role="tablist" aria-label="Choose a letter set">
+          <button
+            id="tab-early"
+            class="mode-tab active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="phonics-game"
+            data-mode="early"
+          >
+            A&ndash;I
+          </button>
+          <button
+            id="tab-middle"
+            class="mode-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="phonics-game"
+            data-mode="middle"
+          >
+            J&ndash;R
+          </button>
+          <button
+            id="tab-late"
+            class="mode-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="phonics-game"
+            data-mode="late"
+          >
+            S&ndash;Z
+          </button>
+          <button
+            id="tab-all"
+            class="mode-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="phonics-game"
+            data-mode="all"
+          >
+            A&ndash;Z
+          </button>
+        </div>
+
+        <div id="phonics-game" class="game-area" role="tabpanel" aria-labelledby="tab-early">
+          <div class="game-status phonics-game-status" aria-label="Current game status">
+            <p><span>Set</span><strong id="set-display">A&ndash;I</strong></p>
+            <p><span>Stars</span><strong id="score-display">0</strong></p>
+            <p><span>Streak</span><strong id="streak-display">0</strong></p>
+            <p><span>Best</span><strong id="best-display">&mdash;</strong></p>
+          </div>
+
+          <progress class="question-progress" id="question-progress" value="1" max="9">1 of 9</progress>
+
+          <div id="question-card" class="phonics-question-card" aria-labelledby="question-heading">
+            <div class="phonics-question-heading">
+              <span id="round-display" class="round-chip">Card 1 of 9</span>
+              <h2 id="question-heading">What sound does this picture begin with?</h2>
+              <p>Say the picture name out loud.</p>
+            </div>
+
+            <div class="phonics-card-frame">
+              <img id="phonics-card-image" alt="" />
+              <span class="card-corner" aria-hidden="true">?</span>
+            </div>
+
+            <div id="letter-buttons" class="letter-answer-buttons" aria-label="Letter choices"></div>
+
+            <p id="phonics-feedback" class="game-feedback phonics-feedback" role="status" aria-live="polite">
+              Choose the beginning sound.
+            </p>
+
+            <div class="game-controls">
+              <button id="next-button" type="button" class="play-button" hidden>Next card</button>
+              <button id="restart-button" type="button" class="play-button secondary-button">New game</button>
+            </div>
+          </div>
+
+          <section id="round-complete" class="round-complete" aria-labelledby="complete-title" hidden>
+            <div class="completion-burst" aria-hidden="true">&#9733;</div>
+            <span class="game-eyebrow">Set complete</span>
+            <h2 id="complete-title">Brilliant sound hunting!</h2>
+            <p id="complete-summary"></p>
+            <div class="completion-score" aria-label="Final result">
+              <strong id="complete-score">0 / 9</strong>
+              <span>first-try stars</span>
+            </div>
+            <button id="play-again-button" type="button" class="play-button">Play again</button>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <audio id="letter-audio" preload="none"></audio>
+    <script src="js/game-3.js"></script>
+  </body>
+</html>

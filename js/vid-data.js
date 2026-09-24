@@ -58,5 +58,11 @@ const videos = [
     title: "Tooty Ta",
     thumbnail: "assets/video/v-10.webp",
     file: "assets/video/tooty-ta.mp4",
-  }
+  },
+  {
+    id: "v-11",
+    title: "Red Yellow Green Blue",
+    thumbnail: "assets/video/v-11.webp",
+    file: "assets/video/red-yellow-green-blue.mp4",
+  },
 ];
