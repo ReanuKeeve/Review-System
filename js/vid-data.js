@@ -65,4 +65,28 @@ const videos = [
     thumbnail: "assets/video/v-11.webp",
     file: "assets/video/red-yellow-green-blue.mp4",
   },
+  {
+    id: "v-12",
+    title: "Do you have a crayon",
+    thumbnail: "assets/video/v-12.webp",
+    file: "assets/video/a-crayon.mp4",
+  },
+  {
+    id: "v-13",
+    title: "The People in My Family",
+    thumbnail: "assets/video/v-13.webp",
+    file: "assets/video/the-family.mp4",
+  },
+  {
+    id: "v-14",
+    title: "Seven days of the week",
+    thumbnail: "assets/video/v-14.webp",
+    file: "assets/video/seven-days.mp4",
+  },
+  {
+    id: "v-15",
+    title: "What I like to Do",
+    thumbnail: "assets/video/v-15.webp",
+    file: "assets/video/like-to-do.mp4",
+  }
 ];
