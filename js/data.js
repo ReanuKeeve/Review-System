@@ -388,6 +388,24 @@ const reviewData = {
       wordAudio: "assets/audio/board.mp3",
       sentenceText: "I have a board.",
       sentenceAudio: "assets/audio/board--sentence.mp3",
+    },
+    {
+      key: "classroom",
+      title: "Classroom",
+      image: "assets/images/classroom.webp",
+      alt: "Classroom",
+      wordAudio: "assets/audio/classroom.mp3",
+      sentenceText: "At the classroom.",
+      sentenceAudio: "assets/audio/classroom-sentence.mp3",
+    },
+    {
+      key: "playground",
+      title: "Playground",
+      image: "assets/images/playground.webp",
+      alt: "Playground",
+      wordAudio: "assets/audio/playground.mp3",
+      sentenceText: "At the playground.",
+      sentenceAudio: "assets/audio/playground-sentence.mp3",
     }
   ],
   middle: [
@@ -624,7 +642,34 @@ const reviewData = {
       wordAudio: "assets/audio/mother.mp3",
       sentenceText: "This is my mother.",
       sentenceAudio: "assets/audio/mother-sentence.mp3",
-    }
+    },
+    {
+      key: "grandfather",
+      title: "Grandfather",
+      image: "assets/images/grandfather.webp",
+      alt: "Grandfather",
+      wordAudio: "assets/audio/grandfather.mp3",
+      sentenceText: "He is my grandfather.",
+      sentenceAudio: "assets/audio/grandfather-sentence.mp3",
+    },
+    {
+      key: "grandmother",
+      title: "Grandmother",
+      image: "assets/images/grandmother.webp",
+      alt: "Grandmother",
+      wordAudio: "assets/audio/grandmother.mp3",
+      sentenceText: "She is my grandmother.",
+      sentenceAudio: "assets/audio/grandmother-sentence.mp3",
+    },
+    {
+      key: "family",
+      title: "Family",
+      image: "assets/images/family.webp",
+      alt: "Family",
+      wordAudio: "assets/audio/family.mp3",
+      sentenceText: "This is my family.",
+      sentenceAudio: "assets/audio/family-sentence.mp3",
+    },
   ],
   big: [
     {
@@ -861,5 +906,32 @@ const reviewData = {
       sentenceText: "Today is Sunday.",
       sentenceAudio: "assets/audio/sunday-sentence.mp3",
     },
+    {
+      key: "go shopping",
+      title: "Go Shopping",
+      image: "assets/images/go-shopping.webp",
+      alt: "Go Shopping",
+      wordAudio: "assets/audio/go-shopping.mp3",
+      sentenceText: "Let's go shopping.",
+      sentenceAudio: "assets/audio/go-shopping-sentence.mp3",
+    },
+    {
+      key: "go skating",
+      title: "Go Skating",
+      image: "assets/images/go-skating.webp",
+      alt: "Go Skating",
+      wordAudio: "assets/audio/go-skating.mp3",
+      sentenceText: "Let's go skating.",
+      sentenceAudio: "assets/audio/go-skating-sentence.mp3",
+    },
+    {
+      key: "listen to music",
+      title: "Listen to Music",
+      image: "assets/images/listen-to-music.webp",
+      alt: "Listen to Music",
+      wordAudio: "assets/audio/listen-to-music.mp3",
+      sentenceText: "Let's listen to music.",
+      sentenceAudio: "assets/audio/listen-to-music-sentence.mp3",
+    }
   ],
 };
