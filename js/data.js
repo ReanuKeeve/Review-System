@@ -406,7 +406,26 @@ const reviewData = {
       wordAudio: "assets/audio/playground.mp3",
       sentenceText: "At the playground.",
       sentenceAudio: "assets/audio/playground-sentence.mp3",
+    },
+    {
+      key: "bookcase",
+      title: "Bookcase",
+      image: "assets/images/bookcase.webp",
+      alt: "Bookcase",
+      wordAudio: "assets/audio/bookcase.mp3",
+      sentenceText: "The book is in the bookcase.",
+      sentenceAudio: "assets/audio/bookcase--sentence.mp3",
+    },
+    {
+      key: "cupboard",
+      title: "Cupboard",
+      image: "assets/images/cupboard.webp",
+      alt: "Cupboard",
+      wordAudio: "assets/audio/cupboard.mp3",
+      sentenceText: "The toys are in the cupboard.",
+      sentenceAudio: "assets/audio/cupboard--sentence.mp3",
     }
+
   ],
   middle: [
     {
@@ -670,6 +689,33 @@ const reviewData = {
       sentenceText: "This is my family.",
       sentenceAudio: "assets/audio/family-sentence.mp3",
     },
+    {
+      key: "beautiful",
+      title: "Beautiful",
+      image: "assets/images/beautiful.webp",
+      alt: "Beautiful",
+      wordAudio: "assets/audio/beautiful.mp3",
+      sentenceText: "It looks beautiful.",
+      sentenceAudio: "assets/audio/beautiful-sentence.mp3"
+    },
+    {
+      key: "ugly",
+      title: "Ugly",
+      image: "assets/images/ugly.webp",
+      alt: "Ugly",
+      wordAudio: "assets/audio/ugly.mp3",
+      sentenceText: "It looks ugly.",
+      sentenceAudio: "assets/audio/ugly-sentence.mp3"
+    },
+    {
+      key: "funny",
+      title: "Funny",
+      image: "assets/images/funny.webp",
+      alt: "Funny",
+      wordAudio: "assets/audio/funny.mp3",
+      sentenceText: "It looks funny.",
+      sentenceAudio: "assets/audio/funny-sentence.mp3"
+    }
   ],
   big: [
     {
@@ -932,6 +978,33 @@ const reviewData = {
       wordAudio: "assets/audio/listen-to-music.mp3",
       sentenceText: "Let's listen to music.",
       sentenceAudio: "assets/audio/listen-to-music-sentence.mp3",
+    },
+    {
+      key: "reading books",
+      title: "Reading Books",
+      image: "assets/images/reading-books.webp",
+      alt: "Reading Books",
+      wordAudio: "assets/audio/reading-books.mp3",
+      sentenceText: "I like reading books.",
+      sentenceAudio: "assets/audio/reading-books-sentence.mp3",
+    },
+    {
+      key: "watching movies",
+      title: "Watching Movies",
+      image: "assets/images/watching-movies.webp",
+      alt: "Watching Movies",
+      wordAudio: "assets/audio/watching-movies.mp3",
+      sentenceText: "Let's watch a movie.",
+      sentenceAudio: "assets/audio/watching-movies-sentence.mp3",
+    },
+    {
+      key: "write a message",
+      title: "Write a Message",
+      image: "assets/images/write-a-message.webp",
+      alt: "Write a Message",
+      wordAudio: "assets/audio/write-a-message.mp3",
+      sentenceText: "Let's write a message.",
+      sentenceAudio: "assets/audio/write-a-message-sentence.mp3",
     }
   ],
 };
