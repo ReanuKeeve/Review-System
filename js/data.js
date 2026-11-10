@@ -424,6 +424,24 @@ const reviewData = {
       wordAudio: "assets/audio/cupboard.mp3",
       sentenceText: "The toys are in the cupboard.",
       sentenceAudio: "assets/audio/cupboard--sentence.mp3",
+    },
+    {
+      key: "apple",
+      title: "Apple",
+      image: "assets/images/apple.webp",
+      alt: "Apple",
+      wordAudio: "assets/audio/apple.mp3",
+      sentenceText: "I like apples.",
+      sentenceAudio: "assets/audio/apple-sentence.mp3",
+    },
+    {
+      key: "banana",
+      title: "Banana",
+      image: "assets/images/banana.webp",
+      alt: "Banana",
+      wordAudio: "assets/audio/banana.mp3",
+      sentenceText: "I like bananas.",
+      sentenceAudio: "assets/audio/banana-sentence.mp3",
     }
 
   ],
@@ -715,6 +733,51 @@ const reviewData = {
       wordAudio: "assets/audio/funny.mp3",
       sentenceText: "It looks funny.",
       sentenceAudio: "assets/audio/funny-sentence.mp3"
+    },
+    {
+      key: "body",
+      title: "Body",
+      image: "assets/images/body.webp",
+      alt: "Body",
+      wordAudio: "assets/audio/body.mp3",
+      sentenceText: "This is my body.",
+      sentenceAudio: "assets/audio/body-sentence.mp3"
+    },
+    {
+      key: "face",
+      title: "Face",
+      image: "assets/images/face.webp",
+      alt: "Face",
+      wordAudio: "assets/audio/face.mp3",
+      sentenceText: "This is my face.",
+      sentenceAudio: "assets/audio/face-sentence.mp3"
+    },
+    {
+      key: "eye",
+      title: "Eye",
+      image: "assets/images/eye.webp",
+      alt: "Eye",
+      wordAudio: "assets/audio/eye.mp3",
+      sentenceText: "I have two eyes.",
+      sentenceAudio: "assets/audio/eye-sentence.mp3"
+    },
+    {
+      key: "ear",
+      title: "Ear",
+      image: "assets/images/ear.webp",
+      alt: "Ear",
+      wordAudio: "assets/audio/ear.mp3",
+      sentenceText: "I have two ears.",
+      sentenceAudio: "assets/audio/ear-sentence.mp3"
+    },
+    {
+      key: "arm",
+      title: "Arm",
+      image: "assets/images/arm.webp",
+      alt: "Arm",
+      wordAudio: "assets/audio/arm.mp3",
+      sentenceText: "I have two arms.",
+      sentenceAudio: "assets/audio/arm-sentence.mp3"
     }
   ],
   big: [
@@ -1005,6 +1068,60 @@ const reviewData = {
       wordAudio: "assets/audio/write-a-message.mp3",
       sentenceText: "Let's write a message.",
       sentenceAudio: "assets/audio/write-a-message-sentence.mp3",
+    },
+    {
+      key: "doctor",
+      title: "Doctor",
+      image: "assets/images/doctor.webp",
+      alt: "Doctor",
+      wordAudio: "assets/audio/doctor.mp3",
+      sentenceText: "I want to be a doctor.",
+      sentenceAudio: "assets/audio/doctor-sentence.mp3",
+    },
+    {
+      key: "dentist",
+      title: "Dentist",
+      image: "assets/images/dentist.webp",
+      alt: "Dentist",
+      wordAudio: "assets/audio/dentist.mp3",
+      sentenceText: "I want to be a dentist.",
+      sentenceAudio: "assets/audio/dentist-sentence.mp3",
+    },
+    {
+      key: "clown",
+      title: "Clown",
+      image: "assets/images/clown.webp",
+      alt: "Clown",
+      wordAudio: "assets/audio/clown.mp3",
+      sentenceText: "I want to be a clown.",
+      sentenceAudio: "assets/audio/clown-sentence.mp3",
+    },
+    {
+      key: "cook",
+      title: "Cook",
+      image: "assets/images/cook.webp",
+      alt: "Cook",
+      wordAudio: "assets/audio/cook.mp3",
+      sentenceText: "I want to be a cook.",
+      sentenceAudio: "assets/audio/cook-sentence.mp3",
+    },
+    {
+      key: "farmer",
+      title: "Farmer",
+      image: "assets/images/farmer.webp",
+      alt: "Farmer",
+      wordAudio: "assets/audio/farmer.mp3",
+      sentenceText: "I want to be a farmer.",
+      sentenceAudio: "assets/audio/farmer-sentence.mp3",
+    },
+    {
+      key: "movie star",
+      title: "Movie Star",
+      image: "assets/images/movie-star.webp",
+      alt: "Movie Star",
+      wordAudio: "assets/audio/movie-star.mp3",
+      sentenceText: "I want to be a movie star.",
+      sentenceAudio: "assets/audio/movie-star-sentence.mp3",
     }
   ],
 };
